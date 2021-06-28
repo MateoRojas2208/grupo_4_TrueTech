@@ -15,6 +15,6 @@ Integrantes: ............
 paginas de referencia: 
 -https://compragamer.com/      por las funcionalidades
 -https://www.fullh4rd.com.ar/
--
+-https://www.compugarden.com.ar/ Por los íconos de las partes de las pc y su funcion
 -
 -
