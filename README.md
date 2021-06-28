@@ -12,4 +12,9 @@ Integrantes: ............
 
 
 
-paginas de referencia: https://compragamer.com/      por las funcionalidades
+paginas de referencia: 
+-https://compragamer.com/      por las funcionalidades
+-https://www.fullh4rd.com.ar/
+-
+-
+-
