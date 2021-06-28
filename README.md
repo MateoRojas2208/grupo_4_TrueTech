@@ -12,4 +12,4 @@ Integrantes: ............
 
 
 
-paginas de referencia: https://compragamer.com/
+paginas de referencia: https://compragamer.com/      por las funcionalidades
