@@ -12,7 +12,7 @@ Faustino Correa:
 
 
 
-
+Link del proyecto (Ninja Mock): https://ninjamock.com/s/22SNTJx
 
 paginas de referencia: 
 -https://compragamer.com/      por las funcionalidades
