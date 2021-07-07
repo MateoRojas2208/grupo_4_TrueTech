@@ -3,7 +3,7 @@ Con este proyecto buscamos facilitarle al usuario la tarea de armar una computad
 
 El sitio apunta a todo el publico que no esta tan informado y no conoce cómo y con qué partes armar una computadora pueda con varios clicks armar su propia pc. La pagina tendrá computadoras "prefabricadas" y con tan solo elegir el juego que quieren jugar la página le daría la que necesitan.
 
-
+Nuestro producto será dirigido a los adolescentes y adultos jóvenes.
 Integrantes: 
 Mateo Rojas:
 Candela Kitajgrocki:
