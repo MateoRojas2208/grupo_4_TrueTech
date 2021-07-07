@@ -19,8 +19,9 @@ Link del proyecto (Ninja Mock): https://ninjamock.com/s/22SNTJx
 * Páginas referenciales
 
 
--https://compragamer.com/      por las funcionalidades
+-https://compragamer.com/   por las funcionalidades que brinda.
+
 -https://www.fullh4rd.com.ar/
+
 -https://www.compugarden.com.ar/ Por los íconos de las partes de las pc y su funcion
--
--
+
