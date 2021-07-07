@@ -1,4 +1,3 @@
- -*- mode: org -*-
 # -*- coding: utf-8 -*-
 #+OPTIONS:   H:1 num:t toc:t \n:nil @:t ::t |:t ^:nil -:t f:t *:t <:t date:nil
 #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
