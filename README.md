@@ -7,10 +7,7 @@ Nuestro producto será dirigido a los adolescentes y adultos jóvenes.
 Integrantes: 
 Mateo Rojas:
 Candela Kitajgrocki:
-Faustino Correa: tengo 18 años, me gustan 
-
-
-
+Faustino Correa: tengo 18 años, me gustan los videojuegos y la naturaleza.
 
 Link del proyecto (Ninja Mock): https://ninjamock.com/s/22SNTJx
 
