@@ -37,12 +37,12 @@ Link del proyecto (Ninja Mock): https://ninjamock.com/s/22SNTJx
 * Páginas referenciales
 
 
--https://compragamer.com/   por las funcionalidades que brinda.
+- https://compragamer.com/   por las funcionalidades que brinda.
 
--https://www.fullh4rd.com.ar/ por el home.
+- https://www.fullh4rd.com.ar/ por el home.
 
--https://www.compugarden.com.ar/ Por los íconos de las partes de las pc y su función.
+- https://www.compugarden.com.ar/ Por los íconos de las partes de las pc y su función.
 
 - https://www.maximus.com.ar/HOME/MAXIMUS/maximus.aspx por el footer.
 
--https://www.hypergaming.com.ar/ por el footer y la búsqueda de los más buscados.
+- https://www.hypergaming.com.ar/ por el footer y la búsqueda de los más buscados.
