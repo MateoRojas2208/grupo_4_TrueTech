@@ -24,7 +24,7 @@
 
 Mateo Rojas: tengo 18 años, me gusta nadar y varios deportes acuáticos.
 
-Candela Kitajgrocki:
+Candela Kitajgrocki: tengo 18 años, me gusta el campo y pasar tiempo con mis amigos.
 
 Faustino Correa: tengo 18 años, me gustan los videojuegos, el fútbol y la naturaleza.
 
