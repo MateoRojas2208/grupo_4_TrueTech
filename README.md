@@ -20,7 +20,7 @@
 - Nuestro producto será dirigido a los adolescentes y adultos jóvenes.
 - La página tendrá computadoras "prefabricadas" y con tan solo elegir el juego que quieren jugar la página le daría la que necesitan.
 
-* Integrantes
+* Integrantes y link del proyecto
 
 Mateo Rojas: tengo 18 años, me gusta nadar y varios deportes acuáticos.
 
