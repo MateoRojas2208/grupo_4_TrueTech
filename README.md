@@ -30,7 +30,7 @@ Faustino Correa: tengo 18 años, me gustan los videojuegos, el fútbol y la natu
 
 
 
-Link del proyecto (Ninja Mock): https://ninjamock.com/s/22SNTJx
+Link del WireFrame (Ninja Mock): https://ninjamock.com/s/22SNTJx
 
 
 
