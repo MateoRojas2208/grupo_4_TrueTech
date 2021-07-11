@@ -26,7 +26,7 @@ Mateo Rojas:
 
 Candela Kitajgrocki:
 
-Faustino Correa: tengo 18 años, me gustan los videojuegos y la naturaleza.
+Faustino Correa: tengo 18 años, me gustan los videojuegos, el fútbol y la naturaleza.
 
 
 
