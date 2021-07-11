@@ -22,7 +22,7 @@
 
 * Integrantes
 
-Mateo Rojas:
+Mateo Rojas: tengo 18 años, me gusta nadar y varios deportes acuaticos
 
 Candela Kitajgrocki:
 
