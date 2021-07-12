@@ -13,7 +13,7 @@
 
 
 
-* ¿Que vamos a hacer? ¿A quienes estará dirigido?
+* ¿Qué vamos a hacer? ¿A quienes estará dirigido?
 - Nuestro producto van a ser las computadoras.
 - Con este proyecto buscamos facilitarle al usuario la tarea de armar una computadora sin tener conocimientos sobre estas. 
 - El sitio apunta a todo el publico que no esta tan informado.
