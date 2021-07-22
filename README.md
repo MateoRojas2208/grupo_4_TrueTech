@@ -36,7 +36,6 @@ Link del WireFrame (Ninja Mock): https://ninjamock.com/s/22SNTJx
 
 * Páginas referenciales
 
-
 - https://compragamer.com/   por las funcionalidades que brinda.
 
 - https://www.fullh4rd.com.ar/ por el home.
