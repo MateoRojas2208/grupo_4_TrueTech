@@ -13,3 +13,7 @@ app.listen(3030, () =>{
 app.get("/", (req, res) => {
     res.sendFile(path.resolve(__dirname, "./views/home.html"))
 })
+
+
+
+//animacion slides de home
