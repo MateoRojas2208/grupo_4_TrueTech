@@ -52,22 +52,41 @@
         showSlides(slideIndex = n);
       }
       var slideIndex = 0;
-    showSlides();
-    function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      for(i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+      showSlides();
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 8000); // frecuencia de cambio de imagen (esta en 8 segundos)
       }
-      slideIndex++;
-      if(slideIndex > slides.length) {
-        slideIndex = 1
-      }
-      slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 2000); // Change image every 2 seconds
-    }
     </script>
   </div>
+  <div class="Titulos1">
+    <div id="titulotext1">Pc Prefabricadas</div><div id="titulotext2">Arma tu propia pc</div>
+  </div>
+  <div class="armaTuPc">
+    <img src="images/PC Prefabricada.jpg" alt="foto de Pc Prefabricada" id="PcPrefab">
+    <img src="images/arma tu pc.jpg" alt="foto de arma tu pc" id="armaPC">
+    <div class="textoFotosHover1">Arma tu PC</div>   
+    <div class="textoFotosHover2">Elige tu PC Prefabricada</div>
+  </div>
+
+  <div id="espacio">
+  </div>
+  <div id="espacio">
+  </div>
+  <div id="espacio">
+  </div>
+  <div id="espacio">
+  </div>
+
 </body>
 <!------------------------------------------------------- FOOTER--------------------------------------------------------------->
 <footer>
