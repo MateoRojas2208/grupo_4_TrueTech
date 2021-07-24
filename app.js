@@ -13,13 +13,10 @@ app.listen(3030, () =>{
 app.get("/", (req, res) => {
     res.sendFile(path.resolve(__dirname, "./views/home.html"))
 })
-<<<<<<< HEAD
+app.get("/detalle-producto", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "./views/detalle-producto.html"))
+})
 
 
 
 //animacion slides de home
-=======
-app.get("/detalle-producto", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/detalle-producto.html"))
-})
->>>>>>> 7c3d156791c2b043148a9fa5fbd9d348923d60ed
