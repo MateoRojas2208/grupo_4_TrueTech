@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/home.css">
   <title>Proyecto</title>
+
 </head>
 
 <body>
@@ -18,7 +19,7 @@
   <div class="carusel">
     <div class="slideshow-container">
       <div class="mySlides fade">
-        <div class="numbertext">1 / 3</div>
+        <div class="numbertext">3 / 3</div>
         <img src="images/beast_2-wallpaper-3200x900.jpg" style="width:100%">
         <div class="text">London, Ebgland</div>
       </div>
@@ -28,7 +29,7 @@
         <div class="text">Sunset in Romania</div>
       </div>
       <div class="mySlides fade">
-        <div class="numbertext">3 / 3</div>
+        <div class="numbertext">1 / 3</div>
         <img src="images/beautiful_city_night-wallpaper-3200x900.jpg" style="width:100%">
         <div class="text">New York, USA</div>
       </div>
@@ -51,25 +52,42 @@
       function currentSlide(n) {
         showSlides(slideIndex = n);
       }
-      function showSlides(n) {
+      var slideIndex = 0;
+      showSlides();
+      function showSlides() {
         var i;
         var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length };
         for (i = 0; i < slides.length; i++) {
           slides[i].style.display = "none";
         }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1
         }
         slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 2000); // Change image every 2 seconds
+        setTimeout(showSlides, 8000); // frecuencia de cambio de imagen (esta en 8 segundos)
       }
     </script>
   </div>
+  <div class="Titulos1">
+    <div id="titulotext1">Pc Prefabricadas</div><div id="titulotext2">Arma tu propia pc</div>
+  </div>
+  <div class="armaTuPc">
+    <img src="images/PC Prefabricada.jpg" alt="foto de Pc Prefabricada" id="PcPrefab">
+    <img src="images/arma tu pc.jpg" alt="foto de arma tu pc" id="armaPC">
+    <div class="textoFotosHover1">Arma tu PC</div>   
+    <div class="textoFotosHover2">Elige tu PC Prefabricada</div>
+  </div>
+
+  <div id="espacio">
+  </div>
+  <div id="espacio">
+  </div>
+  <div id="espacio">
+  </div>
+  <div id="espacio">
+  </div>
+
 </body>
 <!------------------------------------------------------- FOOTER--------------------------------------------------------------->
 <footer>
