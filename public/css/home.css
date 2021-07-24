@@ -2,10 +2,14 @@
 
 
 /*----------------------------- body------------------------ */
-html{
-  background-color: aquamarine;
-}
 
+/* carusel */
+html{
+  background-color: rgb(172, 172, 172);
+}
+#espacio{
+  height: 200px;
+}
 
 * {
   box-sizing: border-box
@@ -20,11 +24,18 @@ body {
 img {
   vertical-align: middle;
 }
-.slideshow-container {
-  max-width: 1000px;
+.carusel{
+  width: 70%;
   position: relative;
   margin: auto;
+  background-color: rgb(134, 161, 173);
 }
+/* .slideshow-container {
+  width: 70%;
+  position: relative;
+  margin: auto;
+  background-color: rgb(134, 161, 173);
+} */
 /* Next & previous buttons */
 .prev,
 .next {

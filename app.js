@@ -10,13 +10,14 @@ app.listen(3030, () =>{
     console.log("servidor corriendo en el puerto 3030")
 })
 
+// Paginas
 app.get("/", (req, res) => {
     res.sendFile(path.resolve(__dirname, "./views/home.html"))
 })
+
 app.get("/detalle-producto", (req, res) => {
     res.sendFile(path.resolve(__dirname, "./views/detalle-producto.html"))
 })
-
-
-
-//animacion slides de home
+app.get("/detalle-producto2", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "./views/detalle-producto2.html"))
+})
