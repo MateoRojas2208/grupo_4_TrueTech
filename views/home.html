@@ -7,82 +7,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/home.css">
   <title>Proyecto</title>
+  <!------ header ------->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <!------ footer ------->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 </head>
 
 <body>
+
+  <!----------------------- header/nav var---------- -->
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">DesignX</label>
+    <ul>
+      <li><a class="active" href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Feedback</a></li>
+    </ul>
+  </nav>
+
+
   <!-- espacio-->
   <div id="espacio">
   </div>
-
-  <!-- codigo de carrusel de fotos -->
-  <div class="carusel">
-    <div class="slideshow-container">
-      <div class="mySlides fade">
-        <div class="numbertext">3 / 3</div>
-        <img src="images/beast_2-wallpaper-3200x900.jpg" style="width:100%">
-        <div class="text">London, Ebgland</div>
+  <main>
+    <!-- codigo de carrusel de fotos -->
+    <div class="carusel">
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="images/beast_2-wallpaper-3200x900.jpg" style="width:100%">
+          <div class="text">London, Ebgland</div>
+        </div>
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="images/beautiful_singapore_reflection-wallpaper-3200x900.jpg" style="width:100%">
+          <div class="text">Sunset in Romania</div>
+        </div>
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="images/beautiful_city_night-wallpaper-3200x900.jpg" style="width:100%">
+          <div class="text">New York, USA</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
-      <div class="mySlides fade">
-        <div class="numbertext">2 / 3</div>
-        <img src="images/beautiful_singapore_reflection-wallpaper-3200x900.jpg" style="width:100%">
-        <div class="text">Sunset in Romania</div>
+      <br>
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
       </div>
-      <div class="mySlides fade">
-        <div class="numbertext">1 / 3</div>
-        <img src="images/beautiful_city_night-wallpaper-3200x900.jpg" style="width:100%">
-        <div class="text">New York, USA</div>
-      </div>
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    <br>
-    <div style="text-align:center">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
-    <!-- codigo javascript para el carusel de fotos -->
-    <script>
-      var slideIndex = 1;
-      showSlides(slideIndex);
-      function plusSlides(n) {
-        showSlides(slideIndex += n);
-      }
-      function currentSlide(n) {
-        showSlides(slideIndex = n);
-      }
-      var slideIndex = 0;
-      showSlides();
-      function showSlides() {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
+      <!-- codigo javascript para el carusel de fotos -->
+      <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
         }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-          slideIndex = 1
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
         }
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 8000); // frecuencia de cambio de imagen (esta en 8 segundos)
-      }
-    </script>
-  </div>
+        var slideIndex = 0;
+        showSlides();
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {
+            slideIndex = 1
+          }
+          slides[slideIndex - 1].style.display = "block";
+          setTimeout(showSlides, 8000); // frecuencia de cambio de imagen (esta en 8 segundos)
+        }
+      </script>
+    </div>
 
-  <div class="Titulos1">
-    <div id="titulotext1">Pc Prefabricadas</div>
-    <div id="titulotext2">Arma tu propia pc</div>
-  </div>
-  <div class="armaTuPc">
-    <img src="images/PC Prefabricada.jpg" alt="foto de Pc Prefabricada" id="PcPrefab">
-    <img src="images/arma tu pc.jpg" alt="foto de arma tu pc" id="armaPC">
-    <div class="textoFotosHover1">Arma tu PC</div>
-    <div class="textoFotosHover2">Elige tu PC Prefabricada</div>
-  </div>
+    <div class="Titulos1">
+      <div id="titulotext1">Pc Prefabricadas</div>
+      <div id="titulotext2">Arma tu propia pc</div>
+    </div>
+    <div class="armaTuPc">
+      <img src="images/PC Prefabricada.jpg" alt="foto de Pc Prefabricada" id="PcPrefab">
+      <img src="images/arma tu pc.jpg" alt="foto de arma tu pc" id="armaPC">
+      <div class="textoFotosHover1">Arma tu PC</div>
+      <div class="textoFotosHover2">Elige tu PC Prefabricada</div>
+    </div>
 
-  <div id="espacio">
-  </div>
+    <div id="espacio">
+    </div>
+  </main>
   <!-------------------------------------- footer-------------------------------------------------- -->
   <div class="FooterGral">
     <footer>
