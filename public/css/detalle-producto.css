@@ -4,6 +4,7 @@ html, body {
   width: 100%;
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  background-color: white;
 }
  
 .container {
@@ -25,12 +26,7 @@ html, body {
   text-transform: uppercase;
   text-decoration: none;
 }
-.product-description h1 {
-  font-weight: 300;
-  font-size: 52px;
-  color: #43484D;
-  letter-spacing: -2px;
-}
+
 .product-description p {
   font-size: 16px;
   font-weight: 300;
@@ -73,7 +69,6 @@ html, body {
     flex-direction: column;
   }
   
-  
   .left-column,
   .right-column {
     width: 100%;
@@ -94,5 +89,6 @@ html, body {
   }
 }
      
+
 
 

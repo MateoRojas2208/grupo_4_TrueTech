@@ -18,6 +18,6 @@ app.get("/", (req, res) => {
 app.get("/detalle-producto", (req, res) => {
     res.sendFile(path.resolve(__dirname, "./views/detalle-producto.html"))
 })
-app.get("/detalle-producto2", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/detalle-producto2.html"))
+app.get("/prueba", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "./views/prueba.html"))
 })
