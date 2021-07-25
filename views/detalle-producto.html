@@ -7,12 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/detalle-producto.css">
   <title>Document</title>
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
   <style type="text/css">
-    .product-small-img img{
+    .product-small-img img {
       width: 100%;
-      border: 1px solid rgba(0, 0, 0,.2);
+      border: 1px solid rgba(0, 0, 0, .2);
       padding: 8px;
       margin: 10px 10px 15px;
       cursor: pointer;
@@ -38,9 +38,9 @@
 
   <main class="container">
 
-     <!-- Imagenes producto -->
+    <!-- Imágenes del producto -->
 
-     <div class="product" style="margin-left: 3em;">
+    <div class="product" style="margin-left: 3em;">
       <div class="img-container">
         <img id="imageBox" src="/images/RAM.png" width="170%">
       </div>
@@ -52,79 +52,118 @@
         <img src="/images/ram5.PNG" onclick="myFuction(this)">
       </div>
     </div>
-    
+
     <script type="text/javascript">
-      function myFunction(smallImg){
-        var fullImg=document.getElementById("imageBox");
-        fullImg.src=smallImg.src;
+      function myFunction(smallImg) {
+        var fullImg = document.getElementById("imageBox");
+        fullImg.src = smallImg.src;
       }
     </script>
 
-    <!-- Product Description -->
+    <!-- Descripción del producto -->
 
     <div class="product-description">
+      <br>
       <span>Corsair Vengeance </span>
       <span> RGB PRO</span>
+      <br>
+      <br>
       <h3>Memoria de escritorio LED DDR4 de 3200 MHz C16 (16 GB, 2 x 8 GB), color negro</h3>
       <p>La preferida por los gamers, rapidez y estética en una pieza. </p>
     </div>
 
 
-    <!-- Product Pricing -->
+    <!-- Precio del producto -->
 
     <div class="product-price">
       <span>97.99$</span>
       <a href="#" class="cart-btn">Add to cart</a>
     </div>
-
   </main>
 
+  <!-- Especificaciones del producto || Más información -->
+
+  <hr>
+  <br>
+  <div class="more-info">
 
 
-
-  <!-------------------------------------- footer-------------------------------------------------- -->
-  <div class="FooterGral">
-    <footer>
-      <div class="content">
-        <div class="left box">
-          <div class="upper">
-            <div class="topic">Sobre nosotros</div>
-            <p>rellenar con algo.........................................................</p>
-          </div>
-          <div class="lower">
-            <div class="topic">Contactanos</div>
-            <div class="phone">
-              <a href="#"><i class="fas fa-phone-volume"></i>+007 9089 6767</a>
-            </div>
-            <div class="email">
-              <a href="#"><i class="fas fa-envelope"></i>GenericEmail@gmail.com</a>
-            </div>
-          </div>
-        </div>
-        <div class="middle box">
-          <div class="topic">Nuestros Servicios</div>
-          <div><a href="#">Servicio Tecnico 24/7</a></div>
-          <div><a href="#">Envio a domicilio</a></div>
-          <div><a href="#">Reparacion de Pc</a></div>
-        </div>
-        <div class="right box">
-          <div class="topic">Subscribe us</div>
-          <form action="#">
-            <input type="text" placeholder="Enter email address">
-            <input type="submit" name="" value="Send">
-            <div class="media-icons">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-          </form>
+    <div class="box">
+      <div class="left">
+        <div class="content">
+          <h2>Especificaciones</h2>
+          <br>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque odio veniam iusto quod nostrum, repudiandae
+          aliquid, maxime quasi numquam vero architecto possimus esse hic. Esse ab aut aspernatur quia sit.
         </div>
       </div>
-      <div class="bottom">
-        <p>Copyright © 2020 <a href="#">CodingLab</a> All rights reserved</p>
+      <div class="center">
+        <div class="content">
+          <h2>Más información</h2>
+          <br>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea deserunt vitae dolores a itaque quasi possimus
+          molestias, doloribus optio sunt? Laboriosam consequuntur asperiores quasi dolorem fuga. Voluptatum dolores
+          possimus explicabo!
+        </div>
       </div>
-    </footer>
-  </div>
+    </div>
 </body>
+</div>
 
+
+
+
+
+
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!------------------ footer------------------------->
+
+<div class="FooterGral">
+  <footer>
+    <div class="content">
+      <div class="left box">
+        <div class="upper">
+          <div class="topic">Sobre nosotros</div>
+          <p>rellenar con algo.........................................................</p>
+        </div>
+        <div class="lower">
+          <div class="topic">Contáctanos</div>
+          <div class="phone">
+            <a href="#"><i class="fas fa-phone-volume"></i>+007 9089 6767</a>
+          </div>
+          <div class="email">
+            <a href="#"><i class="fas fa-envelope"></i>GenericEmail@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="middle box">
+        <div class="topic">Nuestros Servicios</div>
+        <div><a href="#">Servicio Tecnico 24/7</a></div>
+        <div><a href="#">Envio a domicilio</a></div>
+        <div><a href="#">Reparacion de Pc</a></div>
+      </div>
+      <div class="right box">
+        <div class="topic">Subscribe us</div>
+        <form action="#">
+          <input type="text" placeholder="Enter email address">
+          <input type="submit" name="" value="Send">
+          <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </footer>
+</div>
+</body>
