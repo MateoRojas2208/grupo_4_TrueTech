@@ -126,7 +126,7 @@ h2 {
 .cart-button-style {
     border-style: none;
     position: fixed;
-    top: 0;
+    bottom: 0;
     right: 0;
     width: 10em;
     padding: 1em 1em;
@@ -135,6 +135,7 @@ h2 {
     color: white;
     transition: background .5s;
     border-radius: 4px; 
+    z-index: 10;
 }
 
 .cart-button-style-two {
