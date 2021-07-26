@@ -81,7 +81,8 @@ a.active,a:hover{
     left: -100%;
     text-align: center;
     transition: all .5s;
-    z-index: 10
+    z-index: 10;
+    clip-path: polygon(28% 74%, 21% 75%, 40% 0, 88% 0, 69% 76%, 64% 83%, 57% 78%, 53% 83%, 49% 76%, 44% 80%, 39% 76%, 33% 79%);+
   }
   nav ul li{
     display: block;
