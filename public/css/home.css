@@ -183,12 +183,13 @@ img {
 
 .text {
   color: #ffffff;
-  font-size: 8px;
+  font-size: 90%;
   padding: 8px 12px;
   position: absolute;
-  bottom: 19px;
+  bottom: 8%;
   width: 100%;
   text-align: center;
+  right: 0.01%;
 }
 
 /* Number text (1/3 etc) */
@@ -248,11 +249,19 @@ img {
 /* On smaller screens, decrease text size */
 
 @media only screen and (max-width: 300px) {
-  .prev, .next, .text {
+  .prev, .next {
     font-size: 11px
   }
+  .text{
+    bottom: 10%;
+    font-size: 70%
+  }
 }
-
+@media only screen and (min-width: 900px){
+  .text{
+    bottom: 6%;
+  }
+}
 /* ----------------------------------------titulo arma tu pc------------------------------------------------------------ */
 
 .Titulos1 {
