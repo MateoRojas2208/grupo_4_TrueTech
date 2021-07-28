@@ -1,7 +1,6 @@
 
 
-
-
+const jquery = require( "jquery" );
 // Cart Toggle
 let cartToggle = document.getElementById('cart-button');
 let cartToggleCount = 0;
