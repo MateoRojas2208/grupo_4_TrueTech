@@ -1,8 +1,7 @@
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-// var { JSDOM } = require( "jsdom" );
-// var { window } = new JSDOM( "" );
-// var $ = require( "jquery" )( window );
+
+
+
 // Cart Toggle
 let cartToggle = document.getElementById('cart-button');
 let cartToggleCount = 0;

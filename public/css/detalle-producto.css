@@ -1,4 +1,3 @@
-
 /* ---------------------------header-------------------------------------- */
 
 *{
@@ -12,7 +11,8 @@ body{
   font-family: montserrat;
 }
 nav{
-  background: #176400;
+  background: rgb(2,24,0);
+  background: linear-gradient(to top, rgba(20,20,20,1) 0%, rgba(32,84,24,1) 26%, #007c11 100%);
   height: 80px;
   width: 100%;
   z-index: -10;
@@ -80,9 +80,7 @@ a.active,a:hover{
     left: -100%;
     text-align: center;
     transition: all .5s;
-    z-index: 10;
-    clip-path: polygon(0 0, 100% 0, 95% 11%, 81% 20%, 70% 60%, 30% 60%, 22% 21%, 9% 13%);
-  
+    z-index: 10
   }
   nav ul li{
     display: block;
@@ -104,6 +102,155 @@ section{
   background: url(bg1.jpg) no-repeat;
   background-size: cover;
   height: calc(100vh - 80px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilo pagina*/
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(20,20,20);
+}
+ 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+}
+/* Descripción del producto */
+
+.product-description {
+
+  background-color: rgb(30, 30, 30);
+}
+.product-description span {
+  margin-top: 30px;
+  margin-left: 10px;
+  font-size: 11px;
+  color: #358ED7;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  
+}
+.product-description p {
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #86939E;
+  line-height: 24px;
+  
+}
+.product-description h3{
+  margin-left: 10px;
+  font-weight: 300;
+  color: white;
+  
+}
+/* Precio del producto */
+.product-price {
+  display: flex;
+  align-items: center;
+  background-color: rgb(30, 30, 30);
+}
+ 
+.product-price span {
+  font-size: 26px;
+  font-weight: 300;
+  color: whitesmoke;
+  margin-right: 20px;
+}
+ 
+.cart-btn {
+  display: inline-block;
+  background-color: #7DC855;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 12px 30px;
+  transition: all .5s;
+}
+.cart-btn:hover {
+  background-color: #64af3d;
+}
+/* Informacion producto */
+.more-info{
+  background-color: rgb(30, 30, 30);
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+ 
+}
+/* Columnas */
+.box {
+  overflow: hidden;
+}
+.content {
+  font-size: 15px;
+  line-height: 20px;
+  padding: 0 20px;
+  text-align: justify;
+}
+.left {
+  float: left;
+  width: 50%;
+}
+.right {
+  float: right;
+  width: 50%;
+}
+/* Responsive */
+@media (max-width: 940px) {
+  .container {
+      
+    margin-top: 60px;
+    flex-direction: column;
+  }
+  
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+ 
+  .left-column img {
+    width: 300px;
+    right: 0;
+    top: -65px;
+    left: initial;
+  }
+}
+ 
+@media (max-width: 535px) {
+  .left-column img {
+    width: 220px;
+    top: -85px;
+  }
 }
      
 
