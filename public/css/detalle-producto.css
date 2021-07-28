@@ -138,12 +138,9 @@ html, body {
   padding: 15px;
   display: flex;
 }
-/* DescripciÃ³n del producto */
+/* Descripcion del producto */
 
-.product-description {
 
-  background-color: rgb(30, 30, 30);
-}
 .product-description span {
   margin-top: 30px;
   margin-left: 10px;
@@ -168,11 +165,12 @@ html, body {
   color: white;
   
 }
+
 /* Precio del producto */
 .product-price {
   display: flex;
   align-items: center;
-  background-color: rgb(30, 30, 30);
+ 
 }
  
 .product-price span {
@@ -206,6 +204,7 @@ html, body {
   font-family: 'Roboto', sans-serif;
  
 }
+
 /* Columnas */
 .box {
   overflow: hidden;
