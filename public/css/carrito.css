@@ -137,6 +137,7 @@ h2 {
     color: white;
     transition: background .5s;
     border-radius: 4px; 
+    z-index: 10;
 }
 
 .cart-button-style-two {
