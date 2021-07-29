@@ -269,7 +269,7 @@ img {
     bottom: 6%;
   }
 }
-/* ----------------------------------------titulo arma tu pc------------------------------------------------------------ */
+/* ------------------------------------titulo arma tu pc y prefab------------------------------------------------------------ */
 
 .Titulos1 {
   display: flex;
@@ -280,7 +280,7 @@ img {
 }
 
 #titulotext1 {
-  color: #313131;
+  color: green;
   font-family: 'Helvetica Neue', sans-serif;
   font-size: 95%;
   font-weight: 100;
@@ -292,7 +292,7 @@ img {
 }
 
 #titulotext2 {
-  color: #313131;
+  color: green;
   font-family: 'Helvetica Neue', sans-serif;
   font-size: 95%;
   font-weight: 100;
@@ -302,7 +302,7 @@ img {
   position: absolute;
   right: 8%;
 }
-
+ 
 /* --------------------------------------------arma tu pc---------------------------------------------------------------- */
 
 .armaTuPc {
@@ -324,34 +324,40 @@ img {
   filter: blur(1px);
   -webkit-filter: blur(1px);
 }
-
-.textoFotosHover1 {
-  /* letra */
-  color: rgb(255, 255, 255);
-  font-size: 8px;
-  font-weight: bolder;
-  /* posicion */
-  padding: 8px 12px;
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  top: 30%;
-  left: 25%;
+/* ------------------------------------que estas buscando texto---------------------------- */
+#titulo-componentes{
+  color: green;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 95%;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+}
+/* componentes */
+.espacio {
+  padding: 50px;
+}
+section {
+  display: block;
 }
 
-.textoFotosHover2 {
-  color: rgb(255, 255, 255);
-  font-size: 8px;
-  font-weight: bolder;
-  /* posicion */
-  padding: 8px 12px;
-  position: absolute;
-  text-align: center;
+#categories .columnas  {
+  background-color: #fff;
+  color: #6d6d6d;
+  display: flex;
+  font-size: 14px;
+  height: 50px;
+  justify-content: center;
+  outline: 1px solid #eae6e6;
+  text-decoration: none;
   width: 100%;
-  top: 30%;
-  right: 25%;
-}
+  flex-direction: row;
+  align-items: flex-start;
 
+}
+.tamaño{
+  width: 50%;
+}
 /* ----------------------------footer--------------------------------------------------------- */
 
 
