@@ -1,33 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/register.css">
-    <title>Document</title>
-      <!------ header ------->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/register.css">
+  <title>Document</title>
+  <!------ header ------->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
+
 <body>
-    <!----------------------- header/nav var---------- -->
-    <header>
-    <nav>
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-      </label>
-      <label class="logo">(Nombre)</label>
-      <ul>
-        <li><a class="active" href="/">Pagina Principal</a></li>
-        <li><a href="/carrito">Carrito</a></li>
-        <li><a href="/register">Registrate</a></li>
-        <li><a href="/login">Iniciar Sesion </a></li>
-      </ul>
-    </nav>
+  <!----------------------- header/nav var---------- -->
+  <header>
+    <!-- <nav> -->
+    <label class="logo">(Nombre)</label>
+    <!-- </nav> -->
   </header>
-    
+  <main>
+
+    <div class="container" id="container">
+
+      <div class="form-container sign-in-container">
+        <form action="#">
+          <h1>Registrate</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span>O usa tu email para registrarte</span>
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <a href="#">Ayuda para elegir una contraseña?</a>
+          <div>
+            <input class="check" type="checkbox" name="vehicle1" value="Bike">
+            <label for="vehicle1"> Terminos y condiciones </label><br>
+          </div>
+
+          <button>Registrate</button>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-right">
+            <h1>Ya tenes una cuenta?</h1>
+            <p>Ingresa tu infomacion personal y sigue navegando con nosotros</p>
+            <button class="ghost" id="signUp"><a href="/login">Iniciar Sesion</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
+
 </html>
