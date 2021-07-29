@@ -24,9 +24,9 @@ nav{
 }
 label.logo{
   color: white;
-  font-size: 35px;
+  font-size: 30px;
   line-height: 80px;
-  padding: 0 100px;
+  padding-left: 50px;
   font-weight: bold;
 }
 nav ul{
@@ -64,14 +64,14 @@ a.active,a:hover{
 }
 @media (max-width: 952px){
   label.logo{
-    font-size: 30px;
+    /* font-size: 30px; */
     padding-left: 50px;
   }
   nav ul li a{
     font-size: 16px;
   }
 }
-@media (max-width: 858px){
+@media (max-width: 917px){
   .checkbtn{
     display: block;
     z-index: -1;
@@ -111,8 +111,7 @@ section{
   height: calc(100vh - 80px);
 }
 
-
-/* cuerpo */
+/* Cuerpo */
 html, body {
   height: 100%;
   width: 100%;

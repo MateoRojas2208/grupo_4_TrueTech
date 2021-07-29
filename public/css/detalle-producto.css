@@ -1,4 +1,4 @@
-/* --------------------------header-------------------------------------- */
+/* ---------------------------header-------------------------------------- */
 
 *{
   padding: 0;
@@ -11,8 +11,7 @@ body{
   font-family: montserrat;
 }
 nav{
-  background: rgb(2,24,0);
-  background: linear-gradient(to top, rgba(20,20,20,1) 0%, rgba(32,84,24,1) 5%, #007c11 100%);
+  background: linear-gradient(to left, #12300d , #005304);
   height: 80px;
   width: 100%;
   z-index: -10;
@@ -139,9 +138,12 @@ html, body {
   padding: 15px;
   display: flex;
 }
-/* Descripcion del producto */
+/* DescripciÃ³n del producto */
 
+.product-description {
 
+  background-color: rgb(30, 30, 30);
+}
 .product-description span {
   margin-top: 30px;
   margin-left: 10px;
@@ -170,7 +172,7 @@ html, body {
 .product-price {
   display: flex;
   align-items: center;
- 
+  background-color: rgb(30, 30, 30);
 }
  
 .product-price span {
