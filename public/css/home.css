@@ -342,21 +342,31 @@ section {
 }
 
 #categories .columnas  {
-  background-color: #fff;
+  background-color: white;
   color: #6d6d6d;
   display: flex;
   font-size: 14px;
-  height: 50px;
-  justify-content: center;
-  outline: 1px solid #eae6e6;
-  text-decoration: none;
+  height: 120px;
   width: 100%;
-  flex-direction: row;
-  align-items: flex-start;
-
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
 }
 .tamaño{
-  width: 50%;
+  height: 50;
+}
+.fila1{
+ display: flex;
+ justify-content: space-around;
+ width: 100%;
+}
+.fila2{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 /* ----------------------------footer--------------------------------------------------------- */
 
