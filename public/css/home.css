@@ -342,7 +342,7 @@ section {
 }
 
 #categories .columnas  {
-  background-color: white;
+  background-color: rgb(20,20,20);
   color: #6d6d6d;
   display: flex;
   font-size: 14px;
