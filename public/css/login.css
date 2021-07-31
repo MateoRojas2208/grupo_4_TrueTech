@@ -23,10 +23,8 @@ header {
   justify-content: space-around;
   margin: 0 auto;
 }
-
-label.logo {
+.logo {
   color: white;
-  position: absolute;
   font-weight: bold;
   font-size: 35px
 }
