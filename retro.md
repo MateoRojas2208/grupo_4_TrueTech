@@ -14,7 +14,9 @@ Less Of: - Descansar tanto del código (En especial para mí, Faustino)
 
 Stop Doing: -Trabajar los dos a la vez en lo miesmo. Por ejemplo el carrito y después no saber con cual quedarnos.
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<hr>
+  
+  
 <h2>Segundo sprint<h2>
   
   El trabajo fue mucho más sencillo y dinámico. Podemos seguir implementando algunas cosas.
