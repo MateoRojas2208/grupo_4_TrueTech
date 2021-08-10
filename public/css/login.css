@@ -134,6 +134,10 @@ main {
   box-sizing: border-box;
 }
 
+.formulario{
+  max-width: 90%;
+}
+
 h1 {
   font-weight: bold;
   margin: 0;
@@ -194,7 +198,6 @@ form {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 50px;
   height: 100%;
   text-align: center;
 }
@@ -217,7 +220,7 @@ main {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   overflow: hidden;
   width: 768px;
-  max-width: 100%;
+  max-width: 90%;
   min-height: 480px;
   position: absolute;
   top: 50%;
@@ -379,4 +382,3 @@ footer a {
 .check{
   width: 25px;
 }
-
