@@ -126,7 +126,7 @@ h2 {
 .cart-button-style {
     border-style: none;
     position: fixed;
-    top: 0;
+    bottom: 0;
     right: 0;
     width: 10em;
     padding: 1em 1em;

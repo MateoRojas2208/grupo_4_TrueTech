@@ -7,6 +7,9 @@ let subtotal = document.getElementById('subtotal');
 let total = document.getElementById('total');
 let applyPromoButton = document.querySelector('#apply-promo');
 let addToCartButton = document.querySelectorAll('.add-to-cart');
+let cartTogglee = document.querySelectorAll("#cart-button");
+
+
 
 applyPromoButton.addEventListener('click', applyPromo);
 
@@ -32,6 +35,9 @@ let cart = {
 };
 
 for (let button of addToCartButton) {
+    button.addEventListener('click', addToCart);
+}
+for (let button of cartTogglee) {
     button.addEventListener('click', addToCart);
 }
 
