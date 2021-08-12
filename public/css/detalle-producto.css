@@ -104,25 +104,6 @@ section{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Estilo pagina*/
 html, body {
   height: 100%;
@@ -138,7 +119,7 @@ html, body {
   padding: 15px;
   display: flex;
 }
-/* DescripciÃ³n del producto */
+/* Descripcionn del producto */
 
 .product-description {
 
@@ -180,6 +161,7 @@ html, body {
   font-weight: 300;
   color: whitesmoke;
   margin-right: 20px;
+  
 }
  
 .cart-btn {
@@ -223,6 +205,7 @@ html, body {
 .right {
   float: right;
   width: 50%;
+  padding: 0 10px;
 }
 /* Responsive */
 @media (max-width: 940px) {

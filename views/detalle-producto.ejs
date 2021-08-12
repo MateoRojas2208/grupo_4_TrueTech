@@ -3,37 +3,37 @@
 
 <head>
   <%- include("./partials/head") -%>
-  <link rel="stylesheet" href="/css/detalle-producto.css">
-  <title>Detalle Producto</title>
-  <!------ header ------->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/css/detalle-producto.css">
+    <title>Detalle Producto</title>
+    <!------ header ------->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-  <style type="text/css">
-    .product-small-img img {
-      width: 100%;
-      border: 1px solid rgba(0, 0, 0, .2);
-      padding: 8px;
-      margin: 10px 10px 15px;
-      cursor: pointer;
-    }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <style type="text/css">
+      .product-small-img img {
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, .2);
+        padding: 8px;
+        margin: 10px 10px 15px;
+        cursor: pointer;
+      }
 
-    .product-small-img {
-      width: 8%;
-      display: flex;
-    }
+      .product-small-img {
+        width: 8%;
+        display: flex;
+      }
 
-    .img-container img {
-      height: 360px;
-    }
+      .img-container img {
+        height: 360px;
+      }
 
-    .img-container {
-      padding: 10px;
-      width: 50%;
-    }
-  </style>
+      .img-container {
+        padding: 10px;
+        width: 50%;
+      }
+    </style>
 </head>
 
 <body>
@@ -41,77 +41,85 @@
 
   <%- include("./partials/header") -%>
 
-  <main class="container">
+    <main class="container">
 
-    <!-- Imágenes del producto -->
+      <!-- Imágenes del producto -->
 
-    <div class="product" style="margin-left: 3em;">
-      <div class="img-container">
-        <img id="imageBox" src="/images/detalle/RAM-1.png" width="170%">
-      </div>
-      <div class="product-small-img">
-        <img src="/images/detalle/RAM-1.png" onclick="myFunction(this)">
-        <img src="/images/detalle/ram2.PNG" onclick="myFunction(this)">
-        <img src="/images/detalle/ram3.PNG" onclick="myFunction(this)">
-        <img src="/images/detalle/ram4.PNG" onclick="myFunction(this)">
-        <img src="/images/detalle/ram5.PNG" onclick="myFunction(this)">
-      </div>
-    </div>
-
-    <script type="text/javascript">
-      function myFunction(smallImg) {
-        var fullImg = document.getElementById("imageBox");
-        fullImg.src = smallImg.src;
-      }
-    </script>
-
-    <!-- Descripción del producto -->
-    <div class="product-description">
-      <br>
-      <span>Corsair Vengeance </span>
-      <span> RGB PRO</span>
-      <br>
-      <br>
-      <h3>Memoria de escritorio LED DDR4 de 3200 MHz C16 (16 GB, 2 x 8 GB), color negro</h3>
-      <p>La preferida por los gamers, rapidez y estética en una pieza. </p>
-    </div>
-
-
-    <!-- Precio del producto -->
-
-    <div class="product-price">
-      <span>97.99$</span>
-      <a href="/carrito" class="cart-btn">Add to cart</a>
-    </div>
-
-  </main>
-
-  <!-- Especificaciones del producto || Más información -->
-
-  <hr>
-  <br>
-  <div class="more-info">
-
-
-    <div class="box">
-      <div class="left">
-        <div class="content">
-          <h2>Especificaciones</h2>
-          <br>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque odio veniam iusto quod nostrum, repudiandae
-          aliquid, maxime quasi numquam vero architecto possimus esse hic. Esse ab aut aspernatur quia sit.
+      <div class="product" style="margin-left: 3em;">
+        <div class="img-container">
+          <img id="imageBox" src="/images/detalle/RAM-1.png" width="170%">
+        </div>
+        <div class="product-small-img">
+          <img src="/images/detalle/RAM-1.png" onclick="myFunction(this)">
+          <img src="/images/detalle/ram2.PNG" onclick="myFunction(this)">
+          <img src="/images/detalle/ram3.PNG" onclick="myFunction(this)">
+          <img src="/images/detalle/ram4.PNG" onclick="myFunction(this)">
+          <img src="/images/detalle/ram5.PNG" onclick="myFunction(this)">
         </div>
       </div>
-      <div class="center">
-        <div class="content">
-          <h2>Más información</h2>
-          <br>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea deserunt vitae dolores a itaque quasi possimus
-          molestias, doloribus optio sunt? Laboriosam consequuntur asperiores quasi dolorem fuga. Voluptatum dolores
-          possimus explicabo!
+
+      <script type="text/javascript">
+        function myFunction(smallImg) {
+          var fullImg = document.getElementById("imageBox");
+          fullImg.src = smallImg.src;
+        }
+      </script>
+
+      <!-- Descripción del producto -->
+      <div class="product-description">
+        <br>
+        <span>Corsair Vengeance RGB</span>
+
+        <br>
+        <br>
+        <h3>Memoria de escritorio LED DDR4 de 3200 MHz C16 8 GB, color negro.</h3>
+        <br>
+        <p>La preferida por los gamers, rapidez y estética en una pieza. </p>
+
+
+
+        <!-- Precio del producto -->
+
+        <div class="product-price">
+          <span>97.99$</span>
+          <a href="/carrito" class="cart-btn">Add to cart</a>
         </div>
       </div>
-    </div>
+    </main>
+
+    <!-- Especificaciones del producto || Más información -->
+
+    <hr>
+    <br>
+    <div class="more-info">
+
+
+      <div class="box">
+        <div class="left">
+          <div class="content">
+            <h2>Especificaciones</h2>
+            <br>
+            Capacidad total: 8gb.
+            <br>
+            Tecnología: DDR4 SDRAM.
+            <br>
+            Velocidad: 3200 MHz.
+            <br>
+            Formato: SIMM.
+            <br>
+            Compatibilidad: computadoras de escritorio.
+          </div>
+        </div>
+        <div class="right">
+          <div class="content">
+            <h2>Más información</h2>
+            <br>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea deserunt vitae dolores a itaque quasi possimus
+              molestias, doloribus optio sunt? Laboriosam consequuntur asperiores quasi dolorem fuga. Voluptatum dolores
+              possimus explicabo!
+          </div>
+        </div>
+      </div>
 </body>
 </div>
 </div>
@@ -124,4 +132,4 @@
 <!------------------ footer------------------------->
 
 <%- include("./partials/footer") -%>
-</body>
+  </body>
