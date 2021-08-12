@@ -74,51 +74,7 @@ a.active, a:hover {
   display: none;
 }
 
-@media (max-width: 952px) {
-  nav ul li a {
-    font-size: 16px;
-  }
-}
 
-@media (max-width: 917px) {
-  .checkbtn {
-    display: block;
-    z-index: -1;
-  }
-  ul {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #2c3e50;
-    top: 80px;
-    left: -100%;
-    text-align: center;
-    transition: all .5s;
-    z-index: 10;
-    clip-path: polygon(0 0, 100% 0, 95% 11%, 81% 20%, 70% 60%, 30% 60%, 22% 21%, 9% 13%);
-  }
-  nav ul li {
-    display: block;
-    margin: 50px 0;
-    line-height: 30px;
-  }
-  nav ul li a {
-    font-size: 20px;
-  }
-  a:hover, a.active {
-    background: none;
-    color: #0082e6;
-  }
-  #check:checked~ul {
-    left: 0;
-  }
-}
-
-section {
-  background: url(bg1.jpg) no-repeat;
-  background-size: cover;
-  height: calc(100vh - 80px);
-}
 
 /* Cuerpo */
 html, body {
@@ -387,8 +343,90 @@ footer a {
 }
 
 
+@media (max-width: 600px) {
+  .form-container form h1 {
+    font-size: 20px;
+  }
+  .social-container a {
+    height: 30px;
+    width: 30px;
+  }
+  .form-container form input {
+    height: 30px;
+  }
+  .form-container form a {
+    font-size: 12px;
+  }
+  .check {
+    position: relative;
+    top: 10px;
+    max-width: 14px;
+    padding: 0px 0px;
+    margin: 0px 0px;
+  }
+  .form-container form div label {
+    font-size: 11px;
+  }
+  .mantener {
+    margin-bottom: 20px;
+  }
+  .overlay-container div div h1 {
+    font-size: 20px;
+    max-width: 90%;
+  }
+  .overlay-container div div{
+    padding: 10px;
+  }
+  .form-container form {
+    padding: 0px 10px;
+  }
+  .terminos{
+    padding-bottom: 20px;
+  }
+}
 
 
+
+
+@media (max-width: 952px) {
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 917px) {
+  .checkbtn {
+    display: block;
+    z-index: -1;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+    z-index: 10;
+    clip-path: polygon(0 0, 100% 0, 95% 11%, 81% 20%, 70% 60%, 30% 60%, 22% 21%, 9% 13%);
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  a:hover, a.active {
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked~ul {
+    left: 0;
+  }
+}
 
 
 
