@@ -326,7 +326,6 @@ input[type="radio"]+label, select {
     display: inline-block;
     width: 50%;
     text-align: center;
-    float: left;
     border-radius: 0;
 }
 
@@ -351,7 +350,9 @@ input[type="radio"]:checked+label, input:checked+label:before, select:focus, sel
 }
 
 input[type="checkbox"] {
-    display: none;
+    position: relative;
+    right: 53%;
+    top: 25px;
 }
 
 #id {
@@ -498,4 +499,12 @@ main {
     margin-top: 3%;
     margin-bottom: 30%;
     height: 100%;
+}
+.descripciones{
+    width: 100%;
+    max-width: 100%;
+    padding: 5px;
+    min-height: 55px;
+    min-width: 100%;
+    border: #80808036 solid 1.5px;
 }
