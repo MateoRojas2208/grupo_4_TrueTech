@@ -491,23 +491,6 @@ input[type="radio"]:checked+label, input:checked+label:before, select:focus, sel
     border-color: #bd8200;
 }
 
-/* input[type="checkbox"] {
-    display: none;
-    position: relative;
-    right: 53%;
-    top: 25px;
-} */
-
-input[type="checkbox"]+label {
-    position: relative;
-    display: block;
-    padding-left: 1.6em;
-}
-
-input:checked+label:after {
-    opacity: 1;
-}
-
 select {
     height: 3.4em;
     line-height: 2;
@@ -646,8 +629,8 @@ select option {
 
 #terms {
     position: relative;
-    right: 48.5%;
-    top: 25px;
+    right: 53%;
+    top: 43px;
 }
 
 .ghost {
