@@ -121,7 +121,6 @@ html, body {
     width: 100%;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(20, 20, 20);
 }
 
 .container {
@@ -418,15 +417,15 @@ footer a:hover {
     box-sizing: border-box;
 }
 
-
 main {
     margin-top: 5%;
-    margin-bottom: 20%;
+}
+footer{
+    margin-top: 30%;
 }
 body {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15px;
-    color: #b9b9b9;
     background-color: #e3e3e3;
 }
 
@@ -638,16 +637,31 @@ select option {
     }
 }
 
-.descripciones{
+.descripciones {
     width: 100%;
-    max-width: 100%;
     padding: 5px;
     min-height: 55px;
-    min-width: 100%;
     border: #80808036 solid 1.5px;
-} 
+}
+
 #terms {
     position: relative;
-    right: 30%;
-    top: 20px;
+    right: 48.5%;
+    top: 25px;
+}
+
+.ghost {
+    position: relative;
+    border-radius: 20px;
+    border: 1px solid #FF4B2B;
+    background-color: #FF4B2B;
+    color: #FFFFFF;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    left: 28%;
 }

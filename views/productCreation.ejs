@@ -19,14 +19,17 @@
                 <form>
                     <div class="row">
                         <h4>Producto</h4>
-                        <div class="input-group input-group-icon"><input type="text" placeholder="Nombre del producto" />
+                        <div class="input-group input-group-icon"><input type="text"
+                                placeholder="Nombre del producto" />
                             <div class="input-icon"><i class="fa fa-bookmark" aria-hidden="true"></i></div>
                         </div>
                         <div class="input-group input-group-icon"><input type="email" placeholder="Marca/Modelo" />
                             <div class="input-icon"><i class="fa fa-terminal" aria-hidden="true"></i></div>
                         </div>
-                        <div class="input-group input-group-icon">
-                             <textarea name="detalles" placeholder="Descripcion" class="descripciones"></textarea>
+                        <div class="input-group input-group-icon" id="table">
+                            <div class="table-cell">
+                                <textarea cols="80" class="descripciones" placeholder="Descripcion" style="resize:none"></textarea>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -40,8 +43,7 @@
                             <h4>Condicion</h4>
                             <div class="input-group"><input id="gender-male" type="radio" name="gender"
                                     value="male" /><label for="gender-male">Usado</label><input id="gender-female"
-                                    type="radio" name="gender" value="female" /><label
-                                    for="gender-female">Nuevo</label>
+                                    type="radio" name="gender" value="female" /><label for="gender-female">Nuevo</label>
                             </div>
                         </div>
                     </div>
@@ -51,7 +53,8 @@
                                 value="card" checked="true" /><label for="payment-method-card"><span><i
                                         class="fa fa-cc-visa"></i>Tarjeta de credito/paypal</span></label><input
                                 id="payment-method-paypal" type="radio" name="payment-method" value="paypal" /><label
-                                for="payment-method-paypal"> <span><i class="fa fa-cc-paypal"></i>Efectivo</span></label>
+                                for="payment-method-paypal"> <span><i
+                                        class="fa fa-cc-paypal"></i>Efectivo</span></label>
                         </div>
                         <div class="input-group input-group-icon"><input type="text" placeholder="Card Number" />
                             <div class="input-icon"><i class="fa fa-credit-card"></i></div>
