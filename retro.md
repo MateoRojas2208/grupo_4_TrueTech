@@ -33,3 +33,21 @@ Less Of: - Distraernos buscando solución a algo que no pide el sprint.
 
 Stop Doing: - Descansar tanto del código.
             - Esperar 1 semana para empezar a trabajar en el sprint.
+  
+ <hr>
+
+h2>Tercer sprint<h2>
+  
+Start Doing: - nada.
+  
+More of: - Aprovechar el tiempo.
+  
+Keep doing:  - Trabajar juntos.
+            - No sobrecargarnos de trabajo.
+  
+Less Of: - Distraernos con cosas poco importantes.
+         - Tardar en empezar el sprint.
+  
+Stop Doing: - Esperar 1 semana para empezar a trabajar en el sprint.
+            - Copy pastes.
+  
