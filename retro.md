@@ -36,7 +36,7 @@ Stop Doing: - Descansar tanto del código.
   
  <hr>
 
-h2>Tercer sprint<h2>
+<h2>Tercer sprint<h2>
   
 Start Doing: - nada.
   
