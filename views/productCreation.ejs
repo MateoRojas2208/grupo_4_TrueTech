@@ -28,7 +28,8 @@
                         </div>
                         <div class="input-group input-group-icon" id="table">
                             <div class="table-cell">
-                                <textarea cols="80" class="descripciones" placeholder="Descripcion" style="resize:none"></textarea>
+                                <textarea cols="80" class="descripciones" placeholder="Descripcion"
+                                    style="resize:none"></textarea>
                             </div>
                         </div>
                     </div>
@@ -56,56 +57,32 @@
                                 for="payment-method-paypal"> <span><i
                                         class="fa fa-cc-paypal"></i>Efectivo</span></label>
                         </div>
-                        <div class="input-group input-group-icon"><input type="text" placeholder="Número de tarjeta" />
-                            <div class="input-icon"><i class="fa fa-credit-card"></i></div>
-                        </div>
+
                         <div class="col-half">
-                            <div class="input-group input-group-icon"><input type="text" placeholder="Código de seguridad" />
-                                <div class="input-icon"><i class="fa fa-user"></i></div>
+                            <h4>Categoría</h4>
+                            <div class="input-group">
+                                <select>
+                                    <option>SSD</option>
+                                    <option>Memoria ram</option>
+                                    <option>Disco rígido</option>
+                                    <option>Placa de video</option>
+                                    <option>Monitor</option>
+                                    <option>Mouse</option>
+                                    <option>Procesador</option>
+                                    <option>Mother</option>
+                                    <option>Auriculares</option>
+                                    <option>Teclado</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="col-half">
-                            <div class="input-group"><select>
-                                    <option>Enero</option>
-                                    <option>Febrero</option>
-                                    <option>Marzo</option>
-                                    <option>Abril</option>
-                                    <option>Mayo</option>
-                                    <option>Junio</option>
-                                    <option>Julio</option>
-                                    <option>Agosto</option>
-                                    <option>Septiembre</option>
-                                    <option>Octubre</option>
-                                    <option>Noviembre</option>
-                                    <option>Diciembre</option>
-                                </select><select>
-                                    <option>2013</option>
-                                    <option>2014</option>
-                                    <option>2015</option>
-                                    <option>2016</option>
-                                    <option>2017</option>
-                                    <option>2018</option>
-                                    <option>2019</option>
-                                    <option>2020</option> 
-                                    <option>2021</option>
-                                    <option>2022</option>
-                                    <option>2023</option>
-                                </select></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <h4>Terminos y condiciones</h4>
-                        <div class="input-group"><label for="terms"> <input id="terms" type="checkbox" />
-                            <br>
-                           <br> Acepto los terminos y condiciones para registrarme en este servicio,
-                            y por la presente confirmo que he leído la política y privacidad.
-                          </label></div>
                     </div>
 
-                    <button type="submit" class="ghost" id="signUp"><a href="/login">Iniciar Sesion</a></button>
+                            <!-- Cambiar esto para que al apretar el boton se cree el producto -->
+                    <button type="submit" class="ghost" id="signUp"><a href="/login">Crear  Producto</a></button> 
+                   
                 </form>
             </div>
         </main>
-     
+
 </body>
 <%- include("./partials/footer") -%>
