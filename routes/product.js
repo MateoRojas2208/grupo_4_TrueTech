@@ -10,8 +10,8 @@ const productsController = require('../controllers/productController');
 router.get('/', productsController.index); 
 
 // /*** CREATE ONE PRODUCT ***/ 
-// router.???('/???/', productsController.create); 
-// router.???('/', productsController.store); 
+ router.get('/create', productsController.create); 
+//  router.???('/', productsController.store); 
 
 
 // /*** GET ONE PRODUCT ***/ 
@@ -24,16 +24,6 @@ router.get('/detail/:id/', productsController.detail);
 
 // /*** DELETE ONE PRODUCT***/ 
 // router.???('/:id', productsController.destroy); 
-
-router.get('/', function(req, res, next) {
-  res.render('productCreation', { title: 'Express' });
-});
-
-module.exports = router;
-
-
-
-
 
 
 module.exports = router;
