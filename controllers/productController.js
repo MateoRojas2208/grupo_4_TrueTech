@@ -14,7 +14,7 @@ const controller = {
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
-		res.render("product",{products})
+		res.render("productDetail",{products})
 	},
 
 	// Create - Form to create
