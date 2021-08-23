@@ -211,7 +211,8 @@
   #imageBox{
     display:block;
     margin:auto;
-    width:160%;
+    width:140%;
+    height: 140%;
   }
   /* Responsive */
   @media (max-width: 940px) {
@@ -241,7 +242,7 @@
       top: -85px;
     }
   }
-       
+      
   
   
   
