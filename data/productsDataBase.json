@@ -1,45 +1,51 @@
-
 [
-    { "id":2342342423478923423,
-      "name":"iphone-x",
-        "image":123123,
-        "description":"beast of processing power from Apple.",
-        "price": 999    
-    },
-    { "id":234234242342342978903,
-      "name":"Samsung S9",
-        "image":123123,
-        "description":"The most powerful Android device on the planet.",
-        "price": 789   
-    },
-    { "id":23423424234234237567,
-      "name":"Pixel 2",
-        "image":123123,
-        "description":"The perfect phone for a clean Android experience",
-        "price": 876   
-    },
-    { "id":23423424234234237585,
-      "name":"Oneplus 6",
-        "image":123123,
-        "description":"The latest from a long line of affordable premium devices by Oneplus",
-        "price": 799    
-    },
-    { "id":23423424234234233135,
-      "name":"iPhone 8",
-        "image":123123,
-        "description":"The little, less-stylish brother of the iPhone X.",
-        "price": 719
-    },
-    { "id":23423424234234231232,
-      "name":"Huawei P20",
-        "image":123123,
-        "description":"A solid performer from the chinese giant Huawei.",
-        "price": 769  
-    },
-    { "id":2342342423423423123,
-      "name":"Pixel 2",
-        "image":123123,
-        "description":"The perfect phone for a clean Android experience",
-        "price": 876   
-    }
+  {
+    "id": 2342342423478923423,
+    "name": "iphone-x",
+    "image": 123123,
+    "description": "beast of processing power from Apple.",
+    "price": 999
+  },
+  {
+    "id": 234234242342342978903,
+    "name": "Samsung S9",
+    "image": 123123,
+    "description": "The most powerful Android device on the planet.",
+    "price": 789
+  },
+  {
+    "id": 23423424234234237567,
+    "name": "Pixel 2",
+    "image": 123123,
+    "description": "The perfect phone for a clean Android experience",
+    "price": 876
+  },
+  {
+    "id": 23423424234234237585,
+    "name": "Oneplus 6",
+    "image": 123123,
+    "description": "The latest from a long line of affordable premium devices by Oneplus",
+    "price": 799
+  },
+  {
+    "id": 23423424234234233135,
+    "name": "iPhone 8",
+    "image": 123123,
+    "description": "The little, less-stylish brother of the iPhone X.",
+    "price": 719
+  },
+  {
+    "id": 23423424234234231232,
+    "name": "Huawei P20",
+    "image": 123123,
+    "description": "A solid performer from the chinese giant Huawei.",
+    "price": 769
+  },
+  {
+    "id": 2342342423423423123,
+    "name": "Pixel 2",
+    "image": 123123,
+    "description": "The perfect phone for a clean Android experience",
+    "price": 876
+  }
 ]

@@ -21,9 +21,20 @@
 
     <button id='cart-button' class="trigger cart-button-style">Show Cart</button>
 
+      
 
     <div id="shop">
-
+      <div id="shop">
+        <% products.forEach(product => { %>
+          <div class="products" id="<%= product.id %>">
+            <img class="product-image" src="http://via.placeholder.com/200x200">
+            <p class="product-name"><%= product.name%></p>
+            <p class="product-description"><%= product.description%></p>
+            <p class="product-price" value='<%= product.price%>'><%= product.price%></p>
+            <button class="add-to-cart" id='test'>ADD TO CART</button>
+          </div>
+      <% }) ; %>
+    </div>
 
   </div>
   <div id='cart-wrapper' class="slider close">
