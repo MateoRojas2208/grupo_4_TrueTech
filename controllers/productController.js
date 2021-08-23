@@ -9,17 +9,17 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
     // Root - Show all products
     index: (req, res) => {
-        res.render("products",{products})
+        res.render("carrito",{products})
     },
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
-		// Do the magic
+		res.render("productDetail",{products})
 	},
 
 	// Create - Form to create
 	create: (req, res) => {
-		// Do the magic
+		res.render("productCreation",{products})
 	},
 	
 	// Create -  Method to store
