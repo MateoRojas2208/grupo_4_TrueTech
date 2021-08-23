@@ -1,69 +1,45 @@
 
 [
-    { id=iphone-x,
-        "product-image" src="http://via.placeholder.com/200x200">
-        "product-name">iPhone X</p>
-        product-description">A 5.5" beast of processing power from Apple.</p>
-        <p class="product-price" value='999'>999</p>
-        
-    },  
-    {  <div class="products android samsung" id="samsung-s9">
-        <img class="product-image" src="http://via.placeholder.com/200x200">
-        <p class="product-name">Samsung S9</p>
-        <p class="product-description">The most powerful Android device on the planet.</p>
-        <p class="product-price" value='789'>789</p>
-        <button class="add-to-cart">ADD TO CART</button>
-      </div 
-
-      {  <div class="products android google" id="pixel-2">
-        <img class="product-image" src="http://via.placeholder.com/200x200">
-        <p class="product-name">Pixel 2</p>
-        <p class="product-description">The perfect phone for a clean Android experience</p>
-        <p class="product-price" value='876'>876</p>
-        <button class="add-to-cart">ADD TO CART</button>
-      </div>}
-
-      { <div class="products android oneplus" id="oneplus-6">
-        <img class="product-image" src="http://via.placeholder.com/200x200">
-        <p class="product-name">Oneplus 6</p>
-        <p class="product-description">The latest from a long line of affordable premium devices by Oneplus</p>
-        <p class="product-price" value='799'>799</p>
-        <button class="add-to-cart">ADD TO CART</button>
-      </div>}
-
-      {  <div class="products ios apple" id="iphone-8">
-        <img class="product-image" src="http://via.placeholder.com/200x200">
-        <p class="product-name">iPhone 8</p>
-        <p class="product-description">The little, less-stylish brother of the iPhone X.</p>
-        <p class="product-price" value='719'>719</p>
-        <button class="add-to-cart">ADD TO CART</button>
-      </div>}
-
-      {  <div class="products android huawei" id="huawei-p20">
-        <img class="product-image" src="http://via.placeholder.com/200x200">
-        <p class="product-name">Huawei P20</p>
-        <p class="product-description">A solid performer from the chinese giant Huawei.</p>
-        <p class="product-price" value='769'>769</p>
-        <button class="add-to-cart">ADD TO CART</button>
-      </div>}
-
-      { <div class="products android lg" id="lg-g7">
-        <img class="product-image" src="http://via.placeholder.com/200x200">
-        <p class="product-name">LG G7 ThinQ</p>
-        <p class="product-description">The latest and most powerful smartphone from LG.</p>
-        <p class="product-price" value='699'>699</p>
-        <button class="add-to-cart">ADD TO CART</button>
-      </div>}
-
-      { <div class="products android huawei" id="huawei-mate-10-pro">
-        <img class="product-image" src="http://via.placeholder.com/200x200">
-        <p class="product-name">CREAR PRODUCTO</p>
-        <p class="product-name">(Mas facil para nosotros, borrar para entregar)</p>
-        <button><a href="/product/create">CREAR</a></button>
-      </div>}
-
-
-
-
-
+    { "id":2342342423478923423,
+      "name":"iphone-x",
+        "image":123123,
+        "description":"beast of processing power from Apple.",
+        "price": 999    
+    },
+    { "id":234234242342342978903,
+      "name":"Samsung S9",
+        "image":123123,
+        "description":"The most powerful Android device on the planet.",
+        "price": 789   
+    },
+    { "id":23423424234234237567,
+      "name":"Pixel 2",
+        "image":123123,
+        "description":"The perfect phone for a clean Android experience",
+        "price": 876   
+    },
+    { "id":23423424234234237585,
+      "name":"Oneplus 6",
+        "image":123123,
+        "description":"The latest from a long line of affordable premium devices by Oneplus",
+        "price": 799    
+    },
+    { "id":23423424234234233135,
+      "name":"iPhone 8",
+        "image":123123,
+        "description":"The little, less-stylish brother of the iPhone X.",
+        "price": 719
+    },
+    { "id":23423424234234231232,
+      "name":"Huawei P20",
+        "image":123123,
+        "description":"A solid performer from the chinese giant Huawei.",
+        "price": 769  
+    },
+    { "id":2342342423423423123,
+      "name":"Pixel 2",
+        "image":123123,
+        "description":"The perfect phone for a clean Android experience",
+        "price": 876   
+    }
 ]
