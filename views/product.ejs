@@ -3,97 +3,105 @@
 
 <head>
   <%- include("./partials/head") -%>
-  <link rel="stylesheet" href="/css/carrito.css">
-  <title>Carrito</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-  <!------ header ------->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <!------ main--------- -->
+    <link rel="stylesheet" href="/css/product.css">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <!------ header ------->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <!------ main--------- -->
 </head>
 
 <body>
   <!----------------------- header/nav var---------- -->
   <%- include("./partials/header") -%>
-  <!-- ------------------main----------------------------- -->
-  <div>
-   <br>
+    <!-- ------------------main----------------------------- -->
+    <main>
+      <div>
+        <br>
 
-    <button id='cart-button' class="trigger cart-button-style">Show Cart</button>
+        <button id='cart-button' class="trigger cart-button-style">Show Cart</button>
 
-      
 
-    <div id="shop">
-      <div id="shop">
-        <% products.forEach(product => { %>
-          <div class="products" id="<%= product.id %>">
-            <img class="product-image" src="http://via.placeholder.com/200x200">
-            <p class="product-name"><%= product.name%></p>
-            <p class="product-description"><%= product.description%></p>
-            <p class="product-price" value='<%= product.price%>'><%= product.price%></p>
-            <button class="add-to-cart" id='test'>ADD TO CART</button>
+
+        <div id="shop">
+          <div id="shop">
+            <% products.forEach(product=> { %>
+              <div class="products" id="<%= product.id %>">
+                <img class="product-image" src="http://via.placeholder.com/200x200">
+                <p class="product-name">
+                  <%= product.name%>
+                </p>
+                <p class="product-description">
+                  <%= product.description%>
+                </p>
+                <p class="product-price" value='<%= product.price%>'>
+                  <%= product.price%>
+                </p>
+                <button class="add-to-cart" id='test'>ADD TO CART</button>
+              </div>
+              <% }) ; %>
           </div>
-      <% }) ; %>
-    </div>
 
-  </div>
-  <div id='cart-wrapper' class="slider close">
-    <div id='cart'>
-      <div id="cart-products-wrapper">
-        <table id="cart-table">
-          <thead id="cart-table-header">
-            <th class="name-col">Product Name</th>
-            <th class="quantity-col">Quantity</th>
-            <th class="price-col">Price</th>
-            <th class="updated-price-col">Updated Price</th>
-            <th class="update-col">Update</th>
-            <th class="remove-col">Remove</th>
-          </thead>
-          <tbody id="cart-table-body"></tbody>
-        </table>
-      </div>
-    </div>
+        </div>
+        <div id='cart-wrapper' class="slider close">
+          <div id='cart'>
+            <div id="cart-products-wrapper">
+              <table id="cart-table">
+                <thead id="cart-table-header">
+                  <th class="name-col">Product Name</th>
+                  <th class="quantity-col">Quantity</th>
+                  <th class="price-col">Price</th>
+                  <th class="updated-price-col">Updated Price</th>
+                  <th class="update-col">Update</th>
+                  <th class="remove-col">Remove</th>
+                </thead>
+                <tbody id="cart-table-body"></tbody>
+              </table>
+            </div>
+          </div>
 
-    <div id='amount-controls'>
-      <div id="cart-amount-wrapper">
-        <table>
-          <tbody>
-            <tr id='subtotal-wrappper'>
-              <td id="subtotal-label">Subtotal:</td>
-              <td id="subtotal">0.00</td>
-            </tr>
+          <div id='amount-controls'>
+            <div id="cart-amount-wrapper">
+              <table>
+                <tbody>
+                  <tr id='subtotal-wrappper'>
+                    <td id="subtotal-label">Subtotal:</td>
+                    <td id="subtotal">0.00</td>
+                  </tr>
 
-            <tr id='total-wrapper'>
-              <td id="total-label">Total:</td>
-              <td id="total">0.00</td>
-            </tr>
+                  <tr id='total-wrapper'>
+                    <td id="total-label">Total:</td>
+                    <td id="total">0.00</td>
+                  </tr>
 
-            <tr id="promo-checkout">
-              <td id="promo-wrapper">
-                <input id="promo" placeholder="Input Promo Code">
-                <button id="apply-promo">Apply Promo</button>
-              </td>
+                  <tr id="promo-checkout">
+                    <td id="promo-wrapper">
+                      <input id="promo" placeholder="Input Promo Code">
+                      <button id="apply-promo">Apply Promo</button>
+                    </td>
 
-              <td>
-                <button id="checkout">Checkout</button>
-              </td>
+                    <td>
+                      <button id="checkout">Checkout</button>
+                    </td>
 
-              <td>
-                <button id="ks" class="keep-shopping">Keep Shopping</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  </main>
+                    <td>
+                      <button id="ks" class="keep-shopping">Keep Shopping</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div><a href="./productCreation">ir a creacion de producto (link para que sea mas facil)</a></div>
+    </main>
 
-  <!-------------------------------------- footer-------------------------------------------------- -->
-  <%- include("./partials/footer") -%>
+    <!-------------------------------------- footer-------------------------------------------------- -->
+    <%- include("./partials/footer") -%>
 
-  <script type="text/javascript" src="/javascripts/carrito.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script type="text/javascript" src="/javascripts/carrito.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 
 </html>

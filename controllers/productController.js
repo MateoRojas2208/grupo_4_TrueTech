@@ -24,7 +24,7 @@ const controller = {
 	
 	// Create -  Method to store
 	store: (req, res) => {
-		// Do the magic
+		
 	},
 
 	// Update - Form to edit
