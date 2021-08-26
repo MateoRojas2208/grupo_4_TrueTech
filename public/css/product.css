@@ -129,6 +129,15 @@ section {
 
 /* ----------------------------------------main--------------------------- */
 
+
+
+.main{
+  margin-bottom: 30px
+}
+
+
+
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 * {
   font-family: 'Montserrat', sans-serif;
@@ -539,4 +548,13 @@ footer a:hover {
   footer .content .middle {
     padding-left: 0;
   }
+}
+
+
+
+.facilidad {
+  color: #007c11;
+  background-color: crimson;
+  padding: 20px;
+  margin-top: 50px;
 }
