@@ -15,10 +15,10 @@ router.post('/', productsController.store);
 
 
 // /*** GET ONE PRODUCT ***/ 
-router.get('/products/:id', productsController.detail);
+router.get('/:id', productsController.detail);
 
 // /*** EDIT ONE PRODUCT ***/ 
-router.get('/products/:id/edit', productsController.edit);
+router.get('/:id/edit', productsController.edit);
 router.put('/:id', productsController.update);
 
 
