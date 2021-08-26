@@ -126,7 +126,7 @@
     background-color: rgb(30, 30, 30);
   }
   .product-description span {
-    margin-top: 30px;
+  
     margin-left: 10px;
     font-size: 11px;
     color: #358ED7;
@@ -242,6 +242,8 @@
       top: -85px;
     }
   }
+
+
   .img-container {
     padding: 10px;
     width: 50%;
@@ -259,6 +261,10 @@
       width: 12%;
      
     }
+    .cart-btn{
+      padding: 12px 15px;
+    }
+    
     
   }
   
