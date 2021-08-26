@@ -129,8 +129,6 @@ a {
 
 button {
   border-radius: 20px;
-  border: 1px solid #FF4B2B;
-  background-color: #FF4B2B;
   color: #FFFFFF;
   font-size: 12px;
   font-weight: bold;
@@ -138,6 +136,7 @@ button {
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
+  width:96%;
 }
 
 button:active {
@@ -186,7 +185,7 @@ main {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 20%);
+  transform: translate(-50%, 5%);
 }
 
 .form-container {
@@ -303,7 +302,14 @@ main {
 .social-container {
   margin: 20px 0;
 }
-
+#signUp{
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+}
+#signUpLink{
+  position: relative;
+}
 .social-container a {
   border: 1px solid #DDDDDD;
   border-radius: 50%;
