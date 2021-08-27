@@ -122,9 +122,13 @@
   /* Descripcionn del producto */
   
   .product-description {
-  
     background-color: rgb(30, 30, 30);
-  }
+    display: flex;
+    align-content: space-around;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
   .product-description span {
   
     margin-left: 10px;
@@ -133,6 +137,8 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
+    text-align: center;
+    margin: 5px;
     
   }
   .product-description p {
@@ -141,21 +147,23 @@
     font-weight: 300;
     color: #86939E;
     line-height: 24px;
-    
+    text-align: center;
+    margin: 5px;
   }
   .product-description h3{
     margin-left: 10px;
     font-weight: 300;
     color: white;
-    
+    text-align: center;
+    margin: 5px;
   }
   /* Precio del producto */
   .product-price {
     display: flex;
     align-items: center;
     background-color: rgb(30, 30, 30);
+    justify-content: center;
   }
-   
   .product-price span {
     font-size: 26px;
     font-weight: 300;
@@ -408,4 +416,10 @@
       padding-left: 0;
     }
   }
-  
+   
+  .ProductInfo {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
