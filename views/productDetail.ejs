@@ -12,7 +12,6 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <style type="text/css">
-
       .product-small-img img {
         width: 100%;
         border: 1px solid rgba(0, 0, 0, .2);
@@ -20,7 +19,6 @@
         margin: 10px 10px 15px;
         cursor: pointer;
       }
-      
     </style>
 </head>
 
@@ -35,7 +33,7 @@
 
       <div class="product" style="margin-left: 3em;">
         <div class="img-container">
-          <img id="imageBox" src="/images/detalle/RAM-1.png" >
+          <img id="imageBox" src="/images/detalle/RAM-1.png">
         </div>
         <div class="product-small-img">
           <img src="/images/detalle/RAM-1.png" onclick="myFunction(this)">
@@ -55,22 +53,25 @@
 
       <!-- Descripción del producto -->
       <div class="product-description">
-        <br>
-        <span>Corsair Vengeance RGB</span>
+        <div class="ProductInfo">
+          <span>
+            <%- product.name -%>
+          </span>
+          <h3>
+            <%- product.model -%>
+          </h3>
+          <p>
+            <%- product.description -%>
+          </p>
 
-        <br>
-        <br>
-        <h3>Memoria de escritorio LED DDR4 de 3200 MHz C16 8 GB, color negro.</h3>
-        <br>
-        <p>La preferida por los gamers, rapidez y estética en una pieza. </p>
-
-
-
+        </div>
         <!-- Precio del producto -->
 
         <div class="product-price">
-          <span>97.99$</span>
-          <a href="/product" class="cart-btn">Add to cart</a>
+          <span>
+            <%- product.price -%>
+          </span>
+          <a href="/product" class="cart-btn">Agragar al carrito</a>
         </div>
       </div>
     </main>
@@ -104,7 +105,7 @@
             <br>
             Fabricante: VENGEANCE.
             <br>
-          Marca: Corsair.
+            Marca: Corsair.
             <br>
             Línea: Vengance RGB Pro.
             <br>
