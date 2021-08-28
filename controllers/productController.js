@@ -39,7 +39,13 @@ const controller = {
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
 		// Do the magic
+	},
+	upload: (req,res) =>{
+		console.log(req.files);
+    res.send("Archivo subido correactamente")
 	}
+
 };
 
+	
 module.exports = controller;
