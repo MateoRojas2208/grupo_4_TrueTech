@@ -42,3 +42,4 @@ const storage = multer.diskStorage({
   router.post("/photo", uploadFile.single("imagenProducto"), productsController.upload);
 
 module.exports = router;
+// aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa para que deje poner nombre en el comit
