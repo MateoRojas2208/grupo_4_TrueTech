@@ -30,7 +30,8 @@ const controller = {
 
 	// Update - Form to edit
 	edit: (req, res) => {
-		// Do the magic
+		let productId = req.params.id -1
+		res.render("productEdit",{product: products[productId]})
 	},
 	// Update - Method to update
 	update: (req, res) => {

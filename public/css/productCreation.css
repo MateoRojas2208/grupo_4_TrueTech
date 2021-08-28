@@ -499,7 +499,6 @@ select option {
 }
 
 .ghost {
-    position: relative;
     border-radius: 20px;
     border: 1px solid #FF4B2B;
     background-color: #FF4B2B;
@@ -512,4 +511,14 @@ select option {
     text-transform: uppercase;
     transition: transform 80ms ease-in;
     left: 28%;
+    margin: 20px;
+}
+#colour{
+    height: 45.328px;
+    margin: 0px;
+    padding-left: 40%;
+    padding-right: 24%;
+}
+.entregar{
+    display: flex;
 }

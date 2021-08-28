@@ -20,15 +20,16 @@
                     <div class="row">
                         <h4>Producto</h4>
                         <div class="input-group input-group-icon"><input type="text"
-                                placeholder="Nombre del producto" />
+                                placeholder="<%- product.name -%>" />
                             <div class="input-icon"><i class="fa fa-bookmark" aria-hidden="true"></i></div>
                         </div>
-                        <div class="input-group input-group-icon"><input type="email" placeholder="Marca/Modelo" />
+                        <div class="input-group input-group-icon"><input type="Model"
+                                placeholder="<%- product.model -%>" />
                             <div class="input-icon"><i class="fa fa-terminal" aria-hidden="true"></i></div>
                         </div>
                         <div class="input-group input-group-icon" id="table">
                             <div class="table-cell">
-                                <textarea cols="80" class="descripciones" placeholder="Descripcion"
+                                <textarea cols="80" class="descripciones" placeholder="<%- product.description -%>"
                                     style="resize:none"></textarea>
                             </div>
                         </div>
@@ -36,19 +37,9 @@
                     <div class="row">
                         <div class="col-half">
                             <h4>Color</h4>
-                            <div class="input-group">
-                                <select>
-                                    <option>Rojo</option>
-                                    <option>Verde</option>
-                                    <option>Azul</option>
-                                    <option>Rosa</option>
-                                    <option>Blanco</option>
-                                    <option>Negro</option>
-                                    <option>Gris</option>
-                                    <option>Plateado</option>
-                                    <option>Cian</option>
-                                    <option>Naranja</option>
-                                </select>
+                            <div class="input-group input-group-icon"><input id="colour" type="text"
+                                    placeholder="<%- product.colour -%>" />
+                                <div class="input-icon"><i class="fa fa-terminal" aria-hidden="true"></i></div>
                             </div>
                         </div>
                         <div class="col-half">
@@ -71,14 +62,16 @@
                         <div class="row">
                             <h4>Imagen del producto</h4>
                             <div>
-                                <div><input type="file" name="imagenProducto" /></div>
+                                <div><input type="file" name="imagenProducto"></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Cambiar esto para que al apretar el boton se cree el producto -->
-                    <button type="submit" class="ghost" id="signUp"><a href="/login">Crear Producto</a></button>
-
+                    <div class="entregar">
+                        <button type="submit" class="ghost" id="Eliminar"><a href="/">Eliminar Producto</a></button>
+                        <button type="submit" class="ghost" id="signUp"><a href="/product/detail/<%- product.id -%>">Crear Producto</a></button>
+                    </div>
                 </form>
             </div>
         </main>
