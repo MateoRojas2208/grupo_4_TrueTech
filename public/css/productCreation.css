@@ -521,4 +521,5 @@ select option {
 }
 .entregar{
     display: flex;
+    justify-content: center;
 }

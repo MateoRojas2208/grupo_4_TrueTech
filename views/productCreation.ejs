@@ -14,74 +14,66 @@
     <!---------------- header--------- -->
     <%- include("./partials/header") -%>
 
-        <main>
-            <div class="container">
-                <form action="#" method="POST" enctype="multipart/form-data">
-                    <div class="row">
-                        <h4>Producto</h4>
-                        <div class="input-group input-group-icon"><input type="text"
-                                placeholder="Nombre del producto" />
-                            <div class="input-icon"><i class="fa fa-bookmark" aria-hidden="true"></i></div>
+    <main>
+        <div class="container">
+            <form action="/creation" method="POST" enctype="multipart/form-data">
+                <div class="row">
+                    <h4>Producto</h4>
+                    <div class="input-group input-group-icon"><input type="text"
+                            placeholder="Nombre del producto" />
+                        <div class="input-icon"><i class="fa fa-bookmark" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="input-group input-group-icon"><input type="Model"
+                            placeholder="Modelo" />
+                        <div class="input-icon"><i class="fa fa-terminal" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="input-group input-group-icon" id="table">
+                        <div class="table-cell">
+                            <textarea cols="80" class="descripciones" placeholder="Descripción"
+                                style="resize:none"></textarea>
                         </div>
-                        <div class="input-group input-group-icon"><input type="email" placeholder="Marca/Modelo" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-half">
+                        <h4>Color</h4>
+                        <div class="input-group input-group-icon"><input id="colour" type="text"
+                                placeholder="Color" />
                             <div class="input-icon"><i class="fa fa-terminal" aria-hidden="true"></i></div>
                         </div>
-                        <div class="input-group input-group-icon" id="table">
-                            <div class="table-cell">
-                                <textarea cols="80" class="descripciones" placeholder="Descripcion"
-                                    style="resize:none"></textarea>
-                            </div>
+                    </div>
+                    <div class="col-half">
+                        <h4>Categoría</h4>
+                        <div class="input-group">
+                            <select>
+                                <option>SSD</option>
+                                <option>Memoria ram</option>
+                                <option>Disco rígido</option>
+                                <option>Placa de video</option>
+                                <option>Monitor</option>
+                                <option>Mouse</option>
+                                <option>Procesador</option>
+                                <option>Mother</option>
+                                <option>Auriculares</option>
+                                <option>Teclado</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-half">
-                            <h4>Color</h4>
-                            <div class="input-group">
-                                <select>
-                                    <option>Rojo</option>
-                                    <option>Verde</option>
-                                    <option>Azul</option>
-                                    <option>Rosa</option>
-                                    <option>Blanco</option>
-                                    <option>Negro</option>
-                                    <option>Gris</option>
-                                    <option>Plateado</option>
-                                    <option>Cian</option>
-                                    <option>Naranja</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-half">
-                            <h4>Categoría</h4>
-                            <div class="input-group">
-                                <select>
-                                    <option>SSD</option>
-                                    <option>Memoria ram</option>
-                                    <option>Disco rígido</option>
-                                    <option>Placa de video</option>
-                                    <option>Monitor</option>
-                                    <option>Mouse</option>
-                                    <option>Procesador</option>
-                                    <option>Mother</option>
-                                    <option>Auriculares</option>
-                                    <option>Teclado</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <h4>Imagen del producto</h4>
-                            <div>
-                                <div><input type="file" name="imagenProducto" /></div>
-                            </div>
+                        <h4>Imagen del producto</h4>
+                        <div>
+                            <div><input type="file" name="imagenProducto"></div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Cambiar esto para que al apretar el boton se cree el producto -->
-                    <button type="submit" class="ghost" id="signUp"><a href="/login">Crear Producto</a></button>
-
-                </form>
-            </div>
-        </main>
+                <!-- Cambiar esto para que al apretar el boton se cree el producto -->
+                <div class="entregar">
+                    <button type="submit" class="ghost" id="signUp"><a href="/product/detail/">Crear Producto</a></button>
+                </div>
+            </form>
+        </div>
+    </main>
 
 </body>
 <%- include("./partials/footer") -%>

@@ -25,7 +25,8 @@ const controller = {
 	
 	// Create -  Method to store
 	store: (req, res) => {
-		
+		console.log(req.files);
+    res.send("Archivo subido correactamente")
 	},
 
 	// Update - Form to edit
@@ -41,12 +42,7 @@ const controller = {
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
 		// Do the magic
-	},
-	upload: (req,res) =>{
-		console.log(req.files);
-    res.send("Archivo subido correactamente")
 	}
-
 };
 
 	

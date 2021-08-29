@@ -9,12 +9,27 @@ const path = require("path");
 // ************ Controller Require ************
 const productsController = require('../controllers/productController');
 
+// ************ MULTER *****************
+const storage = multer.diskStorage({
+   destination: function (req, file, cb) {
+      cb(null, './public/images/productos');
+   },
+   filename: function (req, file, cb) {
+      cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`);
+   }
+})
+
+const uploadFile = multer({ storage });
+
+// ******************  RUTAS  *******************
+
 /*** GET ALL PRODUCTS ***/
 router.get('/', productsController.index);
 
 // /*** CREATE ONE PRODUCT ***/ 
 router.get('/create', productsController.create);
-router.post('/', productsController.store);
+router.post('/create', productsController.store);
+router.post("/creation", uploadFile.single("imagenProducto"), productsController.store);
 
 
 // /*** GET ONE PRODUCT ***/ 
@@ -29,17 +44,9 @@ router.put('/:id', productsController.update);
 router.delete('/:id', productsController.destroy);
 
 
-// Multer
-const storage = multer.diskStorage({ 
-    destination: function (req, file, cb) { 
-       cb(null, './public/images/productos'); 
-    }, 
-    filename: function (req, file, cb) { 
-       cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`);  } 
-  })
-  const uploadFile = multer({ storage});
-  
-  router.post("/photo", uploadFile.single("imagenProducto"), productsController.upload);
+
+
+
 
 module.exports = router;
 // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa para que deje poner nombre en el comit
