@@ -523,3 +523,6 @@ select option {
     display: flex;
     justify-content: center;
 }
+.signo{
+    display: block;
+}
