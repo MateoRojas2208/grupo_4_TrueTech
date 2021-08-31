@@ -44,7 +44,7 @@ const controller = {
 		productos.push(producto);
 
 		let productosJSON = JSON.stringify(productos);
-		res.send(req.body)
+		res.send(req.body++)
 		// fs.writeFileSync("data/usersDataBase.json", productosJSON);
 		// res.redirect("/")
 	},
