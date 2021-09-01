@@ -51,3 +51,21 @@ Less Of: - Distraernos con cosas poco importantes.
 Stop Doing: - Esperar 1 semana para empezar a trabajar en el sprint.
             - Copy pastes.
   
+ <hr>
+
+<h2>Cuarto sprint<h2>
+
+Una sprint jodido, casi se muere un integrante jajajaj.
+  
+Start Doing: - nada.
+  
+More of: - Trabajar todos los dias.
+  
+Keep doing:  - Trabajar juntos.
+            - Trabajar a diario.
+  
+Less Of: - Distraernos .
+         - Tardar en empezar el sprint.
+  
+Stop Doing: - Enojarse y dejar de hacer.
+            
