@@ -1,16 +1,15 @@
-var express = require('express');
-var router = express.Router();
+// ************ Require's ************
+const express = require('express');
+const router = express.Router();
+const multer = require("multer");
+const path = require("path");
 
+
+// ************ Controller Require ************
+const mainController = require('../controllers/mainController');
 /* GET home */
-router.get('/', function(req, res, next) {
-  res.render('home', { title: 'Express' });
-});
-/* GET login */
-router.get('/login', function(req, res, next) {
-  res.render('login', { title: 'Express' });
-});
-/* GET register */
-router.get('/register', function(req, res, next) {
-  res.render('register', { title: 'Express' });
-});
+
+router.get('/', mainController.home);
+
+
 module.exports = router;

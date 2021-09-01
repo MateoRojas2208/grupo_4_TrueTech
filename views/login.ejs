@@ -3,54 +3,52 @@
 
 <head>
   <%- include("./partials/head") -%>
-  <link rel="stylesheet" href="css/login.css">
-  <title>Login</title>
-  <!------ header ------->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/css/login.css">  
+    <title>Login</title>
+    <!------ header ------->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
 <body>
   <!----------------------- header/nav var------------->
   <%- include("./partials/headerLR") -%>
-  <!----------------------------main------------------->
-  <main>
+    <!----------------------------main------------------->
+    <main>
 
-    <div class="container" id="container">
-      <div class="form-container sign-in-container">
-        <form action="#">
-          <h1>Iniciar Sesion</h1>
-          <div class="social-container">
-            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-          <span>O usa tu cuenta</span>
-          <input class="formulario" type="email" placeholder="Email" />
-          <input class="formulario" type="password" placeholder="Password" />
-          <a href="#">Te olvidaste la contraseña?</a>
-          <div class="mantener">
-            <input class="check"type="checkbox"  name="vehicle1" value="Bike">
-            <label for="vehicle1"> Mantener Sesion Iniciada </label><br>
-          </div>
+      <div class="container" id="container">
+        <div class="form-container sign-in-container">
+          <form action="#">
+            <h1>Iniciar Sesion</h1>
+            <div class="social-container">
+              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>O usa tu cuenta</span>
+            <input class="formulario" type="email" placeholder="Email" />
+            <input class="formulario" type="password" placeholder="Password" />
+            <a href="#">Te olvidaste la contraseña?</a>
+            <div class="mantener">
+              <input class="check" type="checkbox" name="vehicle1" value="Bike">
+              <label for="vehicle1"> Mantener Sesion Iniciada </label><br>
+            </div>
 
-          <button><a href="/home">Iniciar Sesion</a></button>
-        </form>
-      </div>
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-right">
-            <h1>No tenes una cuenta?</h1>
-            <p>Ingresa tu infomacion personal y comienza a navegar con nosotros</p>
-            <button class="ghost" id="signUp"> <a href="/register" id="signUpLink">Registrate</a> </button>
+            <button><a href="/home">Iniciar Sesion</a></button>
+          </form>
+        </div>
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-right">
+              <h1>No tenes una cuenta?</h1>
+              <p>Ingresa tu infomacion personal y comienza a navegar con nosotros</p>
+              <button class="ghost" id="signUp"> <a href="/users/register" id="signUpLink">Registrate</a> </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-  </main>
+    </main>
 </body>
 
 </html>
-
-

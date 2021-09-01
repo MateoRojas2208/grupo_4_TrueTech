@@ -136,7 +136,7 @@ button {
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
-  width:96%;
+  width: 96%;
 }
 
 button:active {
@@ -186,6 +186,7 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, 5%);
+  margin-top: 50px;
 }
 
 .form-container {
@@ -302,14 +303,17 @@ main {
 .social-container {
   margin: 20px 0;
 }
-#signUp{
+
+#signUp {
   display: flex;
   justify-content: center;
   padding: 0px;
 }
-#signUpLink{
+
+#signUpLink {
   position: relative;
 }
+
 .social-container a {
   border: 1px solid #DDDDDD;
   border-radius: 50%;
@@ -381,10 +385,9 @@ footer a {
     font-size: 20px;
     max-width: 90%;
   }
-  .overlay-container div div{
+  .overlay-container div div {
     padding: 10px;
   }
-
 }
 
 @media (max-width: 952px) {
