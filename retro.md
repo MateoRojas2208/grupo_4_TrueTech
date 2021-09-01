@@ -55,7 +55,7 @@ Stop Doing: - Esperar 1 semana para empezar a trabajar en el sprint.
 
 <h2>Cuarto sprint<h2>
 
-Una sprint jodido, casi se muere un integrante jajajaj.
+Un sprint jodido, casi se muere un integrante jajajaj.
   
 Start Doing: - nada.
   
