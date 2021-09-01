@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const { re } = require('semver');
+const uniqid = require("uniqid");
+const { Z_ASCII } = require('zlib');
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -15,8 +17,8 @@ const controller = {
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
-		let productId = req.params.id - 1
-		res.render("productDetail", { product: products[productId] })
+		let productId = req.params.id
+		res.render("productDetail",  { product: products.find(x => x.id == productId)})
 	},
 
 	// Create - Form to create
@@ -26,14 +28,13 @@ const controller = {
 
 	// Create -  Method to store
 	store: (req, res) => {
-		let archivoProductosJson = fs.readFileSync("data/usersDataBase.json", { encoding: "utf-8" })
+		let archivoProductosJson = fs.readFileSync("data/productsDataBase.json", { encoding: "utf-8" })
 		
 		let productos = JSON.parse(archivoProductosJson)
 		
-		let id = productos.lenght + 1;
 
 		let producto = {
-			id: id,
+			id: uniqid("", "-product"),
 			name: req.body.name,
 			model: req.body.model,
 			description: req.body.description,
@@ -43,10 +44,11 @@ const controller = {
 		}
 		productos.push(producto);
 
+
+		console.log(req.file.image)
 		let productosJSON = JSON.stringify(productos);
-		res.send(req.body++)
-		// fs.writeFileSync("data/usersDataBase.json", productosJSON);
-		// res.redirect("/")
+		fs.writeFileSync("data/productsDataBase.json", productosJSON);
+		res.redirect("/product")
 	},
 
 	// Update - Form to edit

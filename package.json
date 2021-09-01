@@ -17,6 +17,7 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.3",
     "nodemon": "^2.0.12",
-    "requirejs": "^2.3.6"
+    "requirejs": "^2.3.6",
+    "uniqid": "^5.4.0"
   }
 }
