@@ -72,9 +72,9 @@ const controller = {
 		let productId = req.params.id
 
 		var filtered = _.remove(productos, (x => x.id == productId) )
-
+		console.log(archivoProductosJson)
 		fs.writeFileSync(path.join(__dirname, '../data/productsDataBase.json'), productos);
-		res.render("/")
+		res.redirect("/")
 	}
 };
 
