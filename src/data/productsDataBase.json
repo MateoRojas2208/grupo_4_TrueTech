@@ -1,4 +1,5 @@
 [
+    {},
     {
         "id": 1,
         "name": "UBS AG",
@@ -13,7 +14,7 @@
         "name": "Five Oaks Investment Corp.",
         "model": "PS27 CVAT F39Q R4BR PGLR LWQV PI7G T",
         "description": "quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas",
-        "image": "http://dummyimage.com/242x100.png/5fa2dd/ffffff",
+        "image": "http://dummyimage.com/2420x1000.png/5fa2dd/ffffff",
         "colour": "Puce",
         "price": "$6494.07"
     },
@@ -454,18 +455,9 @@
         "name": "Proyecto",
         "model": "Modelo",
         "description": "descripcion",
-        "image": "public\\images\\productos\\1630540490616_img_.jpg",
+        "image": "/images\\productos\\1630540490616_img_.jpg",
         "colour": "amarello",
         "price": "1233123"
-    },
-    {
-        "id": "zsncsxr8xokt25zad1-product",
-        "name": "Proyecto",
-        "model": "Modelo",
-        "description": "2",
-        "image": "public\\images\\productos\\1630540946425_img_.jpg",
-        "colour": "amarello",
-        "price": "1"
     },
     {
         "id": "zsncsxr9j8kt262evq-product",

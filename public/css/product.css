@@ -195,12 +195,15 @@ h2 {
     text-align: center;
     padding: 0 0 1% 0;
     height: 400px;
+
 }
 
 
 .products img {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  height: 250px;
+  width: 250px;
 }
 
 @media screen and (max-width: 980px) {

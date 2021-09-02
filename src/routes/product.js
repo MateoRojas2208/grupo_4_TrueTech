@@ -35,13 +35,12 @@ router.post("/creation", uploadFile.single("image"), productsController.store);
 router.get('/detail/:id', productsController.detail);
 
 // /*** EDIT ONE PRODUCT ***/ 
-router.get('/:id/edit', productsController.edit);
+router.get('/edit/:id', productsController.edit);
 router.put('/:id', productsController.update);
 
 
 // /*** DELETE ONE PRODUCT***/ 
-router.delete('/:id', productsController.destroy);
-
+router.post('/destroy/:id', productsController.destroy);
 
 
 

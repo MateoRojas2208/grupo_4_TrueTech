@@ -26,9 +26,9 @@
 
         <div id="shop">
           <div id="shop">
-            <% products.forEach(product=> { %>
+            <% productos.forEach(product=> { %>
               <div class="products" id="<%= product.id %>">
-                <a href="product/detail/<%=product.id%>"><img class="product-image" src="http://via.placeholder.com/200x200">
+                <a href="product/detail/<%=product.id%>"><img class="product-image" src="<%=product.image%>">
                 </a>
                 <p class="product-name">
                   <%= product.name%>

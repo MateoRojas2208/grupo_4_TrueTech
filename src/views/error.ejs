@@ -1,14 +1,31 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <%- include("./partials/head") -%>
+        <link rel="stylesheet" href="/css/error.css">
+        <title>Pagina no encontrada</title>
+</head>
 
+<body>
 
-<!-- 
-█▀▀▀██▀▀▀▀▀▀██▀▀▀▀▀▀██▀▀▀▀▀▀██▀▀▀▀▀▀█
-█───██──────██──────██──────██──────█
-█──███──██──██──██──██──██──██──██──█
-█───██──────██──────██──██──██──────█
-█──███──▄──▄██──▄──▄██──██──██──▄──▄█
-█───██──██─███──██─███──────██──██─██
-█▄▄▄██▄▄██▄▄██▄▄██▄▄██▄▄▄▄▄▄██▄▄██▄▄█ -->
+    <header>
+        <%- include("./partials/header") -%>
+    </header>
+    <!-- mas adelante mostrar div error solo para admins -->
+    <main>
+
+        <div class="mensaje">
+            <h1>Lo Sentimos no pudimos encontrar tu pagina.</h1>
+        </div>
+        <div class="mensaje">
+            <h2><a href="/" class="button">Pagina Principal</a></h2>
+        </div>
+        <div class="error">
+            <h1><%= message %></h1>
+            <h2><%= error.status %></h2>
+            <pre><%= error.stack %></pre>
+        </div>
+
+    </main>
+</body>

@@ -3,6 +3,8 @@ const path = require('path');
 const { re } = require('semver');
 const uniqid = require("uniqid");
 const { Z_ASCII } = require('zlib');
+var _ = require('lodash');
+var array = require('lodash/array')
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -11,7 +13,11 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-		res.render("product", { products })
+
+		let archivoProductosJson = fs.readFileSync(path.join(__dirname, '../data/productsDataBase.json'), { encoding: "utf-8" })
+		let productos = JSON.parse(archivoProductosJson)
+		let productosSin0 = productos.shift()
+		res.render("product", { productos })
 	},
 
 	// Detail - Detail from one product
@@ -51,8 +57,8 @@ const controller = {
 
 	// Update - Form to edit
 	edit: (req, res) => {
-		let productId = req.params.id - 1
-		res.render("productEdit", { product: products[productId] })
+		let productId = req.params.id
+		res.render("productEdit", { product: products.find(x => x.id == productId)})
 	},
 	// Update - Method to update
 	update: (req, res) => {
@@ -61,7 +67,14 @@ const controller = {
 
 	// Delete - Delete one product from DB
 	destroy: (req, res) => {
-		// Do the magic
+		let archivoProductosJson = fs.readFileSync(path.join(__dirname, '../data/productsDataBase.json'), { encoding: "utf-8" })
+		let productos = JSON.parse(archivoProductosJson)
+		let productId = req.params.id
+
+		var filtered = _.remove(productos, (x => x.id == productId) )
+
+		fs.writeFileSync(path.join(__dirname, '../data/productsDataBase.json'), productos);
+		res.render("/")
 	}
 };
 
