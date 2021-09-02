@@ -450,19 +450,30 @@
         "price": "$9051.03"
     },
     {
-        "id": "zsncsxr6mokt22dpvb-product",
-        "name": "Mateo Rojas",
+        "id": "zsncsxr6w4kt25pink-product",
+        "name": "Proyecto",
         "model": "Modelo",
         "description": "descripcion",
+        "image": "public\\images\\productos\\1630540490616_img_.jpg",
         "colour": "amarello",
-        "price": "777"
+        "price": "1233123"
     },
     {
-        "id": "zsncsxra6ckt25ddyb-product",
-        "name": "Mateo Rojas",
-        "model": "asdasd",
-        "description": "asdasdasdasdasdasd",
+        "id": "zsncsxr8xokt25zad1-product",
+        "name": "Proyecto",
+        "model": "Modelo",
+        "description": "2",
+        "image": "public\\images\\productos\\1630540946425_img_.jpg",
         "colour": "amarello",
-        "price": "23145153"
+        "price": "1"
+    },
+    {
+        "id": "zsncsxr9j8kt262evq-product",
+        "name": "Proyecto",
+        "model": "Modelo",
+        "description": "4",
+        "image": "/images\\productos\\1630541092255_img_.jpg",
+        "colour": "amarello",
+        "price": "123123"
     }
 ]

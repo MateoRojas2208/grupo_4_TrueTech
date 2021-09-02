@@ -31,16 +31,8 @@
 
         <div class="product" style="margin-left: 3em;">
           <div class="img-container">
-            <img id="imageBox" src="/images/detalle/RAM-1.png">
+            <img id="imageBox" src= "<%- product.image -%>" >
           </div>
-          <div class="product-small-img">
-            <img src="/images/detalle/RAM-1.png" onclick="myFunction(this)">
-            <img src="/images/detalle/ram2.PNG" onclick="myFunction(this)">
-            <img src="/images/detalle/ram3.PNG" onclick="myFunction(this)">
-            <img src="/images/detalle/ram4.PNG" onclick="myFunction(this)">
-            <img src="/images/detalle/ram5.PNG" onclick="myFunction(this)">
-          </div>
-        </div>
 
         <script type="text/javascript">
           function myFunction(smallImg) {
@@ -53,7 +45,7 @@
         <div class="product-description">
           <div class="ProductInfo">
             <span>
-              <!-- <%- product.name -%> -->
+           <%- product.name -%> 
             </span>
             <h3>
               <%- product.model -%>

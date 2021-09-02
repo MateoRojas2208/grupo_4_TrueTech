@@ -31,18 +31,18 @@ const controller = {
 		
 		let productos = JSON.parse(archivoProductosJson)
 		
-
+		let link = req.file.path.replace("public", "")
+		let imageLink2 = link.replace("\\", "/")
 		let producto = {
 			id: uniqid("", "-product"),
 			name: req.body.name,
 			model: req.body.model,
 			description: req.body.description,
-			image: req.file.image,
+			image: imageLink2,
 			colour: req.body.colour,
 			price: req.body.price
 		}
 		productos.push(producto);
-
 
 		let productosJSON = JSON.stringify(productos);
 		fs.writeFileSync(path.join(__dirname, '../data/productsDataBase.json'), productosJSON);
