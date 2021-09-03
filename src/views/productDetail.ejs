@@ -56,13 +56,19 @@
 
           </div>
           <!-- Precio del producto -->
-
-          <div class="product-price">
-            <span>
-              <%- product.price -%>
-            </span>
-            <a href="/product" class="cart-btn">Agragar al carrito</a>
+          <div class="buttonsProduct">
+            <div class="product-price">
+              <span>
+                <%- product.price -%>
+              </span>
+              <a href="/product" class="cart-btn">Agragar al carrito</a>
+            </div>
+            <!-- ------------------------------Mostrar solo a creador del producto----------------------------- -->
+            <div class="edit-product">
+              <a href="/product/edit/<%- product.id -%>" class="cart-btn">Editar Producto</a>
+            </div>
           </div>
+
         </div>
       </div>
       <!-- Especificaciones del producto || Más información -->

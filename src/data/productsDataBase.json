@@ -10,15 +10,6 @@
         "price": "$7014.91"
     },
     {
-        "id": 2,
-        "name": "Five Oaks Investment Corp.",
-        "model": "PS27 CVAT F39Q R4BR PGLR LWQV PI7G T",
-        "description": "quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas",
-        "image": "http://dummyimage.com/2420x1000.png/5fa2dd/ffffff",
-        "colour": "Puce",
-        "price": "$6494.07"
-    },
-    {
         "id": 3,
         "name": "Summer Infant, Inc.",
         "model": "IT41 K210 3457 561Q 5TUK HSPH 8FY",
@@ -26,15 +17,6 @@
         "image": "http://dummyimage.com/171x100.png/cc0000/ffffff",
         "colour": "Aquamarine",
         "price": "$5817.08"
-    },
-    {
-        "id": 4,
-        "name": "ENDRA Life Sciences Inc.",
-        "model": "LB65 4415 NIIG 67LY FOCK VVMC GVG0",
-        "description": "libero convallis eget eleifend luctus ultricies eu nibh quisque id justo",
-        "image": "http://dummyimage.com/189x100.png/5fa2dd/ffffff",
-        "colour": "Puce",
-        "price": "$9499.45"
     },
     {
         "id": 5,
@@ -457,7 +439,7 @@
         "description": "descripcion",
         "image": "/images\\productos\\1630540490616_img_.jpg",
         "colour": "amarello",
-        "price": "1233123"
+        "price": "$12331.23"
     },
     {
         "id": "zsncsxr9j8kt262evq-product",
@@ -466,6 +448,42 @@
         "description": "4",
         "image": "/images\\productos\\1630541092255_img_.jpg",
         "colour": "amarello",
-        "price": "123123"
+        "price": "$12312.3"
+    },
+    {
+        "id": "zsncsxr5r4kt4k6gq3-product",
+        "name": "producto 3",
+        "model": "este no",
+        "description": "sorpresa, si otra pc",
+        "image": "/images\\productos\\1630685728063_img_.jpg",
+        "colour": "red",
+        "price": "$10"
+    },
+    {
+        "id": "zsncsxr3lgkt4k79qw-product",
+        "name": "producto 3",
+        "model": "este no",
+        "description": "sorpresa, si otra pc",
+        "image": "/images\\productos\\1630685765795_img_.jpg",
+        "colour": "red",
+        "price": "$10"
+    },
+    {
+        "id": "zsncsxr9swkt4nhg8m-product",
+        "name": "12312",
+        "model": "3123123",
+        "description": "123123",
+        "image": "/images\\productos\\1630691279685_img_.jpg",
+        "colour": "123123",
+        "price": "$123123"
+    },
+    {
+        "id": "zsncsxrbskt4ni2hm-product",
+        "name": "ENDRA",
+        "model": "LB65",
+        "description": "acutalizado con edit",
+        "image": "/images\\productos\\1630691308487_img_.jpg",
+        "colour": "puce",
+        "price": "$123123"
     }
 ]

@@ -36,7 +36,7 @@ router.get('/detail/:id', productsController.detail);
 
 // /*** EDIT ONE PRODUCT ***/ 
 router.get('/edit/:id', productsController.edit);
-router.put('/:id', productsController.update);
+router.post('/update/:id', uploadFile.single("image"), productsController.update);
 
 
 // /*** DELETE ONE PRODUCT***/ 

@@ -526,6 +526,13 @@ select option {
 .signo{
     display: block;
 }
+.form-destroy{
+    display: flex;
+    justify-content: center;
+}
+.invisible{
+    display: none;
+}
 
 
 .button2 {

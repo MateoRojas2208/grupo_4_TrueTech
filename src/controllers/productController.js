@@ -39,6 +39,7 @@ const controller = {
 		
 		let link = req.file.path.replace("public", "")
 		let imageLink2 = link.replace("\\", "/")
+
 		let producto = {
 			id: uniqid("", "-product"),
 			name: req.body.name,
@@ -46,7 +47,7 @@ const controller = {
 			description: req.body.description,
 			image: imageLink2,
 			colour: req.body.colour,
-			price: req.body.price
+			price: "$" + req.body.price
 		}
 		productos.push(producto);
 
@@ -62,7 +63,32 @@ const controller = {
 	},
 	// Update - Method to update
 	update: (req, res) => {
-		// Do the magic
+
+		let archivoProductosJson = fs.readFileSync(path.join(__dirname, '../data/productsDataBase.json'), { encoding: "utf-8" })
+		let productos = JSON.parse(archivoProductosJson)
+
+		let productId = req.params.id
+		var filtered = _.remove(productos, (x => x.id == productId) )
+
+		let link = req.file.path.replace("public", "")
+		let imageLink2 = link.replace("\\", "/")
+
+		let producto = {
+			id: uniqid("", "-product"),
+			name: req.body.name,
+			model: req.body.model,
+			description: req.body.description,
+			image: imageLink2,
+			colour: req.body.colour,
+			price: "$" + req.body.price
+		}
+		
+		
+		productos.push(producto);
+		
+		let productosJSON = JSON.stringify(productos);
+		fs.writeFileSync(path.join(__dirname, '../data/productsDataBase.json'), productosJSON);
+		res.redirect("/product")
 	},
 
 	// Delete - Delete one product from DB
@@ -72,8 +98,10 @@ const controller = {
 		let productId = req.params.id
 
 		var filtered = _.remove(productos, (x => x.id == productId) )
-		console.log(archivoProductosJson)
-		fs.writeFileSync(path.join(__dirname, '../data/productsDataBase.json'), productos);
+
+		let productosJSON = JSON.stringify(productos);
+
+		fs.writeFileSync(path.join(__dirname, '../data/productsDataBase.json'), productosJSON);
 		res.redirect("/")
 	}
 };
