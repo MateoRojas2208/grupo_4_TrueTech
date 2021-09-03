@@ -437,7 +437,7 @@
         "name": "Proyecto",
         "model": "Modelo",
         "description": "descripcion",
-        "image": "/images\\productos\\1630540490616_img_.jpg",
+        "image": "/images/productos/PC Prefabricada.jpg",
         "colour": "amarello",
         "price": "$12331.23"
     },
@@ -446,7 +446,7 @@
         "name": "Proyecto",
         "model": "Modelo",
         "description": "4",
-        "image": "/images\\productos\\1630541092255_img_.jpg",
+        "image": "/images/productos/PC Prefabricada.jpg",
         "colour": "amarello",
         "price": "$12312.3"
     },
@@ -455,7 +455,7 @@
         "name": "producto 3",
         "model": "este no",
         "description": "sorpresa, si otra pc",
-        "image": "/images\\productos\\1630685728063_img_.jpg",
+        "image": "/images/productos/PC Prefabricada.jpg",
         "colour": "red",
         "price": "$10"
     },
@@ -464,7 +464,7 @@
         "name": "producto 3",
         "model": "este no",
         "description": "sorpresa, si otra pc",
-        "image": "/images\\productos\\1630685765795_img_.jpg",
+        "image": "/images/productos/PC Prefabricada.jpg",
         "colour": "red",
         "price": "$10"
     },
@@ -473,7 +473,7 @@
         "name": "12312",
         "model": "3123123",
         "description": "123123",
-        "image": "/images\\productos\\1630691279685_img_.jpg",
+        "image": "/images/productos/PC Prefabricada.jpg",
         "colour": "123123",
         "price": "$123123"
     },
@@ -482,7 +482,7 @@
         "name": "ENDRA",
         "model": "LB65",
         "description": "acutalizado con edit",
-        "image": "/images\\productos\\1630691308487_img_.jpg",
+        "image": "/images/productos/PC Prefabricada.jpg",
         "colour": "puce",
         "price": "$123123"
     }
