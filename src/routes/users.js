@@ -18,6 +18,10 @@ router.get('/login', usersController.login);
 router.get('/register', usersController.register);
 
 
+/* GET login page */
+
+router.get('/profile', usersController.profile);
+
 
 
 module.exports = router;
