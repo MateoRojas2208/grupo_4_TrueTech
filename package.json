@@ -13,6 +13,7 @@
     "cookie-parser": "^1.4.5",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-session": "^1.17.2",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
     "morgan": "^1.10.0",
