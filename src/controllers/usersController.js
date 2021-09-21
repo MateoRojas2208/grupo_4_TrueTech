@@ -23,15 +23,14 @@ const controller = {
             });
         }
         else {
-            let infoUser = req.body
-            let lastID = users[users.length -1].id;
+            let ultimaID = users[users.length -1].id;
 
             let newUser = {
-                id: lastID + 1,
-                username: infoUser.username,
-                email: infoUser.email,
-                password: bcrypt.hashSync(infoUser.password, 10),
-                category: "user"
+                id: ultimaID + 1,
+                username: req.body.userName,
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password, 12),
+                autorizacion: "user"
             }
             let newJSON = users.concat(newUser);
             let userJSON = JSON.stringify(newJSON, null, 2);
