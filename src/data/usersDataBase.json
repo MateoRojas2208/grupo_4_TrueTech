@@ -1,0 +1,170 @@
+[
+    {
+        "id": 1,
+        "userName": "Noelani Coaster",
+        "email": "ncoaster0@huffingtonpost.com",
+        "password": "tAFN6dhy",
+        "clearance": "usuario"
+    },
+    {
+        "id": 2,
+        "userName": "Kellby Giamo",
+        "email": "kgiamo1@yellowpages.com",
+        "password": "QpyAs0",
+        "clearance": "usuario"
+    },
+    {
+        "id": 3,
+        "userName": "Ilise Stainfield",
+        "email": "istainfield2@soup.io",
+        "password": "nu3sOXDptmcP",
+        "clearance": "usuario"
+    },
+    {
+        "id": 4,
+        "userName": "Marji Messam",
+        "email": "mmessam3@businessinsider.com",
+        "password": "cnUrowi",
+        "clearance": "usuario"
+    },
+    {
+        "id": 5,
+        "userName": "Zena Beuscher",
+        "email": "zbeuscher4@sfgate.com",
+        "password": "b0rrI0lRJIq",
+        "clearance": "usuario"
+    },
+    {
+        "id": 6,
+        "userName": "Goldi Muggach",
+        "email": "gmuggach5@amazon.co.jp",
+        "password": "eowvc5Z",
+        "clearance": "usuario"
+    },
+    {
+        "id": 7,
+        "userName": "Fara Sidle",
+        "email": "fsidle6@t.co",
+        "password": "HNZ4cSDsmN",
+        "clearance": "usuario"
+    },
+    {
+        "id": 8,
+        "userName": "Albertine Weatherby",
+        "email": "aweatherby7@chronoengine.com",
+        "password": "chjlTEy1QH",
+        "clearance": "usuario"
+    },
+    {
+        "id": 9,
+        "userName": "Bellanca Figin",
+        "email": "bfigin8@woothemes.com",
+        "password": "19Ygeo",
+        "clearance": "usuario"
+    },
+    {
+        "id": 10,
+        "userName": "Aigneis Judgkins",
+        "email": "ajudgkins9@hp.com",
+        "password": "WnTDvI8E6Y",
+        "clearance": "usuario"
+    },
+    {
+        "id": 11,
+        "userName": "Westley Harwick",
+        "email": "wharwicka@free.fr",
+        "password": "Vjzn8Pc",
+        "clearance": "usuario"
+    },
+    {
+        "id": 12,
+        "userName": "Tallie Pitceathly",
+        "email": "tpitceathlyb@intel.com",
+        "password": "7NGU0HYF1o",
+        "clearance": "usuario"
+    },
+    {
+        "id": 13,
+        "userName": "Crysta Van de Castele",
+        "email": "cvanc@youtu.be",
+        "password": "0UIFKt",
+        "clearance": "usuario"
+    },
+    {
+        "id": 14,
+        "userName": "Alanna Korneev",
+        "email": "akorneevd@google.ca",
+        "password": "z0nLOUhf",
+        "clearance": "usuario"
+    },
+    {
+        "id": 15,
+        "userName": "Leda Rouby",
+        "email": "lroubye@oakley.com",
+        "password": "ma4QpDV",
+        "clearance": "usuario"
+    },
+    {
+        "id": 16,
+        "userName": "Ilise Goble",
+        "email": "igoblef@liveinternet.ru",
+        "password": "SDCc6r",
+        "clearance": "usuario"
+    },
+    {
+        "id": 17,
+        "userName": "Allister Bortolutti",
+        "email": "abortoluttig@home.pl",
+        "password": "uaeAUTU",
+        "clearance": "usuario"
+    },
+    {
+        "id": 18,
+        "userName": "Ulla Bramham",
+        "email": "ubramhamh@blogs.com",
+        "password": "PIf7LFfuv",
+        "clearance": "usuario"
+    },
+    {
+        "id": 19,
+        "userName": "Angie Muncey",
+        "email": "amunceyi@hc360.com",
+        "password": "drG1pbssuMUJ",
+        "clearance": "usuario"
+    },
+    {
+        "id": 20,
+        "userName": "Emory Cassie",
+        "email": "ecassiej@abc.net.au",
+        "password": "4LuBM0f",
+        "clearance": "usuario"
+    },
+    {
+        "id": 21,
+        "userName": "Benedick Calbreath",
+        "email": "bcalbreathk@ning.com",
+        "password": "bUVoAdqS",
+        "clearance": "usuario"
+    },
+    {
+        "id": 22,
+        "userName": "Loralie Sawyer",
+        "email": "lsawyerl@etsy.com",
+        "password": "31SYS1I1Aim9",
+        "clearance": "admin"
+    },
+    {
+        "id": 23,
+        "userName": "Sayer Rahlof",
+        "email": "srahlofm@gmpg.org",
+        "password": "uK6lT7ui",
+        "clearance": "admin"
+    },
+    {
+        "id": 24,
+        "userName": "Ermin Meace",
+        "email": "emeacen@technorati.com",
+        "password": "Gb88BW6",
+        "clearance": "admin"
+    }
+]

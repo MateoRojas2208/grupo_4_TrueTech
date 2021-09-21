@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./partials/head") -%>
+        <link rel="stylesheet" href="/css/productCreation.css">
+        <title>Creacion de Producto</title>
+        <!------ header ------->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <!---------------- header--------- -->
+    <%- include("./partials/header") -%>
+
+        <main>
+            <div class="container">
+                <form action="/product/update/<%- product.id -%>" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <h4>Producto</h4>
+                        <div class="input-group input-group-icon"><input type="text" name="name"
+                                placeholder="<%- product.name -%>"  required/>
+                            <div class="input-icon"><i class="fa fa-bookmark" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="input-group input-group-icon"><input type="Model"
+                                placeholder="<%- product.model -%>" required name="model"/>
+                            <div class="input-icon"><i class="fa fa-terminal" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="input-group input-group-icon" id="table">
+                            <div class="table-cell">
+                                <textarea cols="80" class="descripciones" placeholder="<%- product.description -%>" name="description"
+                                    style="resize:none" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-half">
+                            <h4>Color</h4>
+                            <div class="input-group input-group-icon"><input id="colour" type="text"
+                                    placeholder="<%- product.colour -%>" required name="colour"/>
+                                <div class="input-icon"><i class="fa fa-terminal" aria-hidden="true"></i></div>
+                            </div>
+                        </div>
+                        <div class="col-half">
+                            <h4>Price</h4>
+                            <div class="input-group input-group-icon">
+                                <input placeholder="Precio" type="number" name="price" required>
+                                <div class="input-icon">$</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h4>Imagen del producto</h4>
+                            <div>
+                                <div><input type="file" name="image" placeholder="<%- product.image -%>" required accept="image/*"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="entregar">
+                        <button type="submit" class="ghost" id="edit"><a>Actualizar Producto</a></button>
+                    </div>
+                </form>
+                <form action="/product/destroy/<%- product.id -%>" method="POST" enctype="multipart/form-data">
+                    <div class="invisible"><input type="text"></div>
+                    <div class="form-destroy">
+                        <button type="submit" class="ghost" id="erase"><a>Eliminar Producto</a></button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+</body>
+<%- include("./partials/footer") -%>
