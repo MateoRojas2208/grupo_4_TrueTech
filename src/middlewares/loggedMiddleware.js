@@ -2,7 +2,8 @@ function loggedMiddleware (req, res, next) {
     if (req.session.usuarioLogueado != undefined) {
         next()
     } else {
-        res.send("Crea una cuenta")
+        let errorLogin = true
+        res.render("error", {errorLogin})
     }
    }
    

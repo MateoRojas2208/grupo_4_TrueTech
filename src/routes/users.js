@@ -8,6 +8,14 @@ const path = require("path")
 const usersFilePath = path.resolve(__dirname, '../database/users.json');
 const { body } = require("express-validator")
 
+
+const logged = require("../middlewares/loggedMiddleware")
+
+
+
+
+
+
 // express-validator
 const validations = [
     body("username")
@@ -57,7 +65,7 @@ router.post("/register", validations, usersController.createNewAccount);
 
 /* GET profile page */
 
-router.get('/profile', usersController.profile);
+router.get('/profile',logged, usersController.profile);
 
 
 

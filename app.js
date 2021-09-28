@@ -15,6 +15,12 @@ var app = express();
 app.set('views', path.join(__dirname, '/src/views'));
 app.set('view engine', 'ejs');
 
+
+app.use(session({
+  secret: "mensaje secreto",
+  resave:"true",
+  saveUninitialized:"true"
+}))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -38,7 +44,8 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  let errorLogin = false
+  res.render('error', {errorLogin});
 });
 
 module.exports = app;
