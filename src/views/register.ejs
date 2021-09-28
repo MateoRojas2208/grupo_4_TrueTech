@@ -29,6 +29,7 @@
             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
           </div>
           <span>O usa tu email para registrarte</span>
+<<<<<<< HEAD
            <% if (locals.errors && errors.username) { %>
             <div class="text-danger">
                 <i class="fas fa-exclamation-circle">  </i>  <%= errors.username.msg %>
@@ -53,6 +54,12 @@
           value="<%= locals.oldData ? oldData.password : null %>">
 
       
+=======
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <input type="file" name="image" />
+>>>>>>> 78bc7bfe051276a67098f4c859ba31466ee05a06
           <a href="#">Ayuda para elegir una contraseña?</a>
           <div class="terminos">
             <% if (locals.errors && errors.terminos) { %>
@@ -66,7 +73,7 @@
                   <% } %>
           </div>
 
-          <button>Registrate</button>
+          <button class="register-button">Registrate</button>
         </form>
       </div>
       <div class="overlay-container">
