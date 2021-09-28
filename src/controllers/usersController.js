@@ -2,7 +2,7 @@ const { validationResult } = require("express-validator")
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
-const usersFilePath = path.resolve(__dirname, '../database/users.json');
+const usersFilePath = path.resolve(__dirname, '../data/usersDataBase.json');
 
 
 const controller = {
@@ -15,7 +15,7 @@ const controller = {
 	createNewAccount: (req, res) => {
 		const resultValidation = validationResult(req);
         let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-        
+        console.log(validationResult(req))
         if (resultValidation.errors.length > 0) {
             res.render("register", {
                 errors: resultValidation.mapped(),
@@ -38,6 +38,7 @@ const controller = {
             fs.writeFileSync( usersFilePath, userJSON);
             res.redirect("/login")
         }
+        
 	},
 	profile: (req, res) => {
 		res.render("profile", {})

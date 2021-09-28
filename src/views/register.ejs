@@ -21,7 +21,7 @@
     <div class="container" id="container">
 
       <div class="form-container sign-in-container">
-        <form action="#">
+        <form action="/users/register" method="POST" enctype="multipart/form-data">
           <h1>Registrate</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -29,13 +29,41 @@
             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
           </div>
           <span>O usa tu email para registrarte</span>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+           <% if (locals.errors && errors.username) { %>
+            <div class="text-danger">
+                <i class="fas fa-exclamation-circle">  </i>  <%= errors.username.msg %>
+            </div>
+            <% } %>
+          <input type="text" placeholder="Name" name="userName" <%= locals.errors && errors.username ? 'is-invalid' : null %> value="<%= locals.oldData ? oldData.username : null %>"/>
+         <% if (locals.errors && errors.email) { %>
+          <div class="text-danger">
+              <i class="fas fa-exclamation-circle">  </i>  <%= errors.email.msg %>
+          </div>
+          <% } %>
+          <input type="email" placeholder="Email" name="email"class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+          value="<%= locals.oldData ? oldData.email : null %>">
+           <% if (locals.errors && errors.password) { %>
+          <div class="text-danger">
+              <i class="fas fa-exclamation-circle">  </i>  <%= errors.password.msg %>
+          </div>
+          <% } else {%>
+              <i class="fas fa-eye eyePsw"></i>
+              <% } %>
+          <input type="password" placeholder="Password" name="password"class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+          value="<%= locals.oldData ? oldData.password : null %>">
+
+      
           <a href="#">Ayuda para elegir una contraseña?</a>
           <div class="terminos">
-            <input class="check" type="checkbox" name="vehicle1" value="Bike">
-            <label for="vehicle1"> Terminos y condiciones </label><br>
+            <% if (locals.errors && errors.terminos) { %>
+              <input type="checkbox" name="terminos" id="terminos">
+              <label for="terminos" style="color: #dc3545;">Estoy de acuerdo con los <a
+                      href="/terminos-y-condiciones">términos y condiciones</a></label>
+              <% } else {%>
+                  <input type="checkbox" name="terminos" id="terminos">
+                  <label for="terminos">Estoy de acuerdo con los <a
+                          href="/terminos-y-condiciones">términos y condiciones</a></label>
+                  <% } %>
           </div>
 
           <button>Registrate</button>

@@ -12,10 +12,10 @@ const { body } = require("express-validator")
 const validations = [
     body("username")
     .notEmpty().withMessage("Nombre Invalido").bail()
-    .isLength({min:3, max:10}).withMessage("Longitud: 3 a 10 Caracteres"),
+    .isLength({min:3, max:15}).withMessage("Longitud: 3 a 15 Caracteres"),
 
     body("email")
-    .notEmpty().withMessage("Escribe el email").bail()
+    .notEmpty().withMessage("Email invalido").bail()
     .isEmail().withMessage("Formato Invalido")
     .custom(function(value) {
         let usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -35,7 +35,7 @@ const validations = [
     }).withMessage("Datos Incorrectos"),
 
     body("password")
-    .notEmpty().withMessage("Escribe Una Contraseña").bail()
+    .notEmpty().withMessage("Contraseña invalida").bail()
     .isLength({min:4, max:15}).withMessage("Longitud: 4 a 15 Caracteres"),
 
     body("terminos")
