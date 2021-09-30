@@ -16,14 +16,20 @@ app.set('views', path.join(__dirname, '/src/views'));
 app.set('view engine', 'ejs');
 
 
+
+// creating 24 hours from milliseconds
+const oneDay = 1000 * 60 * 60 * 24;
+//session middleware
 app.use(session({
-  secret: "mensaje secreto",
-  resave:"true",
-  saveUninitialized:"true"
+  secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
+  saveUninitialized:true,
+  cookie: { maxAge: oneDay },
+  resave:false
+  
 }))
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
