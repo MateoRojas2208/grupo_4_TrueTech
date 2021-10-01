@@ -68,4 +68,20 @@ Less Of: - Distraernos .
          - Tardar en empezar el sprint.
   
 Stop Doing: - Enojarse y dejar de hacer.
+  
+     <hr>
+
+<h2>Quinto sprint<h2>
+
+Start Doing: - nada.
+  
+More of: - Trabajar todos los dias.
+  
+Keep doing:  - Dividir tareas.
+           
+Less Of: - Distraernos .
+         - Tardar en empezar el sprint.
+  
+Stop Doing: - No trabajar
             
+
