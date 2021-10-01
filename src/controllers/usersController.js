@@ -7,6 +7,8 @@ const express = require('express');
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
 
+
+
 const controller = {
     login: (req, res) => {
         res.render("login", {})
@@ -31,7 +33,7 @@ const controller = {
     },
     register: (req, res) => {
         console.log(req.session)
-        res.render("register", {})
+        res.render("register")
     },
     createNewAccount: (req, res) => {
             let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -59,7 +61,7 @@ const controller = {
 
     },
     profile: (req, res) => {
-        res.render("profile", {})
+        res.render("profile")
     },
     
 }
