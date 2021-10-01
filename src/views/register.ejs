@@ -29,37 +29,10 @@
             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
           </div>
           <span>O usa tu email para registrarte</span>
-<<<<<<< HEAD
-           <% if (locals.errors && errors.username) { %>
-            <div class="text-danger">
-                <i class="fas fa-exclamation-circle">  </i>  <%= errors.username.msg %>
-            </div>
-            <% } %>
-          <input type="text" placeholder="Name" name="userName" <%= locals.errors && errors.username ? 'is-invalid' : null %> value="<%= locals.oldData ? oldData.username : null %>"/>
-         <% if (locals.errors && errors.email) { %>
-          <div class="text-danger">
-              <i class="fas fa-exclamation-circle">  </i>  <%= errors.email.msg %>
-          </div>
-          <% } %>
-          <input type="email" placeholder="Email" name="email"class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-          value="<%= locals.oldData ? oldData.email : null %>">
-           <% if (locals.errors && errors.password) { %>
-          <div class="text-danger">
-              <i class="fas fa-exclamation-circle">  </i>  <%= errors.password.msg %>
-          </div>
-          <% } else {%>
-              <i class="fas fa-eye eyePsw"></i>
-              <% } %>
-          <input type="password" placeholder="Password" name="password"class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
-          value="<%= locals.oldData ? oldData.password : null %>">
-
-      
-=======
           <input type="text" placeholder="Name" />
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
           <input type="file" name="image" />
->>>>>>> 78bc7bfe051276a67098f4c859ba31466ee05a06
           <a href="#">Ayuda para elegir una contraseña?</a>
           <div class="terminos">
             <% if (locals.errors && errors.terminos) { %>
