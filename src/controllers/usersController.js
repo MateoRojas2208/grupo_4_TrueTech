@@ -18,14 +18,20 @@ const controller = {
             let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
             
             let ultimaID = users[users.length - 1].id;
-
+            
+            let link = req.file.path.replace("public", "")
+		    let imageLink2 = link.replace("\\", "/")
+            
             let newUser = {
                 id: ultimaID + 1,
                 username: req.body.userName,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 12),
+                photo: imageLink2,
                 clearence: "user"
             }
+            
+
             let newJSON = users.concat(newUser);
             let userJSON = JSON.stringify(newJSON, null, 2);
 

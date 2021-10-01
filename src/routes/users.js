@@ -12,6 +12,16 @@ const { body } = require("express-validator")
 const logged = require("../middlewares/loggedMiddleware")
 
 
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+       cb(null, './public/images/users');
+    },
+    filename: function (req, file, cb) {
+       cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`);
+    }
+ })
+
+ const uploadFile = multer({ storage });
 
 // express-validator
 // const validations = [
@@ -60,7 +70,7 @@ router.get('/register', usersController.register);
 
 /* POST register page */
 
-router.post("/register", usersController.createNewAccount);
+router.post("/register", uploadFile.single("image"), usersController.createNewAccount);
 
 /* GET profile page */
 

@@ -173,5 +173,12 @@
     "email": "zxczxczxc@zxczxc.com",
     "password": "$2a$12$qW3hwLsiwSFSzK8QWa4SH.71tHmETuhmPokv8t/K1fTKXXKqi/oOy",
     "clearence": "user"
+  },
+  {
+    "id": 26,
+    "email": "zxczxczxc@zxczxc.com",
+    "password": "$2a$12$mFpTrmzvlp7AFccPDaMo1OQITgdCvhzfYLk7L9fz3F1nBYO7FHt3O",
+    "photo": "/images\\users\\1633111695145_img_.png",
+    "clearence": "user"
   }
 ]

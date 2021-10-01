@@ -159,6 +159,10 @@ input {
   margin: 8px 0;
   width: 100%;
 }
+.contenido{
+width: 100%;
+}
+
 
 main {
   position: relative
@@ -342,7 +346,7 @@ footer a {
     height: 30px;
     width: 30px;
   }
-  .form-container form input {
+  .form-container form div input {
     height: 30px;
   }
   .form-container form a {
