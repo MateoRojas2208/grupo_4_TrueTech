@@ -176,9 +176,34 @@
   },
   {
     "id": 26,
+    "username": "asdasdfgfggg",
     "email": "zxczxczxc@zxczxc.com",
     "password": "$2a$12$mFpTrmzvlp7AFccPDaMo1OQITgdCvhzfYLk7L9fz3F1nBYO7FHt3O",
     "photo": "/images\\users\\1633111695145_img_.png",
+    "clearence": "user"
+  },
+  {
+    "id": 27,
+    "username": "Mateo Rojas",
+    "email": "asdasdasdas@asdas",
+    "password": "$2a$12$x4cqd8VrTsT7gW8YjMY3pO4D.BzQneTPEUIBf3R.CeH1Fxvl7XF4y",
+    "photo": "/images\\users\\1633123174736_img_.png",
+    "clearence": "user"
+  },
+  {
+    "id": 28,
+    "username": "Mateo Rojas",
+    "email": "asdasdasdas@asdasdasdasd",
+    "password": "$2a$12$iMXHgHjRqy/6PH1ugJOFIO7dpSqcopsPeymIgvFjv4/smod742x9y",
+    "photo": "/images\\users\\1633123256610_img_.png",
+    "clearence": "user"
+  },
+  {
+    "id": 29,
+    "username": "Mateo Rojas",
+    "email": "Rojas@asdasd",
+    "password": "$2a$12$7wtf8P6fcpgHCvnhWYBZpONqyxdFyGzS7BzvVuvbHznG9UmLiMpLe",
+    "photo": "/images\\users\\1633124440961_img_.png",
     "clearence": "user"
   }
 ]
