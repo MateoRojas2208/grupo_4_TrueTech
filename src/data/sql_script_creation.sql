@@ -1,13 +1,10 @@
-CREATE TABLE `admins` (
+CREATE TABLE `user` (
   `id` int(10) UNSIGNED NOT NULL,
-  `shop_id` int(10) UNSIGNED DEFAULT NULL,
-  `name` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `full_name` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
   `username` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` int(11) NOT NULL,
   `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `clearence` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT "user" NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `brands` (
@@ -17,66 +14,18 @@ CREATE TABLE `brands` (
 
 CREATE TABLE `brand_models` (
   `id` int(10) UNSIGNED NOT NULL,
-  `brand_id` int(10) UNSIGNED DEFAULT NULL,
-  `product_type_id` int(10) UNSIGNED DEFAULT NULL,
+  `brand_id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `categories` (
+CREATE TABLE `product_categories` (
   `id` int(10) UNSIGNED NOT NULL,
-  `_lft` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `_rgt` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `parent_id` int(10) UNSIGNED DEFAULT NULL,
-  `top` tinyint(4) NOT NULL,
-  `sort_order` int(11) NOT NULL,
-  `status` tinyint(4) NOT NULL
+  `name` varchar(100) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `countries` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-CREATE TABLE `markets` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `shops_count` int(11) NOT NULL,
-  `products_count` int(11) NOT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-CREATE TABLE `m_options` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-CREATE TABLE `m_option_values` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `m_option_id` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-CREATE TABLE `options` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `product_type_id` int(10) UNSIGNED DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-CREATE TABLE `option_values` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `option_id` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `products` (
@@ -97,33 +46,8 @@ CREATE TABLE `products` (
   `status` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `product_m_option_values` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `product_type_id` int(10) UNSIGNED DEFAULT NULL,
-  `m_option_id` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `product_option_values` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `product_id` int(10) UNSIGNED DEFAULT NULL,
-  `option_id` int(10) UNSIGNED DEFAULT NULL,
-  `option_value_id` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-CREATE TABLE `product_types` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `category_id` int(10) UNSIGNED DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-CREATE TABLE `product_type_m_options` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `product_type_id` int(10) UNSIGNED DEFAULT NULL,
-  `m_option_id` int(10) UNSIGNED DEFAULT NULL,
-  `m_option_value_id` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-CREATE TABLE `shops` (
+CREATE TABLE `shop` (
   `id` int(10) UNSIGNED NOT NULL,
   `market_id` int(10) UNSIGNED DEFAULT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
