@@ -1,139 +1,117 @@
-CREATE TABLE `user` (
+CREATE DATABASE  IF NOT EXISTS `database_trueTechV2`;
+USE `database_trueTechV2`;
+
+
+CREATE TABLE `color` (
+  `id` int(10) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
   `full_name` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
   `username` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `clearence` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT "user" NOT NULL
+  `clearence` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT "user" NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `brands` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `brand_models` (
   `id` int(10) UNSIGNED NOT NULL,
   `brand_id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+
+  PRIMARY KEY (`id`),
+  index (brand_id),
+ 	foreign key (brand_id )
+ 		references brands(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `product_categories` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(100) UNSIGNED NOT NULL
+  `name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `countries` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-CREATE TABLE `products` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `product_type_id` int(10) UNSIGNED DEFAULT NULL,
-  `category_id` int(10) UNSIGNED DEFAULT NULL,
-  `market_id` int(10) UNSIGNED DEFAULT NULL,
-  `shop_id` int(10) UNSIGNED DEFAULT NULL,
-  `country_id` int(10) UNSIGNED DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `price` int(11) NOT NULL,
-  `discount_price` int(11) NOT NULL,
-  `discount` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `views` int(11) NOT NULL,
-  `likes` int(11) NOT NULL,
-  `sort_order` int(11) NOT NULL,
-  `status` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 CREATE TABLE `shop` (
   `id` int(10) UNSIGNED NOT NULL,
-  `market_id` int(10) UNSIGNED DEFAULT NULL,
+  `admin_id` int(10) UNSIGNED NOT NULL,
+  `manager_id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `product_types_count` int(11) NOT NULL,
   `products_count` int(11) NOT NULL,
-  `views` int(11) NOT NULL,
   `photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` tinyint(4) NOT NULL
+  `sold_items` int(11) NOT NULL,
+  
+  PRIMARY KEY (`id`),
+  
+  index (admin_id),
+  index (manager_id),
+  
+ 	foreign key (admin_id)
+ 		references users(id),
+ 		
+ 	foreign key (manager_id)
+ 		references users(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-ALTER TABLE `admins`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `admins_username_unique` (`username`),
-  ADD UNIQUE KEY `admins_phone_unique` (`phone`),
-  ADD UNIQUE KEY `admins_email_unique` (`email`),
-  ADD KEY `admins_shop_id_foreign` (`shop_id`);
 
-ALTER TABLE `brands`
-  ADD PRIMARY KEY (`id`);
+CREATE TABLE `products` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `category_id` int(10) UNSIGNED NOT NULL,
+  `model_id` int(10) UNSIGNED NOT NULL,
+  `image_id` int(10) UNSIGNED NOT NULL,
+  `shop_id` int(10) UNSIGNED DEFAULT NULL,
+  `seller_id` int(10) UNSIGNED NOT NULL,
+  `color_id` int(10) UNSIGNED DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` varchar(500) NOT null,
+  `price` int(11) UNSIGNED NOT NULL,
+  `discount_price` int(11) DEFAULT NULL,
+  `discount` int(11) DEFAULT NULL,
+  `quantity` int(11) DEFAULT "1",
+  `sold_items` int(11) DEFAULT "0",
+  `likes` int(11) DEFAULT "0",
+  `status` boolean DEFAULT NULL,
+  `creation_date` datetime NOT NULL,
+  `update_date` datetime NOT NULL,
 
-ALTER TABLE `brand_models`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `brand_models_brand_id_foreign` (`brand_id`),
-  ADD KEY `brand_models_product_type_id_foreign` (`product_type_id`);
+  PRIMARY KEY (`id`),
 
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `categories__lft__rgt_parent_id_index` (`_lft`,`_rgt`,`parent_id`);
+  index (category_id),
+  index (model_id),
+  index (shop_id),
+  index (seller_id),
 
-ALTER TABLE `countries`
-  ADD PRIMARY KEY (`id`);
+  foreign key (category_id)
+ 		references product_categories(id),
 
-ALTER TABLE `markets`
-  ADD PRIMARY KEY (`id`);
+  foreign key (model_id)
+    references brand_models(id),
+  foreign key (shop_id)
+ 		references shop(id),
 
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
+  foreign key (seller_id)
+ 		references users(id)
 
-ALTER TABLE `m_options`
-  ADD PRIMARY KEY (`id`);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-ALTER TABLE `m_option_values`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `m_option_values_m_option_id_foreign` (`m_option_id`);
 
-ALTER TABLE `options`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `options_product_type_id_foreign` (`product_type_id`);
 
-ALTER TABLE `option_values`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `option_values_option_id_foreign` (`option_id`);
 
-ALTER TABLE `password_resets`
-  ADD KEY `password_resets_email_index` (`email`);
 
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `products_product_type_id_foreign` (`product_type_id`),
-  ADD KEY `products_category_id_foreign` (`category_id`),
-  ADD KEY `products_market_id_foreign` (`market_id`),
-  ADD KEY `products_shop_id_foreign` (`shop_id`),
-  ADD KEY `products_country_id_foreign` (`country_id`);
 
-ALTER TABLE `product_m_option_values`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `product_m_option_values_product_type_id_foreign` (`product_type_id`),
-  ADD KEY `product_m_option_values_m_option_id_foreign` (`m_option_id`);
 
-ALTER TABLE `product_option_values`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `product_option_values_product_id_foreign` (`product_id`),
-  ADD KEY `product_option_values_option_id_foreign` (`option_id`),
-  ADD KEY `product_option_values_option_value_id_foreign` (`option_value_id`);
 
-ALTER TABLE `product_types`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `product_types_category_id_foreign` (`category_id`);
 
-ALTER TABLE `product_type_m_options`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `product_type_m_options_product_type_id_foreign` (`product_type_id`),
-  ADD KEY `product_type_m_options_m_option_id_foreign` (`m_option_id`),
-  ADD KEY `product_type_m_options_m_option_value_id_foreign` (`m_option_value_id`);
 
-ALTER TABLE `shops`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `shops_market_id_foreign` (`market_id`);
