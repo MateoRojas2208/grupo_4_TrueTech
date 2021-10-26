@@ -16,10 +16,11 @@ const Pelicula = sequelize.define("Products",
         },
           seller_id:{type: Sequelize.BIGINT(11)
         },
-          name: {type: Sequelize.STRING},
+          name: {type: Sequelize.STRING
+        },
           description: {type: Sequelize.STRING
         },
-          color_id:{type: Sequelize.BIGINT(11)
+          color:{type: Sequelize.BIGINT(11)
         },
           price:{type: Sequelize.BIGINT(11)
         },
