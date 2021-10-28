@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require("express-session")
+const Sequelize = require('sequelize');
+const mysql = require("mysql2")
 
 var indexRouter = require('./src/routes/index');
 var usersRouter = require('./src/routes/users');
@@ -11,8 +13,13 @@ var productRouter = require("./src/routes/product")
 
 var app = express();
 
-var models = require("./database/models/Product")
-console.log(models)
+const db = require('./database/models');
+db.User.findByPk(1)
+.then((resultado) => {
+       console.log(resultado);
+});
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, '/src/views'));
