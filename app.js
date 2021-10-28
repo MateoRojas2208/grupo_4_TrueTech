@@ -11,6 +11,9 @@ var productRouter = require("./src/routes/product")
 
 var app = express();
 
+var models = require("./database/models/Product")
+console.log(models)
+
 // view engine setup
 app.set('views', path.join(__dirname, '/src/views'));
 app.set('view engine', 'ejs');
