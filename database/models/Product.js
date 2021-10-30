@@ -3,7 +3,8 @@ module.exports = (sequeliz, Sequelize) => {
   let cols = {
     id: {
       type: Sequelize.BIGINT(11),
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     categories_id: {
       type: Sequelize.BIGINT(11)
@@ -73,7 +74,7 @@ module.exports = (sequeliz, Sequelize) => {
       as: 'seller',
       foreignKey: 'seller_id'
     }),
-    Product.belongsTo(models.ProductCategory, {
+    Product.belongsTo(models.Category, {
       as: 'category',
       foreignKey: 'categories_id'
     }),

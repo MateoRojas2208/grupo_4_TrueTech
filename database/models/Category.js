@@ -1,5 +1,5 @@
 module.exports = (sequeliz, Sequelize) => {
-  let alias = "ProductCategory"
+  let alias = "Category"
   let cols = {
     id: {
       type: Sequelize.BIGINT(11),

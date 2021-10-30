@@ -19,14 +19,10 @@
     <main>
       <div>
         <br>
-
         <button id='cart-button' class="trigger cart-button-style">Mostrar Carrito</button>
-
-
-
         <div id="shop">
           <div id="shop">
-            <% productos.forEach(product=> { %>
+            <% product.forEach(product=> { %>
               <div class="products" id="<%= product.id %>">
                 <a href="product/detail/<%=product.id%>"><img class="product-image" src="<%=product.image%>">
                 </a>
@@ -40,11 +36,9 @@
                   <%= product.price%>
                 </p>
                 <button class="add-to-cart" id='test'>Agregar al carrito</button>
-
               </div>
               <% }) ; %>
           </div>
-
         </div>
         <div id='cart-wrapper' class="slider close">
           <div id='cart'>
@@ -62,7 +56,6 @@
               </table>
             </div>
           </div>
-
           <div id='amount-controls'>
             <div id="cart-amount-wrapper">
               <table>
@@ -71,22 +64,18 @@
                     <td id="subtotal-label">Subtotal:</td>
                     <td id="subtotal">0.00</td>
                   </tr>
-
                   <tr id='total-wrapper'>
                     <td id="total-label">Total:</td>
                     <td id="total">0.00</td>
                   </tr>
-
                   <tr id="promo-checkout">
                     <td id="promo-wrapper">
                       <input id="promo" placeholder="Input Promo Code">
                       <button id="apply-promo">Apply Promo</button>
                     </td>
-
                     <td>
                       <button id="checkout">Checkout</button>
                     </td>
-
                     <td>
                       <button id="ks" class="keep-shopping">Keep Shopping</button>
                     </td>

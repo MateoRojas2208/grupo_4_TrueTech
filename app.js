@@ -13,13 +13,6 @@ var productRouter = require("./src/routes/product")
 
 var app = express();
 
-const db = require('./database/models');
-db.Product.findByPk(1)
-.then((resultado) => {
-       console.log(resultado);
-});
-
-
 
 // view engine setup
 app.set('views', path.join(__dirname, '/src/views'));

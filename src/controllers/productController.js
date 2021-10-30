@@ -4,41 +4,45 @@ const { re } = require('semver');
 const uniqid = require("uniqid");
 const { Z_ASCII } = require('zlib');
 var _ = require('lodash');
-var array = require('lodash/array')
-
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
+const db = require('../../database/models');
+const Product = db.Product;
+const Category = db.Category
 
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-
-		let archivoProductosJson = fs.readFileSync(path.join(__dirname, '../data/productsDataBase.json'), { encoding: "utf-8" })
-		let productos = JSON.parse(archivoProductosJson)
-		let productosSin0 = productos.shift()
-		res.render("product", { productos })
+		Product.findAll({
+			
+		})
+			.then(product => {
+				return res.render('product', { product });
+			})
 	},
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
-		let productId = req.params.id
-		res.render("productDetail",  { product: products.find(x => x.id == productId)}, {logeado})
+		Product.findByPk(req.params.id, {})
+		.then(product => { 
+			res.render('productDetail', { product });
+			}
+		)
 	},
 
 	// Create - Form to create
 	create: (req, res) => {
-		res.render("productCreation", { products })
+
+		Category.findAll()
+            .then(categories => {
+                return res.render('productCreation', { categories });
+            })
 	},
 
 	// Create -  Method to store
 	store: (req, res) => {
 		let archivoProductosJson = fs.readFileSync(path.join(__dirname, '../data/productsDataBase.json'), { encoding: "utf-8" })
-		
+
 		let productos = JSON.parse(archivoProductosJson)
-		
+
 		let link = req.file.path.replace("public", "")
 		let imageLink2 = link.replace("\\", "/")
 
@@ -61,7 +65,7 @@ const controller = {
 	// Update - Form to edit
 	edit: (req, res) => {
 		let productId = req.params.id
-		res.render("productEdit", { product: products.find(x => x.id == productId)})
+		res.render("productEdit", { product: products.find(x => x.id == productId) })
 	},
 	// Update - Method to update
 	update: (req, res) => {
@@ -70,7 +74,7 @@ const controller = {
 		let productos = JSON.parse(archivoProductosJson)
 
 		let productId = req.params.id
-		var filtered = _.remove(productos, (x => x.id == productId) )
+		var filtered = _.remove(productos, (x => x.id == productId))
 
 		let link = req.file.path.replace("public", "")
 		let imageLink2 = link.replace("\\", "/")
@@ -84,10 +88,10 @@ const controller = {
 			colour: req.body.colour,
 			price: "$" + req.body.price
 		}
-		
-		
+
+
 		productos.push(producto);
-		
+
 		let productosJSON = JSON.stringify(productos);
 		fs.writeFileSync(path.join(__dirname, '../data/productsDataBase.json'), productosJSON);
 		res.redirect("/product")
@@ -99,7 +103,7 @@ const controller = {
 		let productos = JSON.parse(archivoProductosJson)
 		let productId = req.params.id
 
-		var filtered = _.remove(productos, (x => x.id == productId) )
+		var filtered = _.remove(productos, (x => x.id == productId))
 
 		let productosJSON = JSON.stringify(productos);
 

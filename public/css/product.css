@@ -194,8 +194,21 @@ h2 {
     margin: 3% 1%;
     text-align: center;
     padding: 0 0 1% 0;
-    height: 400px;
+    height: 530px;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 
+}
+.textoYBoton{
+display: flex;
+}
+.texto{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 
@@ -390,6 +403,9 @@ h2 {
   color: white;
   transition: background .5s;
   border-radius: 4px;
+}
+.product-name{
+  font-weight: bold
 }
 
 /* ----------------------------footer--------------------------------------------------------- */
