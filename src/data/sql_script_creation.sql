@@ -30,7 +30,7 @@ CREATE TABLE `brand_models` (
  		references brands(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `product_categories` (
+CREATE TABLE `categories` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
@@ -63,7 +63,7 @@ CREATE TABLE `shop` (
 
 CREATE TABLE `products` (
   `id` int(10) UNSIGNED NOT NULL,
-  `product_categories_id` int(10) UNSIGNED NOT NULL,
+  `categories_id` int(10) UNSIGNED NOT NULL,
   `model_id` int(10) UNSIGNED NOT NULL,
   `shop_id` int(10) UNSIGNED DEFAULT NULL,
   `seller_id` int(10) UNSIGNED NOT NULL,
@@ -83,13 +83,13 @@ CREATE TABLE `products` (
 
   PRIMARY KEY (`id`),
 
-  index (product_categories_id),
+  index (categories_id),
   index (model_id),
   index (shop_id),
   index (seller_id),
 
-  foreign key (product_categories_id)
- 		references product_categories(id),
+  foreign key (categories_id)
+ 		references categories(id),
 
   foreign key (model_id)
     references brand_models(id),

@@ -5,7 +5,7 @@ module.exports = (sequeliz, Sequelize) => {
       type: Sequelize.BIGINT(11),
       primaryKey: true
     },
-    product_categories_id: {
+    categories_id: {
       type: Sequelize.BIGINT(11)
     },
     model_id: {
@@ -63,7 +63,25 @@ module.exports = (sequeliz, Sequelize) => {
     timestamps: false,
     //Si no tengo timestamps
   };
-  const product = sequeliz.define(alias, cols, config)
+  const Product = sequeliz.define(alias, cols, config)
+  Product.associate = function (models) {
+    Product.belongsTo(models.Shop, {
+      as: 'shop',
+      foreignKey: 'shop_id'
+    }),
+    Product.belongsTo(models.User, {
+      as: 'seller',
+      foreignKey: 'seller_id'
+    }),
+    Product.belongsTo(models.ProductCategory, {
+      as: 'category',
+      foreignKey: 'categories_id'
+    }),
+    Product.belongsTo(models.BrandModel, {
+      as: 'model',
+      foreignKey: 'model_id'
+    })
+  }
 
-  return product
+  return Product
 }

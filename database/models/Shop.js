@@ -34,6 +34,20 @@ module.exports = (sequeliz, Sequelize) => {
       //Si no tengo timestamps
     };
     const Shop = sequeliz.define(alias, cols, config)
+    Shop.associate = function (models) {
+      Shop.belongsTo(models.User, {
+        as: 'admin',
+        foreignKey: 'admin_id'
+      });
+      Shop.belongsTo(models.User, {
+        as: 'manager',
+        foreignKey: 'manager_id'
+      }),
+      Shop.hasMany(models.Product, {
+        as: 'shop',
+        foreignKey: 'shop_id'
+      })
+    }
   
     return Shop
   }

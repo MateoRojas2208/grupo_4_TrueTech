@@ -28,6 +28,20 @@ module.exports = (sequeliz, Sequelize) => {
       //Si no tengo timestamps
     };
     const User = sequeliz.define(alias, cols, config)
+    User.associate = function (models) {
+      User.hasMany(models.Shop, {
+        as: 'admin',
+        foreignKey: 'admin_id'
+      });
+      User.hasMany(models.Shop, {
+        as: 'manager',
+        foreignKey: 'manager_id'
+      }),
+      User.hasMany(models.Product, {
+        as: 'seller',
+        foreignKey: 'seller_id'
+      })
+    }
   
     return User
   }

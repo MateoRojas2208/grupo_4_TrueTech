@@ -14,7 +14,7 @@ var productRouter = require("./src/routes/product")
 var app = express();
 
 const db = require('./database/models');
-db.User.findByPk(1)
+db.Product.findByPk(1)
 .then((resultado) => {
        console.log(resultado);
 });
