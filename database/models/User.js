@@ -3,19 +3,23 @@ module.exports = (sequeliz, Sequelize) => {
     let cols = {
       id: {
         type: Sequelize.BIGINT(11),
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
       },
       full_name: {
-        type: Sequelize.BIGINT(11)
+        type: Sequelize.STRING
       },
       username: {
-        type: Sequelize.BIGINT(11)
+        type: Sequelize.STRING
       },
       email: {
-        type: Sequelize.BIGINT(11)
+        type: Sequelize.STRING
       },
       password: {
-        type: Sequelize.BIGINT(11)
+        type: Sequelize.STRING
+      },
+      photo: {
+        type: Sequelize.STRING
       },
       clearence: {
         type: Sequelize.STRING

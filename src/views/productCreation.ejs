@@ -21,12 +21,11 @@
                         <h4>Producto</h4>
                         <div class="input-group input-group-icon">
                             <select name="category" id="category">
-                                <% categories.forEach(element=> { %>
-                                    <% console.log(element.name) %>  
-                                    <option value="<% element.name %> ">
-                                        <% element.name %>
+                                <% for( let i = 0; i < categories.length; i++ ) { %>
+                                <option value="<% categories[i].name %> ">
+                                        <% categories[i].name %>
                                     </option>
-                                    <% }) %>
+                                <% } %>
                             </select>
                             <div class="input-icon"><i class="fa fa-database" aria-hidden="true"></i></div>
                         </div>
