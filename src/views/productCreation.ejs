@@ -22,8 +22,8 @@
                         <div class="input-group input-group-icon">
                             <select name="category" id="category">
                                 <% for( let i = 0; i < categories.length; i++ ) { %>
-                                <option value="<% categories[i].name %> ">
-                                        <% categories[i].name %>
+                                <option value="<%= categories[i].id %> ">
+                                        <%= categories[i].name %>
                                     </option>
                                 <% } %>
                             </select>

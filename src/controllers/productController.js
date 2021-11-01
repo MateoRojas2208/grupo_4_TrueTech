@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { re } = require('semver');
-const uniqid = require("uniqid");
+var rn = require('random-number')
 const { Z_ASCII } = require('zlib');
 var _ = require('lodash');
 const db = require('../../database/models');
@@ -44,17 +44,42 @@ const controller = {
 		let link = req.file.path.replace("public", "")
 		let imageLink2 = link.replace("\\", "/")
 
-		db.products.create({
+		Product.create({
+			id: rn({
+				min: 1000,
+				max: 1000000000000,
+				integer: true
+			}),
+			categories_id: req.body.category,
+			model_id: rn({
+				min: 1,
+				max: 20,
+				integer: true
+			}) ,
+			shop_id: rn({
+				min: 1,
+				max: 20,
+				integer: true
+			}),
+			seller_id: rn({
+				min: 1,
+				max: 20,
+				integer: true
+			}),
 			name: req.body.name,
 			description: req.body.description,
-			image: imageLink2,
-			category: req.body.category,
+			color: req.body.colour,
 			price: req.body.price,
-			creation_date: timeStamp,
-			update_date: timeStamp
-		});
-
-		res.redirect("/product")
+			discount_price: 0,
+			discount: 0,
+			quantity: 1,
+			sold_items: 0,
+			likes: 0,
+			status: true,
+			image: imageLink2
+		}).then(res.redirect("/product"))
+		// console.log()
+		
 	},
 
 	// Update - Form to edit
@@ -69,19 +94,23 @@ const controller = {
 	// Update - Method to update
 	update: (req, res) => {
 
-		db.Product.update(
-			{
+		let link = req.file.path.replace("public", "")
+		let imageLink2 = link.replace("\\", "/")
+
+		db.Product.update({
 				name: req.body.name,
 				description: req.body.description,
-				image: imageLink2,
-				category: req.body.category,
+				color: req.body.colour,
 				price: req.body.price,
-				creation_date: timeStamp,
-				update_date: timeStamp
-			},{
-			where: {id: req.params.id}
-		})
-		res.redirect("/product")
+				discount_price: 0,
+				discount: 0,
+				quantity: 1,
+				status: true,
+				image: imageLink2
+			}, {
+			where: { id: req.params.id }
+		}).then(res.redirect("/product"))
+		
 	},
 
 	// Delete - Delete one product from DB
