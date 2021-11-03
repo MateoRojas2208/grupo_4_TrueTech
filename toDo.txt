@@ -1,3 +1,9 @@
-Menu mejor hecho en products
-carrito en base de datos
-CSS EN products
+--Menu mejor hecho en products
+--carrito en base de datos
+--CSS EN products
+--agregar especificaciones en products db para usar en product description (array? objeto?)
+
+--idea para crear products: para especificaciones hacer algo con JS para que agregue una linea mas tipo button y addeventlistener para que agregue algo como:
+<div id="titulo de la especificacion" name="titulo1">...</div>
+<div id="especificacion" name="espec1">...</div>
+y que con css aparezcan al lado una de la otra, despues en controllers se junten en un objeto y se mande para crear en la base de datos

@@ -10,6 +10,13 @@ const { search } = require('../routes/product');
 const Product = db.Product;
 const Category = db.Category
 const Op = db.Sequelize.Op
+Product.findOne({
+	where: {
+		id: 1
+	}
+}).then(i=>{
+	console.log(i.categories_id)
+})
 
 const controller = {
 	// Root - Show all products
