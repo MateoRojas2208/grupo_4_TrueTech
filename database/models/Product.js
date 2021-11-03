@@ -7,16 +7,24 @@ module.exports = (sequeliz, Sequelize) => {
       autoIncrement: true
     },
     categories_id: {
-      type: Sequelize.BIGINT(11)
+      type: Sequelize.BIGINT(11),
+      references: 'categories',
+      referencesKey: 'id'
     },
     model_id: {
-      type: Sequelize.BIGINT(11)
+      type: Sequelize.BIGINT(11),
+      references: 'model',
+      referencesKey: 'id'
     },
     shop_id: {
-      type: Sequelize.BIGINT(11)
+      type: Sequelize.BIGINT(11),
+      references: 'shop',
+      referencesKey: 'id'
     },
     seller_id: {
-      type: Sequelize.BIGINT(11)
+      type: Sequelize.BIGINT(11),
+      references: 'user',
+      referencesKey: 'id'
     },
     name: {
       type: Sequelize.STRING

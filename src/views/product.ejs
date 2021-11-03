@@ -20,24 +20,69 @@
       <div>
         <br>
         <button id='cart-button' class="trigger cart-button-style">Mostrar Carrito</button>
+        <div id="search">
+          <form action="/product/search" method="post">
+            <div class="wrap">
+                 <input type="text" class="searchTerm" placeholder="Buscar por nombre..." name="search">
+                 <button type="submit" class="searchButton">
+                   <i class="fa fa-search"></i>
+                </button>
+           </div>
+          </form>
+          
+        </div>
+        <div id="filter">
+          <div>
+            Filtro Por categoria
+          </div>
+          <div class="containerOptionsC">
+            <% for( let i=0; i < categories.length; i++ ) { %>
+              <a href="/product/filter/<%= categories[i].id %>" class="optionsC">
+                <div class="optionsC">
+                  <%= categories[i].name %>
+                </div>
+              </a>
+              <% } %>
+          </div>
+
+        </div>
         <div id="shop">
           <div id="shop">
-            <% product.forEach(product=> { %>
-              <div class="products" id="<%= product.id %>">
-                <a href="product/detail/<%=product.id%>"><img class="product-image" src="<%=product.image%>">
-                </a>
-                <p class="product-name">
-                  <%= product.name%>
-                </p>
-                <p class="product-description">
-                  <%= product.description%>
-                </p>
-                <p class="product-price" value='<%= product.price%>'>
-                  <%= product.price%>
-                </p>
-                <button class="add-to-cart" id='test'>Agregar al carrito</button>
-              </div>
-              <% }) ; %>
+            <% if (product !== "VACIO"){ %>
+              <% for( let i=0; i < categories.length; i++ ) { %>
+                <div class="products" id="<%= product[i].id %>">
+                  <a href="product/detail/<%=product[i].id%>"><img class="product-image" src="<%=product[i].image%>">
+                  </a>
+                  <p class="product-name">
+                    <%= product[i].name%>
+                  </p>
+                  <p class="product-description">
+                    <%= product[i].description%>
+                  </p>
+                  <p class="product-price" value='<%= product[i].price%>'>
+                    <%= product[i].price%>
+                  </p>
+                  <button class="add-to-cart" id='test'>Agregar al carrito</button>
+                </div>
+                <% }} ; %>
+                
+                  <% if (filtered !== "VACIO" ){ %>
+                    <% for( let i=0; i < filtered.length; i++ ) { %>
+                    <div class="products" id="i">
+                      <a href="product/detail/<%=filtered[i].id%>"><img class="product-image" src="<%=filtered[i].image%>">
+                      </a>
+                      <p class="product-name">
+                        <%= filtered[i].name%>
+                      </p>
+                      <p class="product-description">
+                        <%= filtered[i].description%>
+                      </p>
+                      <p class="product-price" value='<%= filtered[i].price%>'>
+                        <%= filtered[i].price%>
+                      </p>
+                      <button class="add-to-cart" id='test'>Agregar al carrito</button>
+                    </div>
+                    <% }} %>
           </div>
         </div>
         <div id='cart-wrapper' class="slider close">

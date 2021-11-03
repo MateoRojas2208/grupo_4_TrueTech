@@ -25,6 +25,9 @@ const uploadFile = multer({ storage });
 
 /*** GET ALL PRODUCTS ***/
 router.get('/', productsController.index);
+//***GET SOME PRODUCTS ***/ 
+router.post("/search", productsController.indexSearch)
+router.get("/filter/:id", productsController.indexFilter)
 
 // /*** CREATE ONE PRODUCT ***/ 
 router.get('/create', productsController.create);

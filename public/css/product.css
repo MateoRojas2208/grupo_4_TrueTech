@@ -63,13 +63,15 @@ a.active, a:hover {
 #check {
   display: none;
 }
-@media (min-width: 952px){
-  .logo{
-  font-size: 35px;
-  padding: 0 100px;
-  padding-left: 50px
+
+@media (min-width: 952px) {
+  .logo {
+    font-size: 35px;
+    padding: 0 100px;
+    padding-left: 50px
   }
 }
+
 @media (max-width: 952px) {
   .logo {
     font-size: 30px;
@@ -129,14 +131,9 @@ section {
 
 /* ----------------------------------------main--------------------------- */
 
-
-
-.main{
+.main {
   margin-bottom: 30px;
 }
-
-
-
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 * {
@@ -188,29 +185,29 @@ h2 {
   color: white;
 }
 
-  .products {
-    float: left;
-    width: 23%;
-    margin: 3% 1%;
-    text-align: center;
-    padding: 0 0 1% 0;
-    height: 530px;
-    display: flex;
-    align-content: center;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+.products {
+  float: left;
+  width: 23%;
+  margin: 3% 1%;
+  text-align: center;
+  padding: 0 0 1% 0;
+  height: 530px;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
 
+.textoYBoton {
+  display: flex;
 }
-.textoYBoton{
-display: flex;
-}
-.texto{
+
+.texto {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-
 
 .products img {
   border-top-left-radius: 10px;
@@ -404,8 +401,25 @@ display: flex;
   transition: background .5s;
   border-radius: 4px;
 }
-.product-name{
+
+.product-name {
   font-weight: bold
+}
+
+.optionsC {
+  display: flex;
+  justify-content: center;
+  color: black;
+  height: 30px;
+  width: 20%;
+}
+
+.containerOptionsC {
+  top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 /* ----------------------------footer--------------------------------------------------------- */
@@ -567,8 +581,6 @@ footer a:hover {
     padding-left: 0;
   }
 }
-
-
 
 .facilidad {
   color: #007c11;
