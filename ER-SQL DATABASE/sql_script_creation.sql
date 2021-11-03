@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `database_trueTech`;
-USE `database_trueTech`;
+CREATE DATABASE  IF NOT EXISTS `database_trueTech1`;
+USE `database_trueTech1`;
 
 
 

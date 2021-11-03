@@ -68,7 +68,7 @@ const controller = {
 				return res.render('product', {
 					product: products,
 					categories: category,
-					filtered: filtered
+					filtered: [filtered]
 				});
 			});
 		})
