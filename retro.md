@@ -69,7 +69,7 @@ Less Of: - Distraernos .
   
 Stop Doing: - Enojarse y dejar de hacer.
   
-     <hr>
+<hr>
 
 <h2>Quinto sprint<h2>
 
@@ -84,7 +84,7 @@ Less Of: - Distraernos .
   
 Stop Doing: - No trabajar
             
-     <hr>
+<hr>
 
 <h2>Sexto sprint<h2>
 
