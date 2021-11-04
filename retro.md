@@ -88,15 +88,14 @@ Stop Doing: - No trabajar
 
 <h2>Sexto sprint<h2>
 
-Start Doing: - Trabajar(Faustino).
+Start Doing: - Volver a trabajar juntos.
   
 More of: - Que Faustino trabaje.
   
 Keep doing:  .
            
-Less Of: - No trabajar (Faustino)
-         - Tardar en empezar el sprint.
-  
+Less Of: - Tardar en empezar el sprint.
+         
 Stop Doing: - No trabajar (Faustino)
             
 
