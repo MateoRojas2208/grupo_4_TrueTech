@@ -8,12 +8,13 @@
         <!------ header ------->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
 </head>
 
 <body>
+
     <!---------------- header--------- -->
     <%- include("./partials/header") -%>
-
         <main>
             <div class="container">
                 <form action="/product/creation" method="POST" enctype="multipart/form-data">
@@ -21,11 +22,11 @@
                         <h4>Producto</h4>
                         <div class="input-group input-group-icon">
                             <select name="category" id="category">
-                                <% for( let i = 0; i < categories.length; i++ ) { %>
-                                <option value="<%= categories[i].id %> ">
+                                <% for( let i=0; i < categories.length; i++ ) { %>
+                                    <option value="<%= categories[i].id %> ">
                                         <%= categories[i].name %>
                                     </option>
-                                <% } %>
+                                    <% } %>
                             </select>
                             <div class="input-icon"><i class="fa fa-database" aria-hidden="true"></i></div>
                         </div>
@@ -66,14 +67,116 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="lastRow">
+                        <h4>Especificaciones</h4>
+                        <div class="spec " id="spec1">
+                            <div class="specH1">
+                                <input type="text" placeholder="especificacionTitulo1" name="specT1">
+                            </div>
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            <div class="specH2">
+                                <input type="text" placeholder="especificacionDesc1" name="specD1">
+                            </div>
+                        </div>
+                        <div class="spec specHidden" id="spec2">
+                            <div class="specH1">
+                                <input type="text" placeholder="especificacionTitulo1" name="specT2">
+                            </div>
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            <div class="specH2">
+                                <input type="text" placeholder="especificacionDesc1" name="specD2">
+                            </div>
+                        </div>
+                        <div class="spec specHidden" id="spec3">
+                            <div class="specH1">
+                                <input type="text" placeholder="especificacionTitulo1" name="specT3">
+                            </div>
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            <div class="specH2">
+                                <input type="text" placeholder="especificacionDesc1" name="specD3">
+                            </div>
+                        </div>
+                        <div class="spec specHidden" id="spec4">
+                            <div class="specH1">
+                                <input type="text" placeholder="especificacionTitulo1" name="specT4">
+                            </div>
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            <div class="specH2">
+                                <input type="text" placeholder="especificacionDesc1" name="specD4">
+                            </div>
+                        </div>
+                        <div class="spec specHidden" id="spec5">
+                            <div class="specH1">
+                                <input type="text" placeholder="especificacionTitulo1" name="specT5">
+                            </div>
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            <div class="specH2">
+                                <input type="text" placeholder="especificacionDesc1" name="specD5">
+                            </div>
+                        </div>
+                        <div class="spec specHidden" id="spec6">
+                            <div class="specH1">
+                                <input type="text" placeholder="especificacionTitulo1" name="specT6">
+                            </div>
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            <div class="specH2">
+                                <input type="text" placeholder="especificacionDesc1" name="specD6">
+                            </div>
+                        </div>
+                        <div class="spec specHidden" id="spec7">
+                            <div class="specH1">
+                                <input type="text" placeholder="especificacionTitulo1" name="specT7">
+                            </div>
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            <div class="specH2">
+                                <input type="text" placeholder="especificacionDesc1" name="specD7">
+                            </div>
+                        </div>
+                        <div class="spec specHidden" id="spec8">
+                            <div class="specH1">
+                                <input type="text" placeholder="especificacionTitulo1" name="specT8">
+                            </div>
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            <div class="specH2">
+                                <input type="text" placeholder="especificacionDesc1" name="specD8">
+                            </div>
+                        </div>
+                        <div class="spec specHidden" id="spec9">
+                            <div class="specH1">
+                                <input type="text" placeholder="especificacionTitulo1" name="specT9">
+                            </div>
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            <div class="specH2">
+                                <input type="text" placeholder="especificacionDesc1" name="specD9">
+                            </div>
+                        </div>
+                        <div class="spec specHidden" id="spec10">
+                            <div class="specH1">
+                                <input type="text" placeholder="especificacionTitulo1" name="specT10" value="">
+                            </div>
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            <div class="specH2">
+                                <input type="text" placeholder="especificacionDesc1" name="specD10">
+                            </div>
+                        </div>
+                        <div class="buttonsContainer">
+                            </divclass>
+                            <button type="button" class="specButton" id="addSpec">
+                                Agregar Especificacion
+                            </button>
+                            <button type="button" class="specButton" id="removeSpec">
+                                Quitar Especificacion
+                            </button>
+                        </div>
+                    </div>
                     <!-- Cambiar esto para que al apretar el boton se cree el producto -->
                     <div class="entregar">
                         <button type="submit" class="ghost" id="signUp">Crear Producto</button>
                     </div>
                 </form>
             </div>
-        </main>
 
+        </main>
+        <script type="text/javascript" src="/js/productCreation.js"></script>
 </body>
 <%- include("./partials/footer") -%>

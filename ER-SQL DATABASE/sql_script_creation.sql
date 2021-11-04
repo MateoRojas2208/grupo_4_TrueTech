@@ -62,12 +62,27 @@ CREATE TABLE `shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
+CREATE TABLE `specs` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `spec1` int(10) UNSIGNED NOT NULL,
+  `spec2` int(10) UNSIGNED NOT NULL,
+  `spec3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `spec4` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `spec5` int(11) NOT NULL,
+  `spec6` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `spec7` int(11) NOT NULL,
+  
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
 CREATE TABLE `products` (
   `id` int(10) UNSIGNED NOT NULL,
   `categories_id` int(10) UNSIGNED NOT NULL,
   `model_id` int(10) UNSIGNED NOT NULL,
   `shop_id` int(10) UNSIGNED DEFAULT NULL,
   `seller_id` int(10) UNSIGNED NOT NULL,
+  `specs_id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` varchar(500) NOT null,
   `color` varchar(20)  DEFAULT NULL,
@@ -88,17 +103,22 @@ CREATE TABLE `products` (
   index (model_id),
   index (shop_id),
   index (seller_id),
+  index (specs_id),
 
   foreign key (categories_id)
  		references categories(id),
 
   foreign key (model_id)
     references brand_models(id),
+
   foreign key (shop_id)
  		references shop(id),
 
   foreign key (seller_id)
- 		references users(id)
+ 		references users(id),
+
+  foreign key (specs_id)
+ 		references specs(id)
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

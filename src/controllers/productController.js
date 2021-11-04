@@ -10,13 +10,6 @@ const { search } = require('../routes/product');
 const Product = db.Product;
 const Category = db.Category
 const Op = db.Sequelize.Op
-Product.findOne({
-	where: {
-		id: 1
-	}
-}).then(i=>{
-	console.log(i.categories_id)
-})
 
 const controller = {
 	// Root - Show all products
@@ -102,45 +95,98 @@ const controller = {
 
 	// Create -  Method to store
 	store: (req, res) => {
-
 		let link = req.file.path.replace("public", "")
 		let imageLink2 = link.replace("\\", "/")
 
-		Product.create({
-			id: rn({
-				min: 1000,
-				max: 1000000000000,
-				integer: true
-			}),
-			categories_id: req.body.category,
-			model_id: rn({
-				min: 1,
-				max: 20,
-				integer: true
-			}),
-			shop_id: rn({
-				min: 1,
-				max: 20,
-				integer: true
-			}),
-			seller_id: rn({
-				min: 1,
-				max: 20,
-				integer: true
-			}),
-			name: req.body.name,
-			description: req.body.description,
-			color: req.body.colour,
-			price: req.body.price,
-			discount_price: 0,
-			discount: 0,
-			quantity: 1,
-			sold_items: 0,
-			likes: 0,
-			status: true,
-			image: imageLink2
-		}).then(res.redirect("/product"))
-		// console.log()
+		let specs = [
+			{
+				specTitle: req.body.specT1,
+				specDescription: req.body.specD1
+			},
+			{
+				specTitle: req.body.specT2,
+				specDescription: req.body.specD2
+			},
+			{
+				specTitle: req.body.specT3,
+				specDescription: req.body.specD3
+			},
+			{
+				specTitle: req.body.specT4,
+				specDescription: req.body.specD4
+			},
+			{
+				specTitle: req.body.specT5,
+				specDescription: req.body.specD5
+			},
+			{
+				specTitle: req.body.specT6,
+				specDescription: req.body.specD6
+			},
+			{
+				specTitle: req.body.specT7,
+				specDescription: req.body.specD7
+			},
+			{
+				specTitle: req.body.specT8,
+				specDescription: req.body.specD8
+			},
+			{
+				specTitle: req.body.specT9,
+				specDescription: req.body.specD9
+			},
+			{
+				specTitle: req.body.specT10,
+				specDescription: req.body.specD10
+			}
+
+		]
+		var filteredSpecs = []
+		for (let i=0;i<10;i++){
+			if (specs[i].specTitle !== ""){
+
+				filteredSpecs.push(specs[i])
+			}
+			
+		}
+		let a = `hola ${filteredSpecs[1].specTitle}`
+		console.log(a)
+
+		// Product.create({
+		// 	id: rn({
+		// 		min: 1000,
+		// 		max: 1000000000000,
+		// 		integer: true
+		// 	}),
+		// 	categories_id: req.body.category,
+		// 	model_id: rn({
+		// 		min: 1,
+		// 		max: 20,
+		// 		integer: true
+		// 	}),
+		// 	shop_id: rn({
+		// 		min: 1,
+		// 		max: 20,
+		// 		integer: true
+		// 	}),
+		// 	seller_id: rn({
+		// 		min: 1,
+		// 		max: 20,
+		// 		integer: true
+		// 	}),
+		// 	name: req.body.name,
+		// 	description: req.body.description,
+		// 	specs: filteredSpecs,
+		// 	color: req.body.colour,
+		// 	price: req.body.price,
+		// 	discount_price: 0,
+		// 	discount: 0,
+		// 	quantity: 1,
+		// 	sold_items: 0,
+		// 	likes: 0,
+		// 	status: true,
+		// 	image: imageLink2
+		// }).then(res.redirect("/product"))
 
 	},
 

@@ -114,8 +114,6 @@ section {
     height: calc(100vh - 80px);
 }
 
-
-
 /* ----------------------------footer--------------------------------------------------------- */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
@@ -285,9 +283,11 @@ footer a:hover {
 main {
     margin-top: 5%;
 }
-footer{
+
+footer {
     margin-top: 30%;
 }
+
 body {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15px;
@@ -513,27 +513,32 @@ select option {
     left: 28%;
     margin: 20px;
 }
-#colour{
+
+#colour {
     height: 45.328px;
     margin: 0px;
     padding-left: 40%;
     padding-right: 24%;
 }
-.entregar{
+
+.entregar {
     display: flex;
     justify-content: center;
-}
-.signo{
-    display: block;
-}
-.form-destroy{
-    display: flex;
-    justify-content: center;
-}
-.invisible{
-    display: none;
+    padding-top: 40px;
 }
 
+.signo {
+    display: block;
+}
+
+.form-destroy {
+    display: flex;
+    justify-content: center;
+}
+
+.invisible {
+    display: none;
+}
 
 .button2 {
     position: relative;
@@ -549,15 +554,18 @@ select option {
     filter: hue-rotate(0deg);
     border: 2px solid #d2bdff;
     transition: all 0.1s linear;
-  }
-  .button2:hover {
+}
+
+.button2:hover {
     border: 1px solid transparent;
-  }
-  .button2:hover span {
+}
+
+.button2:hover span {
     position: absolute;
     display: block;
-  }
-  .button2:hover span:nth-child(1) {
+}
+
+.button2:hover span:nth-child(1) {
     filter: hue-rotate(0deg);
     top: 0;
     left: 0;
@@ -565,16 +573,18 @@ select option {
     height: 3px;
     background: linear-gradient(90deg, transparent, #3a86ff);
     animation: animate1 1s linear infinite;
-  }
-  @keyframes animate1 {
+}
+
+@keyframes animate1 {
     0% {
         left: -100%;
-   }
+    }
     50%, 100% {
         left: 100%;
-   }
-  }
-  .button2:hover span:nth-child(2) {
+    }
+}
+
+.button2:hover span:nth-child(2) {
     filter: hue-rotate(60deg);
     top: -100%;
     right: 0;
@@ -583,16 +593,18 @@ select option {
     background: linear-gradient(180deg, transparent, #3a86ff);
     animation: animate2 1s linear infinite;
     animation-delay: 0.25s;
-  }
-  @keyframes animate2 {
+}
+
+@keyframes animate2 {
     0% {
         top: -100%;
-   }
+    }
     50%, 100% {
         top: 100%;
-   }
-  }
-  .button2:hover span:nth-child(3) {
+    }
+}
+
+.button2:hover span:nth-child(3) {
     filter: hue-rotate(120deg);
     bottom: 0;
     right: 0;
@@ -600,18 +612,20 @@ select option {
     background: linear-gradient(270deg, transparent, #3a86ff);
     animation: animate3 1s linear infinite;
     animation-delay: 0.5s;
-  }
-  @keyframes animate3 {
+}
+
+@keyframes animate3 {
     0% {
         right: -100%;
         height: 3px;
-   }
+    }
     50%, 100% {
         height: 2px;
         right: 100%;
-   }
-  }
-  .button2:hover span:nth-child(4) {
+    }
+}
+
+.button2:hover span:nth-child(4) {
     filter: hue-rotate(300deg);
     bottom: -100%;
     left: 0;
@@ -620,26 +634,56 @@ select option {
     background: linear-gradient(360deg, transparent, #3a86ff);
     animation: animate4 1s linear infinite;
     animation-delay: 0.75s;
-  }
-  @keyframes animate4 {
+}
+
+@keyframes animate4 {
     0% {
         bottom: -100%;
-   }
+    }
     50%, 100% {
         bottom: 100%;
-   }
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+    }
+}
+
+.specifications {
+    display: flex;
+    flex-direction: column;
+}
+
+.spec {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.specHidden {
+    display: none;
+}
+
+.specH1 {
+    float: left;
+    width: 35%;
+}
+
+.specH2 {
+    float: left;
+    width: 60%;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.specButton{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
+}
+.lastRow{
+    zoom: 1;
+    padding-top: 20px;
+}
