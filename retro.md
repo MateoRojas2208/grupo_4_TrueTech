@@ -69,7 +69,7 @@ Less Of: - Distraernos .
   
 Stop Doing: - Enojarse y dejar de hacer.
   
-     <hr>
+<hr>
 
 <h2>Quinto sprint<h2>
 
@@ -84,11 +84,12 @@ Less Of: - Distraernos .
   
 Stop Doing: - No trabajar
             
-     <hr>
+<hr>
 
 <h2>Sexto sprint<h2>
 
 Start Doing: - Volver a trabajar juntos.
+<<<<<<< HEAD
 
 More of: - Que Faustino trabaje.
 
@@ -96,6 +97,15 @@ Keep doing: .
 
 Less Of: - Tardar en empezar el sprint.
 
+=======
+  
+More of: - Que Faustino trabaje.
+  
+Keep doing:  .
+           
+Less Of: - Tardar en empezar el sprint.
+         
+>>>>>>> cf1c0ece37f34aa4098ae6f8c7401f95782357a2
 Stop Doing: - No trabajar (Faustino)
             
 

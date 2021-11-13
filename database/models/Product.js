@@ -32,6 +32,9 @@ module.exports = (sequeliz, Sequelize) => {
     description: {
       type: Sequelize.STRING
     },
+    specs: {
+      type:Sequelize.STRING
+    },
     color: {
       type: Sequelize.BIGINT(11)
     },
