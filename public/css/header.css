@@ -1,0 +1,15 @@
+#hola{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#hola2{
+    padding:15px;
+    padding-left: 5px;
+}
+#hola3{
+    padding-right: 0px;
+}
+#navbar {
+    border-end-end-radius: 4px;
+}

@@ -26,14 +26,16 @@ module.exports = (sequeliz, Sequelize) => {
       references: 'user',
       referencesKey: 'id'
     },
+    specs_id: {
+      type: Sequelize.BIGINT(11),
+      references: 'user',
+      referencesKey: 'id'
+    },
     name: {
       type: Sequelize.STRING
     },
     description: {
       type: Sequelize.STRING
-    },
-    specs: {
-      type:Sequelize.STRING
     },
     color: {
       type: Sequelize.BIGINT(11)
@@ -76,6 +78,7 @@ module.exports = (sequeliz, Sequelize) => {
     //Si no tengo timestamps
   };
   const Product = sequeliz.define(alias, cols, config)
+
   Product.associate = function (models) {
     Product.belongsTo(models.Shop, {
       as: 'shop',
@@ -92,6 +95,10 @@ module.exports = (sequeliz, Sequelize) => {
     Product.belongsTo(models.BrandModel, {
       as: 'model',
       foreignKey: 'model_id'
+    }),
+    Product.belongsTo(models.Spec, {
+      as: 'specs',
+      foreignKey: 'specs_id'
     })
   }
 
