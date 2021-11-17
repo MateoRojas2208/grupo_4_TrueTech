@@ -2,3 +2,4 @@
 --carrito en base de datos
 --CSS EN products
 --product/edit agregar el menu de spec
+--arreglar css en todas las paginas porque se agrego boostrap
