@@ -74,7 +74,7 @@ router.post("/register", uploadFile.single("image"), usersController.createNewAc
 
 /* GET profile page */
 
-router.get('/profile',logged, usersController.profile);
+router.get('/profile:id',logged, usersController.profile);
 
 
 

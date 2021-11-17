@@ -98,7 +98,14 @@ const controller = {
 		let link = req.file.path.replace("public", "")
 		let imageLink2 = link.replace("\\", "/")
 
-		let specs = [
+		let rawSpecs = [
+			{
+				id: rn({
+					min: 1000,
+					max: 1000000000000,
+					integer: true
+				})
+			},
 			{
 				specTitle: req.body.specT1,
 				specDescription: req.body.specD1
@@ -142,51 +149,51 @@ const controller = {
 
 		]
 		var filteredSpecs = []
-		for (let i=0;i<10;i++){
-			if (specs[i].specTitle !== ""){
+		for (let i = 0; i < 10; i++) {
+			if (rawSpecs[i].specTitle !== "") {
 
-				filteredSpecs.push(specs[i])
+				filteredSpecs.push(rawSpecs[i])
 			}
-			
-		}
-		let a = `hola ${filteredSpecs[1].specTitle}`
-		console.log(a)
 
-		// Product.create({
-		// 	id: rn({
-		// 		min: 1000,
-		// 		max: 1000000000000,
-		// 		integer: true
-		// 	}),
-		// 	categories_id: req.body.category,
-		// 	model_id: rn({
-		// 		min: 1,
-		// 		max: 20,
-		// 		integer: true
-		// 	}),
-		// 	shop_id: rn({
-		// 		min: 1,
-		// 		max: 20,
-		// 		integer: true
-		// 	}),
-		// 	seller_id: rn({
-		// 		min: 1,
-		// 		max: 20,
-		// 		integer: true
-		// 	}),
-		// 	name: req.body.name,
-		// 	description: req.body.description,
-		// 	specs: filteredSpecs,
-		// 	color: req.body.colour,
-		// 	price: req.body.price,
-		// 	discount_price: 0,
-		// 	discount: 0,
-		// 	quantity: 1,
-		// 	sold_items: 0,
-		// 	likes: 0,
-		// 	status: true,
-		// 	image: imageLink2
-		// }).then(res.redirect("/product"))
+		}
+		let specs = JSON.stringify(filteredSpecs) 
+		console.log(specs)
+
+		Product.create({
+			id: 22,
+			categories_id: req.body.category,
+			model_id: rn({
+				min: 1,
+				max: 20,
+				integer: true
+			}),
+			shop_id: rn({
+				min: 1,
+				max: 20,
+				integer: true
+			}),
+			seller_id: rn({
+				min: 1,
+				max: 20,
+				integer: true
+			}),
+			name: req.body.name,
+			description: req.body.description,
+			specs: specs,
+			color: req.body.colour,
+			price: req.body.price,
+			discount_price: 0,
+			discount: 0,
+			quantity: 1,
+			sold_items: 0,
+			likes: 0,
+			status: true,
+			image: imageLink2
+		}).then(res.redirect("/product"))
+		.catch(function (err) {
+			// print the error details
+			console.log(err, req.body.email);
+		});
 
 	},
 

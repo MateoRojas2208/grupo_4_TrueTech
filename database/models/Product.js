@@ -26,10 +26,8 @@ module.exports = (sequeliz, Sequelize) => {
       references: 'user',
       referencesKey: 'id'
     },
-    specs_id: {
-      type: Sequelize.BIGINT(11),
-      references: 'user',
-      referencesKey: 'id'
+    specs: {
+      type: Sequelize.JSON
     },
     name: {
       type: Sequelize.STRING
@@ -95,10 +93,6 @@ module.exports = (sequeliz, Sequelize) => {
     Product.belongsTo(models.BrandModel, {
       as: 'model',
       foreignKey: 'model_id'
-    }),
-    Product.belongsTo(models.Spec, {
-      as: 'specs',
-      foreignKey: 'specs_id'
     })
   }
 

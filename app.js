@@ -21,12 +21,12 @@ app.set('view engine', 'ejs');
 
 
 // creating 24 hours from milliseconds
-const oneDay = 1000 * 60 * 60 * 24;
+const oneWeek = 1000 * 60 * 60 * 24 * 7;
 //session middleware
 app.use(session({
   secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
   saveUninitialized: false,
-  cookie: { maxAge: oneDay },
+  cookie: { maxAge: oneWeek },
   resave: true
 
 }))
