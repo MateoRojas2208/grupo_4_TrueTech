@@ -95,106 +95,117 @@ const controller = {
 
 	// Create -  Method to store
 	store: (req, res) => {
-		let link = req.file.path.replace("public", "")
-		let imageLink2 = link.replace("\\", "/")
-
-		let rawSpecs = [
-			{
-				id: rn({
-					min: 1000,
-					max: 1000000000000,
-					integer: true
+		const resultValidation = validationResult(req)
+		if (resultValidation.errors.length > 0) {
+			db.categories.findAll()
+				.then(function (e) {
+					res.render("./products/newProduct", {
+						categorias: e,
+						errors: resultValidation.mapped(),
+						oldData: req.body
+					})
 				})
-			},
-			{
-				specTitle: req.body.specT1,
-				specDescription: req.body.specD1
-			},
-			{
-				specTitle: req.body.specT2,
-				specDescription: req.body.specD2
-			},
-			{
-				specTitle: req.body.specT3,
-				specDescription: req.body.specD3
-			},
-			{
-				specTitle: req.body.specT4,
-				specDescription: req.body.specD4
-			},
-			{
-				specTitle: req.body.specT5,
-				specDescription: req.body.specD5
-			},
-			{
-				specTitle: req.body.specT6,
-				specDescription: req.body.specD6
-			},
-			{
-				specTitle: req.body.specT7,
-				specDescription: req.body.specD7
-			},
-			{
-				specTitle: req.body.specT8,
-				specDescription: req.body.specD8
-			},
-			{
-				specTitle: req.body.specT9,
-				specDescription: req.body.specD9
-			},
-			{
-				specTitle: req.body.specT10,
-				specDescription: req.body.specD10
+		} else {
+			let link = req.file.path.replace("public", "")
+			let imageLink2 = link.replace("\\", "/")
+
+			let rawSpecs = [
+				{
+					id: rn({
+						min: 1000,
+						max: 1000000000000,
+						integer: true
+					})
+				},
+				{
+					specTitle: req.body.specT1,
+					specDescription: req.body.specD1
+				},
+				{
+					specTitle: req.body.specT2,
+					specDescription: req.body.specD2
+				},
+				{
+					specTitle: req.body.specT3,
+					specDescription: req.body.specD3
+				},
+				{
+					specTitle: req.body.specT4,
+					specDescription: req.body.specD4
+				},
+				{
+					specTitle: req.body.specT5,
+					specDescription: req.body.specD5
+				},
+				{
+					specTitle: req.body.specT6,
+					specDescription: req.body.specD6
+				},
+				{
+					specTitle: req.body.specT7,
+					specDescription: req.body.specD7
+				},
+				{
+					specTitle: req.body.specT8,
+					specDescription: req.body.specD8
+				},
+				{
+					specTitle: req.body.specT9,
+					specDescription: req.body.specD9
+				},
+				{
+					specTitle: req.body.specT10,
+					specDescription: req.body.specD10
+				}
+
+			]
+			var filteredSpecs = []
+			for (let i = 0; i < 10; i++) {
+				if (rawSpecs[i].specTitle !== "") {
+
+					filteredSpecs.push(rawSpecs[i])
+				}
+
 			}
+			let specs = JSON.stringify(filteredSpecs)
+			console.log(specs)
 
-		]
-		var filteredSpecs = []
-		for (let i = 0; i < 10; i++) {
-			if (rawSpecs[i].specTitle !== "") {
-
-				filteredSpecs.push(rawSpecs[i])
-			}
-
+			Product.create({
+				id: 22,
+				categories_id: req.body.category,
+				model_id: rn({
+					min: 1,
+					max: 20,
+					integer: true
+				}),
+				shop_id: rn({
+					min: 1,
+					max: 20,
+					integer: true
+				}),
+				seller_id: rn({
+					min: 1,
+					max: 20,
+					integer: true
+				}),
+				name: req.body.name,
+				description: req.body.description,
+				specs: specs,
+				color: req.body.colour,
+				price: req.body.price,
+				discount_price: 0,
+				discount: 0,
+				quantity: 1,
+				sold_items: 0,
+				likes: 0,
+				status: true,
+				image: imageLink2
+			}).then(res.redirect("/product"))
+				.catch(function (err) {
+					// Mostrar detalles del error
+					console.log(err, req.body.email);
+				});
 		}
-		let specs = JSON.stringify(filteredSpecs) 
-		console.log(specs)
-
-		Product.create({
-			id: 22,
-			categories_id: req.body.category,
-			model_id: rn({
-				min: 1,
-				max: 20,
-				integer: true
-			}),
-			shop_id: rn({
-				min: 1,
-				max: 20,
-				integer: true
-			}),
-			seller_id: rn({
-				min: 1,
-				max: 20,
-				integer: true
-			}),
-			name: req.body.name,
-			description: req.body.description,
-			specs: specs,
-			color: req.body.colour,
-			price: req.body.price,
-			discount_price: 0,
-			discount: 0,
-			quantity: 1,
-			sold_items: 0,
-			likes: 0,
-			status: true,
-			image: imageLink2
-		}).then(res.redirect("/product"))
-		.catch(function (err) {
-			// print the error details
-			console.log(err, req.body.email);
-		});
-
 	},
 
 	// Update - Form to edit
@@ -208,24 +219,39 @@ const controller = {
 	},
 	// Update - Method to update
 	update: (req, res) => {
+		const resultValidation = validationResult(req)
+		if (resultValidation.errors.length > 0) {
+			
+			let idS = req.params.id
+			let producto = db.products.findByPk(req.params.id);
+			let categorias = db.categories.findAll()
+			Promise.all([producto, categorias])
+				.then(function ([producto, categorias]) {
+					res.render("./products/editProduct", {
+						errors: resultValidation.mapped(),
+						producto: producto, categorias: categorias, idS: idS
 
-		let link = req.file.path.replace("public", "")
-		let imageLink2 = link.replace("\\", "/")
+					})
+				})
+		} else {
 
-		db.Product.update({
-			name: req.body.name,
-			description: req.body.description,
-			color: req.body.colour,
-			price: req.body.price,
-			discount_price: 0,
-			discount: 0,
-			quantity: 1,
-			status: true,
-			image: imageLink2
-		}, {
-			where: { id: req.params.id }
-		}).then(res.redirect("/product"))
+			let link = req.file.path.replace("public", "")
+			let imageLink2 = link.replace("\\", "/")
 
+			db.Product.update({
+				name: req.body.name,
+				description: req.body.description,
+				color: req.body.colour,
+				price: req.body.price,
+				discount_price: 0,
+				discount: 0,
+				quantity: 1,
+				status: true,
+				image: imageLink2
+			}, {
+				where: { id: req.params.id }
+			}).then(res.redirect("/product"))
+		}
 	},
 
 	// Delete - Delete one product from DB

@@ -70,7 +70,7 @@ CREATE TABLE `products` (
   `model_id` int(10) UNSIGNED NOT NULL,
   `shop_id` int(10) UNSIGNED DEFAULT NULL,
   `seller_id` int(10) UNSIGNED NOT NULL,
-  `specs` varchar(10000) UNSIGNED NOT NULL,
+  `specs` varchar(10000)  NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` varchar(500) NOT null,
   `color` varchar(20)  DEFAULT NULL,

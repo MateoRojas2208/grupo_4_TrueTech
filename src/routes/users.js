@@ -24,37 +24,28 @@ const storage = multer.diskStorage({
  const uploadFile = multer({ storage });
 
 // express-validator
-// const validations = [
-//     body("userName").notEmpty().withMessage("Nombre Invalido").bail()
-//     .isLength({min:3, max:15}).withMessage("Longitud: 3 a 15 Caracteres"),
-
-//     body("email")
-//     .notEmpty().withMessage("Email invalido").bail()
-//     .isEmail().withMessage("Formato Invalido")
-//     .custom(function(value) {
-//         let usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-//         let users;
-//         if (usersJSON == "") {
-//             users = []
-//         } else {
-//             users = usersJSON
-//         }
-//         for (let i = 0; i < users.length; i++) {
-//             const user = users[i];
-//             if (user.email == value) {
-//                 return false
-//             }
-//         }
-//         return true
-//     }).withMessage("Datos Incorrectos"),
-
-//     body("password")
-//     .notEmpty().withMessage("Contraseña invalida").bail()
-//     .isLength({min:4, max:15}).withMessage("Longitud: 4 a 15 Caracteres"),
-
-//     body("terms")
-//     .notEmpty()
-// ];
+const validations = [
+   body("name").notEmpty().withMessage("El campo no puede estar vacio").escape(),
+   body("email").notEmpty().withMessage("El campo no puede estar vacio").bail().isEmail().withMessage("Tenes que escribir un formato de correo valido").trim().escape().normalizeEmail(),
+   body("password").notEmpty().withMessage("El campo no puede estar vacio")
+   .bail().isStrongPassword(
+     { minLength: 8, minLowercase: 1, minUppercase: 0, minNumbers: 1, minSymbols: 0, returnScore: false, pointsPerUnique: 1, pointsPerRepeat: 0.5, pointsForContainingLower: 10, pointsForContainingUpper: 10, pointsForContainingNumber: 10, pointsForContainingSymbol: 10 }
+ 
+ 
+   )
+   .withMessage("La contraseña debe tener al menos 8 caracteres y contener letras y numeros").escape().trim(),
+   body("image").custom((value, {req})=>{
+      if(req.file){
+        let file = req.file.originalname
+        let acceptedExt = [".png", ".jpg", ".jpeg"]
+        let extension = (path.extname(file)).toLowerCase();
+        if(!acceptedExt.includes(extension))
+        throw new Error("este tipo de archivo no esta permitido");
+      }
+      return true
+    })
+ 
+ ]
 
 
 /* GET login page. */

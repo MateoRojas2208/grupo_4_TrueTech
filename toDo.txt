@@ -3,3 +3,4 @@
 --CSS EN products
 --product/edit agregar el menu de spec
 --arreglar css en todas las paginas porque se agrego boostrap
+--en creacion de producto el modelo tiene que darte para elegir los de las database
