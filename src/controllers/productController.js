@@ -95,8 +95,7 @@ const controller = {
 
 	// Create -  Method to store
 	store: (req, res) => {
-		const resultValidation = validationResult(req)
-		if (resultValidation.errors.length > 0) {
+		if (validations.errors.length > 0) {
 			db.categories.findAll()
 				.then(function (e) {
 					res.render("./products/newProduct", {

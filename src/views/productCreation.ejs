@@ -14,7 +14,7 @@
 <body>
 
     <!---------------- header--------- -->
-  <%- include("./partials/header") -%>
+    <%- include("./partials/header") -%>
         <main>
             <div class="container">
                 <form action="/product/creation" method="POST" enctype="multipart/form-data">
@@ -30,18 +30,20 @@
                             </select>
                             <div class="input-icon"><i class="fa fa-database" aria-hidden="true"></i></div>
                         </div>
-                        <div class="input-group input-group-icon"><input type="name" name="name"
-                                placeholder="Nombre del producto" />
-                            <div class="input-icon"><i class="fa fa-bookmark" aria-hidden="true"></i></div>
+                        <div class="input-group input-group-icon">
+                            <input type="name" name="name" placeholder="Nombre del producto" class="prodName" />
+                            <div class="input-icon">
+                                <i class="fa fa-bookmark" aria-hidden="true"></i>
+                            </div>
                         </div>
-                        <div class="input-group input-group-icon"><input type="Model" name="model"
-                                placeholder="Modelo" />
-                            <div class="input-icon"><i class="fa fa-terminal" aria-hidden="true"></i></div>
+                        <div class="input-group input-group-icon"><input type="Model" name="model" placeholder="Modelo" />
+                            <div class="input-icon">
+                                <i class="fa fa-terminal" aria-hidden="true"></i>
+                            </div>
                         </div>
                         <div class="input-group input-group-icon" id="table">
                             <div class="table-cell">
-                                <textarea cols="80" class="descripciones" placeholder="Descripción" name="description"
-                                    style="resize:none"></textarea>
+                                <textarea cols="80" class="descripciones" placeholder="Descripción" name="description" class="description" style="resize:none"></textarea>
                             </div>
                         </div>
                     </div>
@@ -63,7 +65,7 @@
                         <div class="row">
                             <h4>Imagen del producto</h4>
                             <div>
-                                <div><input type="file" name="image"></div>
+                                <div><input type="file" name="image" class="pImage"></div>
                             </div>
                         </div>
                     </div>
@@ -71,92 +73,92 @@
                         <h4>Especificaciones</h4>
                         <div class="spec " id="spec1">
                             <div class="specH1">
-                                <input type="text" placeholder="especificacionTitulo1" name="specT1">
+                                <input type="text" placeholder="Nombre de la Especificacion" name="specT1" class="specName1">
                             </div>
                             <i class="fa fa-chevron-right" aria-hidden="true"></i>
                             <div class="specH2">
-                                <input type="text" placeholder="especificacionDesc1" name="specD1">
+                                <input type="text" placeholder="Descripcion de la Especificacion" name="specD1" class="specDesc1">
                             </div>
                         </div>
                         <div class="spec specHidden" id="spec2">
                             <div class="specH1">
-                                <input type="text" placeholder="especificacionTitulo1" name="specT2">
+                                <input type="text" placeholder="Nombre de la Especificacion" name="specT2" class="specName2">
                             </div>
                             <i class="fa fa-chevron-right" aria-hidden="true"></i>
                             <div class="specH2">
-                                <input type="text" placeholder="especificacionDesc1" name="specD2">
+                                <input type="text" placeholder="Descripcion de la Especificacion" name="specD2" class="specDesc2">
                             </div>
                         </div>
                         <div class="spec specHidden" id="spec3">
                             <div class="specH1">
-                                <input type="text" placeholder="especificacionTitulo1" name="specT3">
+                                <input type="text" placeholder="Nombre de la Especificacion" name="specT3" class="specName3">
                             </div>
                             <i class="fa fa-chevron-right" aria-hidden="true"></i>
                             <div class="specH2">
-                                <input type="text" placeholder="especificacionDesc1" name="specD3">
+                                <input type="text" placeholder="Descripcion de la Especificacion" name="specD3" class="specDesc3">
                             </div>
                         </div>
                         <div class="spec specHidden" id="spec4">
                             <div class="specH1">
-                                <input type="text" placeholder="especificacionTitulo1" name="specT4">
+                                <input type="text" placeholder="Nombre de la Especificacion" name="specT4" class="specName4">
                             </div>
                             <i class="fa fa-chevron-right" aria-hidden="true"></i>
                             <div class="specH2">
-                                <input type="text" placeholder="especificacionDesc1" name="specD4">
+                                <input type="text" placeholder="Descripcion de la Especificacion" name="specD4" class="specDesc4">
                             </div>
                         </div>
                         <div class="spec specHidden" id="spec5">
                             <div class="specH1">
-                                <input type="text" placeholder="especificacionTitulo1" name="specT5">
+                                <input type="text" placeholder="Nombre de la Especificacion" name="specT5" class="specName5">
                             </div>
                             <i class="fa fa-chevron-right" aria-hidden="true"></i>
                             <div class="specH2">
-                                <input type="text" placeholder="especificacionDesc1" name="specD5">
+                                <input type="text" placeholder="Descripcion de la Especificacion" name="specD5" class="specDesc5">
                             </div>
                         </div>
                         <div class="spec specHidden" id="spec6">
                             <div class="specH1">
-                                <input type="text" placeholder="especificacionTitulo1" name="specT6">
+                                <input type="text" placeholder="Nombre de la Especificacion" name="specT6" class="specName6">
                             </div>
                             <i class="fa fa-chevron-right" aria-hidden="true"></i>
                             <div class="specH2">
-                                <input type="text" placeholder="especificacionDesc1" name="specD6">
+                                <input type="text" placeholder="Descripcion de la Especificacion" name="specD6" class="specDesc6">
                             </div>
                         </div>
                         <div class="spec specHidden" id="spec7">
                             <div class="specH1">
-                                <input type="text" placeholder="especificacionTitulo1" name="specT7">
+                                <input type="text" placeholder="Nombre de la Especificacion" name="specT7" class="specName7">
                             </div>
                             <i class="fa fa-chevron-right" aria-hidden="true"></i>
                             <div class="specH2">
-                                <input type="text" placeholder="especificacionDesc1" name="specD7">
+                                <input type="text" placeholder="Descripcion de la Especificacion" name="specD7" class="specDesc7">
                             </div>
                         </div>
                         <div class="spec specHidden" id="spec8">
                             <div class="specH1">
-                                <input type="text" placeholder="especificacionTitulo1" name="specT8">
+                                <input type="text" placeholder="Nombre de la Especificacion" name="specT8" class="specName8">
                             </div>
                             <i class="fa fa-chevron-right" aria-hidden="true"></i>
                             <div class="specH2">
-                                <input type="text" placeholder="especificacionDesc1" name="specD8">
+                                <input type="text" placeholder="Descripcion de la Especificacion" name="specD8" class="specDesc8">
                             </div>
                         </div>
                         <div class="spec specHidden" id="spec9">
                             <div class="specH1">
-                                <input type="text" placeholder="especificacionTitulo1" name="specT9">
+                                <input type="text" placeholder="Nombre de la Especificacion" name="specT9" class="specName9">
                             </div>
                             <i class="fa fa-chevron-right" aria-hidden="true"></i>
                             <div class="specH2">
-                                <input type="text" placeholder="especificacionDesc1" name="specD9">
+                                <input type="text" placeholder="Descripcion de la Especificacion" name="specD9" class="specDesc9">
                             </div>
                         </div>
                         <div class="spec specHidden" id="spec10">
                             <div class="specH1">
-                                <input type="text" placeholder="especificacionTitulo1" name="specT10" value="">
+                                <input type="text" placeholder="Nombre de la Especificacion" name="specT10" class="specName10">
                             </div>
                             <i class="fa fa-chevron-right" aria-hidden="true"></i>
                             <div class="specH2">
-                                <input type="text" placeholder="especificacionDesc1" name="specD10">
+                                <input type="text" placeholder="Descripcion de la Especificacion" name="specD10" class="specDesc10">
                             </div>
                         </div>
                         <div class="buttonsContainer">
