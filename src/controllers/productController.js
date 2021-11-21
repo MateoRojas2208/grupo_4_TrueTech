@@ -1,15 +1,10 @@
-const fs = require('fs');
-const path = require('path');
-const { re } = require('semver');
 var rn = require('random-number')
-const { Z_ASCII } = require('zlib');
-var _ = require('lodash');
 const db = require('../../database/models');
-const { timeStamp } = require('console');
-const { search } = require('../routes/product');
 const Product = db.Product;
 const Category = db.Category
 const Op = db.Sequelize.Op
+const { validationResult } = require('express-validator');
+const { validationError } = require('express-validator');
 
 const controller = {
 	// Root - Show all products
@@ -95,16 +90,19 @@ const controller = {
 
 	// Create -  Method to store
 	store: (req, res) => {
-		if (validations.errors.length > 0) {
-			db.categories.findAll()
-				.then(function (e) {
-					res.render("./products/newProduct", {
-						categorias: e,
+		let resultValidation = validationResult(req)
+		if (resultValidation.errors.length > 0) {
+			Category.findAll()
+				.then(function (cat) {
+					res.render("productCreation", {
+						categories: cat,
 						errors: resultValidation.mapped(),
 						oldData: req.body
 					})
 				})
 		} else {
+
+
 			let link = req.file.path.replace("public", "")
 			let imageLink2 = link.replace("\\", "/")
 
@@ -170,7 +168,11 @@ const controller = {
 			console.log(specs)
 
 			Product.create({
-				id: 22,
+				id: rn({
+					min: 1,
+					max: 20000000,
+					integer: true
+				}),
 				categories_id: req.body.category,
 				model_id: rn({
 					min: 1,
@@ -220,7 +222,7 @@ const controller = {
 	update: (req, res) => {
 		const resultValidation = validationResult(req)
 		if (resultValidation.errors.length > 0) {
-			
+
 			let idS = req.params.id
 			let producto = db.products.findByPk(req.params.id);
 			let categorias = db.categories.findAll()

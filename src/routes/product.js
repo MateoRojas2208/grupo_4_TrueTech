@@ -25,12 +25,10 @@ const uploadFile = multer({ storage });
 
 const validations = [
   body("category").notEmpty().withMessage("El campo no puede estar vacio"),
-  body("name").notEmpty().withMessage("El campo no puede estar vacio"),
-  body("description").notEmpty().withMessage("El campo no puede estar vacio"),
-  body("specT1").notEmpty().withMessage("El campo no puede estar vacio"),
-  body("specD1").notEmpty().withMessage("El campo no puede estar vacio"),
+  body("name").notEmpty().withMessage("El campo no puede estar vacio").isLength({ min: 5 }).withMessage("El nombre del producto debe tener al menos 5 caracteres"),
+  body("description").notEmpty().withMessage("El campo no puede estar vacio").isLength({ min: 15 }).withMessage("La descripcion del producto debe tener al menos 15 caracteres"),
   body("colour").notEmpty().withMessage("El campo no puede estar vacio"),
-  body("price").notEmpty().withMessage("El campo no puede estar vacio"),
+  body("price").notEmpty().withMessage("El campo no puede estar vacio").isNumeric().withMessage("El precio debe ser un numero"),
   body("model").notEmpty().withMessage("El campo no puede estar vacio"),
   body("image").custom((value, {req})=>{
     if(req.file){
@@ -41,12 +39,11 @@ const validations = [
       if(!acceptedExt.includes(extension))
       throw new Error("este tipo de archivo no esta permitido");
     }
-
-
     return true
-  })
+  }),
+  body("specT1").notEmpty().withMessage("El campo no puede estar vacio").isLength({ min: 3 }).withMessage("El titulo de la especificacion debe tener al menos 3 caracteres"),
+  body("specD1").notEmpty().withMessage("El campo no puede estar vacio").isLength({ min: 3 }).withMessage("La descripcion de la especificacion debe tener al menos 3 caracteres"),
 ]
-
 // ******************  RUTAS  *******************
 
 /*** GET ALL PRODUCTS ***/

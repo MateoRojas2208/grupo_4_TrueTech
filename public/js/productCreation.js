@@ -26,7 +26,7 @@ window.addEventListener("load", function () {
     let form = document.querySelector("form.productsForm")
 
 
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("change", function (e) {
         e.preventDefault();
         let pName = document.querySelector("input.prodname");
         if (pName.value == "") {
@@ -38,23 +38,20 @@ window.addEventListener("load", function () {
         if (pDescription.value.length < 20) {
             alert("La descripción debe tener al menos 20 caracteres");
         }
+        let pColour = document.querySelector("input.colour");
         let pImage = document.querySelector("input.pImage");
         if (pImage.file != JPG, JPEG, PNG, GIF) {
             alert("El formato del archivo debe ser válido (JPG, JPEG, PNG, GIF)");
         }
-
-
-        for(let i=1;i<11;i++){
+        for (let i = 1; i < 11; i++) {
             let specName = document.querySelector(`input.specName${i}`);
-            let specDesc = document.querySelector(`input.specName${i}`);
-            if((specName.value || specDesc.value) == "" ){
-                alert("Tienes que completar ambos campos")
+            let specDesc = document.querySelector(`input.specDesc${i}`);
+            if (specName.value.lenght > 5 && specDesc.value == "") {
+                alert(`Tienes que completar ambos campos en la especificacion Nº${i}`)
+            }
+            else if (specDesc.value.lenght > 5 && specName.value == "") {
+                alert(`Tienes que completar ambos campos en la especificacion Nº${i}`)
             }
         }
-
-
-
-
-
     });
 });

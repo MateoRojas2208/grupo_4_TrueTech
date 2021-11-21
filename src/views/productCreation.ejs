@@ -30,54 +30,73 @@
                             </select>
                             <div class="input-icon"><i class="fa fa-database" aria-hidden="true"></i></div>
                         </div>
+
                         <div class="input-group input-group-icon">
-                            <input type="name" name="name" placeholder="Nombre del producto" class="prodName" />
                             <div class="input-icon">
                                 <i class="fa fa-bookmark" aria-hidden="true"></i>
                             </div>
+                            <input type="name" name="name" placeholder="Nombre del producto" class="prodName" value="<%= locals.oldData ? oldData.name: null %>"/>
+                            <% if (locals.errors && errors.name) { %>
+                                <p style="color: rgb(252, 80, 0); font-size: 13px; margin-right: 40%;"><%= locals.errors.name.msg %> </p>
+                            <% } %>
                         </div>
-                        <div class="input-group input-group-icon"><input type="Model" name="model" placeholder="Modelo" />
+                        <div class="input-group input-group-icon"><input type="Model" name="model" placeholder="Modelo" value="<%= locals.oldData ? oldData.model: null %>"/>
                             <div class="input-icon">
                                 <i class="fa fa-terminal" aria-hidden="true"></i>
                             </div>
+                            <% if (locals.errors && errors.model) { %>
+                                <p style="color: rgb(252, 80, 0); font-size: 13px; margin-right: 40%;"><%= locals.errors.model.msg %></p>
+                            <% } %>
                         </div>
                         <div class="input-group input-group-icon" id="table">
                             <div class="table-cell">
-                                <textarea cols="80" class="descripciones" placeholder="Descripción" name="description" class="description" style="resize:none"></textarea>
+                                <textarea cols="80" class="descripciones" placeholder="Descripción" name="description" class="description" style="resize:none" value="<%= locals.oldData ? oldData.description: null %>"></textarea>
                             </div>
+                            <% if (locals.errors && errors.description) { %>
+                                <p style="color: rgb(252, 80, 0); font-size: 13px; margin-right: 40%;"><%= locals.errors.description.msg %></p>
+                            <% } %>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-half">
                             <h4>Color</h4>
                             <div class="input-group input-group-icon"><input id="colour" type="text" placeholder="Color"
-                                    name="colour" />
+                                    name="colour" value="<%= locals.oldData ? oldData.colour: null %>" />
                                 <div class="input-icon"><i class="fa fa-terminal" aria-hidden="true"></i></div>
                             </div>
+                            <% if (locals.errors && errors.colour) { %>
+                                <p style="color: rgb(252, 80, 0); font-size: 13px; margin-right: 40%;"><%= locals.errors.colour.msg %></p>
+                            <% } %>
                         </div>
                         <div class="col-half">
                             <h4>Price</h4>
                             <div class="input-group input-group-icon">
-                                <input placeholder="Precio" type="number" name="price">
+                                <input placeholder="Precio" type="number" name="price" value="<%= locals.oldData ? oldData.price: null %>">
                                 <div class="input-icon">$</div>
+                                <% if (locals.errors && errors.price) { %>
+                                    <p style="color: rgb(252, 80, 0); font-size: 13px; margin-right: 40%;"><%= locals.errors.price.msg %></p>
+                                <% } %>
                             </div>
                         </div>
                         <div class="row">
                             <h4>Imagen del producto</h4>
                             <div>
-                                <div><input type="file" name="image" class="pImage"></div>
+                                <div><input type="file" name="image" class="pImage" value="<%= locals.oldData ? oldData.image: null %>"></div>
                             </div>
+                            <% if (locals.errors && errors.image) { %>
+                                <p style="color: rgb(252, 80, 0); font-size: 13px; margin-right: 40%;"><%= locals.errors.image.msg %></p>
+                            <% } %>
                         </div>
                     </div>
                     <div class="lastRow">
                         <h4>Especificaciones</h4>
                         <div class="spec " id="spec1">
                             <div class="specH1">
-                                <input type="text" placeholder="Nombre de la Especificacion" name="specT1" class="specName1">
+                                <input type="text" placeholder="Nombre de la Especificacion" name="specT1" class="specName1" value="<%= locals.oldData ? oldData.specT1: null %>">
                             </div>
                             <i class="fa fa-chevron-right" aria-hidden="true"></i>
                             <div class="specH2">
-                                <input type="text" placeholder="Descripcion de la Especificacion" name="specD1" class="specDesc1">
+                                <input type="text" placeholder="Descripcion de la Especificacion" name="specD1" class="specDesc1" value="<%= locals.oldData ? oldData.specD1: null %>">
                             </div>
                         </div>
                         <div class="spec specHidden" id="spec2">

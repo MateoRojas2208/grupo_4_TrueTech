@@ -6,3 +6,4 @@
 --en creacion de producto el modelo tiene que darte para elegir los de las database
 --pestaña de ediit hacerla para que sea como ver el producto en product detail y edites desde ahi en vez de un formulario 
 --productCreation hacer que las specs se creen con un for() 
+--validacion para specs en backend
