@@ -22,34 +22,48 @@ function removeSpec() {
         alert("Al menos tienes que tener 1 Especificacion")
     }
 }
+
 window.addEventListener("load", function () {
-    let form = document.querySelector("form.productsForm")
+    var pName = document.querySelector("input.prodName");
+    var pDescription = document.querySelector("textarea.description");
+    let pColour = document.querySelector("input.colour");
+    let pImage = document.querySelector("input.pImage");
+    var specsRow = document.getElementById("specsRow")
 
-
-    form.addEventListener("change", function (e) {
+    pName.addEventListener("change", function (e) {
         e.preventDefault();
-        let pName = document.querySelector("input.prodname");
+        console.log(pName)
         if (pName.value == "") {
-            alert("Este campo es obligatorio");
+            alert("El nombre del producto es obligatorio");
         } else if (pName.value.length < 5) {
             alert("El título debe tener al menos 5 caracteres");
         }
-        let pDescription = document.querySelector("textarea.description");
+    })
+
+    pDescription.addEventListener("change", function (e) {
         if (pDescription.value.length < 20) {
-            alert("La descripción debe tener al menos 20 caracteres");
+            alert("La descripción debe tener al menos 20 caracteres y no puede estar vacia");
         }
-        let pColour = document.querySelector("input.colour");
-        let pImage = document.querySelector("input.pImage");
-        if (pImage.file != JPG, JPEG, PNG, GIF) {
-            alert("El formato del archivo debe ser válido (JPG, JPEG, PNG, GIF)");
-        }
+    })
+
+    pColour.addEventListener("change", function (e) {
+        if (pColour.value == "") {
+            alert("El color es obligatorio");
+        }})
+
+    pImage.addEventListener("change", function (e) {
+        if (pImage.file != "JPG", "JPEG", "PNG") {
+            alert("El formato del archivo debe ser válido (JPG, JPEG, PNG)");
+        }})
+        
+    specsRow.addEventListener("change", function (e) {
         for (let i = 1; i < 11; i++) {
             let specName = document.querySelector(`input.specName${i}`);
             let specDesc = document.querySelector(`input.specDesc${i}`);
-            if (specName.value.lenght > 5 && specDesc.value == "") {
+            if (specName.value.lenght > 1 && specDesc.value == "") {
                 alert(`Tienes que completar ambos campos en la especificacion Nº${i}`)
             }
-            else if (specDesc.value.lenght > 5 && specName.value == "") {
+            else if (specDesc.value.lenght > 1 && specName.value == "") {
                 alert(`Tienes que completar ambos campos en la especificacion Nº${i}`)
             }
         }

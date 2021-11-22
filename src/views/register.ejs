@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <%- include("./partials/head") -%>
+ 
 
     <link rel="stylesheet" href="/css/register.css">
     <title>Register</title>
@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <%- include("./partials/head") -%>
 </head>
 
 <body>
@@ -17,42 +18,64 @@
   <%- include("./partials/header") -%>
 
     <main>
+      <div class="box">
+        <div class="container" id="container">
 
-      <div class="container" id="container">
-
-        <div class="form-container sign-in-container">
+          <div class="form-container sign-in-container">
 
 
-          <form action="/users/register" method="POST" enctype="multipart/form-data">
-            <h1>Registrate</h1>
-            <div class="social-container">
-              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <span>O usa tu email para registrarte</span>
+            <form action="/users/register" method="POST" enctype="multipart/form-data">
+              <h1>Registrate</h1>
+              <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <span>O usa tu email para registrarte</span>
 
-            <input type="text" placeholder="Nombre" name="name" />
-            <input type="email" placeholder="Email" name="email" />
-            <input type="password" placeholder="Contraseña" name="password" />
-            <input type="file" name="image" />
+              <input type="text" placeholder="Nombre" name="name" />
+              <% if (locals.errors && errors.name) { %>
+                <p style="color: rgb(252, 80, 0); font-size: 13px; margin-right: 40%;">
+                  <%= locals.errors.name.msg %>
+                </p>
+                <% } %>
+                  <input type="email" placeholder="Email" name="email" />
+                  <% if (locals.errors && errors.email) { %>
+                    <p style="color: rgb(252, 80, 0); font-size: 13px; margin-right: 40%;">
+                      <%= locals.errors.email.msg %>
+                    </p>
+                    <% } %>
+                      <input type="password" placeholder="Contraseña" name="password" />
+                      <% if (locals.errors && errors.password) { %>
+                        <p style="color: rgb(252, 80, 0); font-size: 13px; margin-right: 40%;">
+                          <%= locals.errors.password.msg %>
+                        </p>
+                        <% } %>
+                          <input type="file" name="image" />
+                          <% if (locals.errors && errors.image) { %>
+                            <p style="color: rgb(252, 80, 0); font-size: 13px; margin-right: 40%;">
+                              <%= locals.errors.image.msg %>
+                            </p>
+                            <% } %>
 
-            <div class="terminos">
-              <input type="checkbox" name="terminos" id="terminos">
-              <label for="terminos">Estoy de acuerdo con los <a href="/terminos-y-condiciones">términos y
-                  condiciones</a></label>
+                              <div class="terminos">
+                                <input type="checkbox" name="terminos" id="terminos">
+                                <label for="terminos">Estoy de acuerdo con los <a
+                                    href="/terminos-y-condiciones">términos y
+                                    condiciones</a></label>
 
-            </div>
-            <button class="register-button" type="submit">Registrate</button>
-          </form><a href="#">Ayuda para elegir una contraseña?</a>
+                              </div>
+                              <button class="register-button" type="submit">Registrate</button>
+            </form><a href="#">Ayuda para elegir una contraseña?</a>
 
-        </div>
-        <div class="overlay-container">
-          <div class="overlay">
-            <div class="overlay-panel overlay-right">
-              <h1>Ya tenes una cuenta?</h1>
-              <p>Ingresa tu infomacion personal y sigue navegando con nosotros</p>
-              <button class="ghost" id="signUp"><a href="/users/login">Iniciar Sesion</a></button>
+          </div>
+          <div class="overlay-container">
+            <div class="overlay">
+              <div class="overlay-panel overlay-right">
+                <h1>Ya tenes una cuenta?</h1>
+                <p>Ingresa tu infomacion personal y sigue navegando con nosotros</p>
+                <button class="ghost" id="signUp"><a href="/users/login">Iniciar Sesion</a></button>
+              </div>
             </div>
           </div>
         </div>

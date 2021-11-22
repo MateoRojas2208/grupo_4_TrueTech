@@ -76,12 +76,12 @@ html, body {
   width: 100%;
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #e3e3e3;
+  background-color: #FFFFFF;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 main {
-  background-color: #e3e3e3;
+  background-color: #FFFFFF;
 }
 
 * {
@@ -156,7 +156,7 @@ input {
   background-color: #eee;
   border: none;
   padding: 12px 15px;
-  margin: 8px 0;
+  margin: 8px 0 !important; 
   width: 100%;
 }
 .contenido{
@@ -169,18 +169,18 @@ main {
 }
 
 .container {
-  background-color: #fff;
+  background-color: #e3e3e3;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   overflow: hidden;
   width: 768px;
   max-width: 90%;
-  min-height: 580px;
+  min-height: 725px;
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, 5%);
+  transform: translate(-50%, 0%);
   margin-top: 50px;
+  margin-bottom: 5%;
 }
 
 .form-container {
@@ -309,34 +309,6 @@ main {
   width: 40px;
 }
 
-footer {
-  background-color: #222;
-  color: #fff;
-  font-size: 14px;
-  bottom: 0;
-  position: fixed;
-  left: 0;
-  right: 0;
-  text-align: center;
-  z-index: 999;
-}
-
-footer p {
-  margin: 10px 0;
-}
-
-footer i {
-  color: red;
-}
-
-footer a {
-  color: #3c97bf;
-  text-decoration: none;
-}
-
-.check {
-  width: 25px;
-}
 
 @media (max-width: 600px) {
   .form-container form h1 {
@@ -421,4 +393,14 @@ footer a {
 }
 .register-button{
   color: black;
+}
+
+
+.box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  height: 770px;
+  width: 90%;
 }

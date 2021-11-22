@@ -25,13 +25,11 @@ const storage = multer.diskStorage({
 
 // express-validator
 const validations = [
-   body("name").notEmpty().withMessage("El campo no puede estar vacio").escape(),
+   body("name").notEmpty().withMessage("El campo no puede estar vacio").isLength({ min: 5 }).withMessage("El nombre del producto debe tener al menos 5 caracteres").escape(),
    body("email").notEmpty().withMessage("El campo no puede estar vacio").bail().isEmail().withMessage("Tenes que escribir un formato de correo valido").trim().escape().normalizeEmail(),
    body("password").notEmpty().withMessage("El campo no puede estar vacio")
    .bail().isStrongPassword(
      { minLength: 8, minLowercase: 1, minUppercase: 0, minNumbers: 1, minSymbols: 0, returnScore: false, pointsPerUnique: 1, pointsPerRepeat: 0.5, pointsForContainingLower: 10, pointsForContainingUpper: 10, pointsForContainingNumber: 10, pointsForContainingSymbol: 10 }
- 
- 
    )
    .withMessage("La contraseña debe tener al menos 8 caracteres y contener letras y numeros").escape().trim(),
    body("image").custom((value, {req})=>{
@@ -61,7 +59,7 @@ router.get('/register', usersController.register);
 
 /* POST register page */
 
-router.post("/register", uploadFile.single("image"), usersController.createNewAccount);
+router.post("/register", uploadFile.single("image"), validations, usersController.createNewAccount);
 
 /* GET profile page */
 
