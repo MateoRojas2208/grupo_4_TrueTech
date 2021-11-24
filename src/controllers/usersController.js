@@ -15,7 +15,8 @@ let passordsss = 1234
 const controller = {
     // carga pagina de login
     login: (req, res) => {
-        res.render("login", {})
+        let errors1 = ""
+        res.render("login", { errors1 })
     },
     // te logea en la cuenta (falta hacer que sirva la verificacion)
     enter: (req, res) => {
@@ -25,16 +26,22 @@ const controller = {
         User.findOne({
             where: { email: mail }
         }).then((resultado) => {
-            console.log(resultado.password)
-            if (bcrypt.compareSync(pass, resultado.password)) {
-                req.session.isLogged = true
-                res.redirect("/users/profile:" + resultado.id);
+            if (resultado !== null) {
+                if (bcrypt.compareSync(pass, resultado.password)) {
+                    req.session.isLogged = true
+                    res.redirect("/users/profile:" + resultado.id);
+
+                } else {
+                    res.render("login", {
+                        errors1: "El mail y la contraseña no coinciden (contraseña"
+                    })
+                }
             } else {
-                res.send("no salio")
+                res.render("login", {
+                    errors1: "El mail y la contraseña no coinciden (mail)"
+                })
             }
-        });
-
-
+        })
     },
     // carga la pagina de register
     register: (req, res) => {
@@ -42,42 +49,48 @@ const controller = {
     },
     // cuando apretas crear en register/POST de creacion de cuenta en base de datos
     createNewAccount: (req, res) => {
-        let resultValidation = validationResult(req)
-        if (resultValidation.errors.length > 0) {
-            res.render("register", {
-                errors: resultValidation.mapped(),
-                oldData: req.body
-            })
-        } else {
-            let link = req.file.path.replace("public", "")
-            let imageLink2 = link.replace("\\", "/")
+        User.findAll().then(u => {
+            let usersNumber = u.length
+            let resultValidation = validationResult(req)
 
-            User.findAll().then( u => {
-                let usersNumber = u.length
-                User.create({
-                id:(usersNumber + 1),
-                full_name: req.body.name,
-                username: req.body.name,
-                email: req.body.email,
-                password: bcrypt.hashSync(req.body.password, 12),
-                photo: imageLink2,
-                clearence: 0
-            })
-                .then(res.redirect("/users/login"))
-                .catch(function (err) {
-                    // print the error details
-                    console.log(err, req.body.email);
+            const filter = u.find(user => user.email === req.body.email);
+            if (resultValidation.errors.length > 0) {
+                res.render("register", {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
                 })
-            })
-        }
+            } else if (filter !== null) {
+                res.render("register", {
+                    errors2: {email: "El email ya existe"},
+                    oldData: req.body
+                })
+            } else {
+                let link = req.file.path.replace("public", "")
+                let imageLink2 = link.replace("\\", "/")
+                User.create({
+                    id: (usersNumber + 1),
+                    full_name: req.body.name,
+                    username: req.body.name,
+                    email: req.body.email,
+                    password: bcrypt.hashSync(req.body.password, 12),
+                    photo: imageLink2,
+                    clearence: 0
+                }).then(res.redirect("/users/login"))
+                    .catch(function (err) {
+                        // print the error details
+                        console.log(err, req.body.email);
+                    })
+            }
+        })
     },
+
     // carga la pagina del perfil
     profile: (req, res) => {
         User.findByPk(req.params.id)
-            .then(user => {
-                res.render('profile', { user });
-            }
-            )
+    .then(user => {
+        res.render('profile', { user });
+    }
+    )
     },
 
 }

@@ -26,8 +26,13 @@
               <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <span>O usa tu cuenta</span>
-            <input class="formulario" type="email" placeholder="Email" name="email" />
-            <input class="formulario" type="password" placeholder="Password" name="password" />
+            <% if(errors1 !== ""){ %>
+              <p style="color: rgb(252, 80, 0); font-size: 13px; margin-right: 40%;">
+                <%= errors1 %>
+              </p>
+            <% } %>
+            <input class="uEmail" type="email" placeholder="Email" name="email" />
+            <input class="uPassword" type="password" placeholder="Password" name="password" />
             <a href="#">Te olvidaste la contraseña?</a>
             <div class="mantener">
               <input class="check" type="checkbox" name="KeepSesionOpen" value="Bike">
@@ -47,8 +52,8 @@
           </div>
         </div>
       </div>
-
     </main>
+    <script type="text/javascript" src="/js/login.js"></script>
 </body>
 
 </html>

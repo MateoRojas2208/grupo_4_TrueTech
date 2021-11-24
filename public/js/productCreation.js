@@ -32,7 +32,6 @@ window.addEventListener("load", function () {
 
     pName.addEventListener("change", function (e) {
         e.preventDefault();
-        console.log(pName)
         if (pName.value == "") {
             alert("El nombre del producto es obligatorio");
         } else if (pName.value.length < 5) {
@@ -41,22 +40,26 @@ window.addEventListener("load", function () {
     })
 
     pDescription.addEventListener("change", function (e) {
+        e.preventDefault();
         if (pDescription.value.length < 20) {
             alert("La descripción debe tener al menos 20 caracteres y no puede estar vacia");
         }
     })
 
     pColour.addEventListener("change", function (e) {
+        e.preventDefault();
         if (pColour.value == "") {
             alert("El color es obligatorio");
         }})
 
     pImage.addEventListener("change", function (e) {
+        e.preventDefault();
         if (pImage.file != "JPG", "JPEG", "PNG") {
             alert("El formato del archivo debe ser válido (JPG, JPEG, PNG)");
         }})
         
     specsRow.addEventListener("change", function (e) {
+        e.preventDefault();
         for (let i = 1; i < 11; i++) {
             let specName = document.querySelector(`input.specName${i}`);
             let specDesc = document.querySelector(`input.specDesc${i}`);

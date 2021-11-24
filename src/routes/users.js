@@ -34,6 +34,7 @@ const validations = [
    .withMessage("La contraseña debe tener al menos 8 caracteres y contener letras y numeros").escape().trim(),
    body("image").custom((value, {req})=>{
       if(req.file){
+         console.log(req.file)
         let file = req.file.originalname
         let acceptedExt = [".png", ".jpg", ".jpeg"]
         let extension = (path.extname(file)).toLowerCase();
