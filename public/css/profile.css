@@ -405,3 +405,8 @@ footer a:hover {
         padding-left: 0;
     }
 }
+
+#arreglo{
+    display: flex !important;
+    flex-direction: row !important;
+}

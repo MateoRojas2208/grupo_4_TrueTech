@@ -45,9 +45,9 @@
                     <%= locals.errors.email.msg %>
                   </p>
                 <% } %>
-                <% if (errors2.email) { %>
+                <% if (errors2.email !== "") { %>
                   <p style="color: rgb(252, 80, 0); font-size: 13px; margin-right: 70%;">
-                    <%= locals.errors2.email %>
+                    <%= errors2.email %>
                   </p>
                 <% } %>
               <input type="password" placeholder="Contraseña" name="password" class="uPassword" />

@@ -45,7 +45,7 @@ const controller = {
     },
     // carga la pagina de register
     register: (req, res) => {
-        res.render("register")
+        res.render("register", {errors2: ""})
     },
     // cuando apretas crear en register/POST de creacion de cuenta en base de datos
     createNewAccount: (req, res) => {
@@ -56,6 +56,7 @@ const controller = {
             const filter = u.find(user => user.email === req.body.email);
             if (resultValidation.errors.length > 0) {
                 res.render("register", {
+                    errors2 : "",
                     errors: resultValidation.mapped(),
                     oldData: req.body
                 })
