@@ -1,12 +1,48 @@
+.subMainContainer1 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 750px;
+}
+
+.interactiveContainer {
+  display: flex;
+  border: 5px solid black;
+  width: 45%;
+  height: 90%;
+}
 
 
 
+.interactive-image {
+  width: 100%;
+  height: auto;
+  background-image: url(../images/faltaPhotoshop.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+#my-interactive-image>div.social-share-box>div {
+  display: none
+}
 
+#my-interactive-image>div.social-share-box>a.social-button.mail-colors.icon-envelop {
+  display: none
+}
+
+#my-interactive-image>div.social-share-box>a.social-button.twitter-colors.icon-twitter {
+  display: none
+}
+
+#my-interactive-image>div.social-share-box {
+  display: none !important;
+}
 
 
 /* ----------------------------footer--------------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -146,6 +182,7 @@ footer a:hover {
   footer .content .box {
     width: 50%;
   }
+
   .content .right {
     margin-top: 40px;
   }
@@ -155,10 +192,12 @@ footer a:hover {
   footer {
     position: relative;
   }
+
   footer .content .box {
     width: 100%;
     margin-top: 30px;
   }
+
   footer .content .middle {
     padding-left: 0;
   }
