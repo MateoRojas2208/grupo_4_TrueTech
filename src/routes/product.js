@@ -52,6 +52,10 @@ router.get('/', productsController.index);
 router.post("/search", productsController.indexSearch)
 router.get("/filter/:id", productsController.indexFilter)
 
+// *** GET pcCreation ****/
+router.get("/pcCreation", productsController.fullCreation)
+router.get("/iFrame", productsController.iFrameController)
+
 // /*** CREATE ONE PRODUCT ***/ 
 router.get('/create', productsController.create);
 router.post("/creation", uploadFile.single("image"), validations, productsController.store);

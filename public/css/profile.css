@@ -410,3 +410,14 @@ footer a:hover {
     display: flex !important;
     flex-direction: row !important;
 }
+#arreglo2{
+    display: flex !important;
+    flex-direction: row !important;
+}
+#arreglo3{
+    display: block;
+}
+#arreglo4{
+    display: flex;
+    justify-content: space-between;
+}

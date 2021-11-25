@@ -1,0 +1,6 @@
+.interactive-image {
+    margin: auto;
+    width: 800px;
+    height: 600px;
+    background-image: url('https://raw.githubusercontent.com/jpchateau/Interactive-Image/master/docs/_static/background.jpg');
+  }

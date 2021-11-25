@@ -78,7 +78,12 @@ const controller = {
 			}
 			)
 	},
-
+	fullCreation: (req, res) => {
+		res.render("pcCreation", {})
+	},
+	iFrameController: (req, res) => {
+		res.render("iFrame", {})
+	},
 	// Create - Form to create
 	create: (req, res) => {
 

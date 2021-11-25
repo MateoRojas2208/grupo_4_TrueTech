@@ -38,7 +38,7 @@ window.addEventListener("load", function () {
             alert("El título debe tener al menos 5 caracteres");
         }
     })
-
+    
     pDescription.addEventListener("change", function (e) {
         e.preventDefault();
         if (pDescription.value.length < 20) {
