@@ -1,6 +1,8 @@
 .subMainContainer1 {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   height: 750px;
 }
@@ -38,6 +40,14 @@
 #my-interactive-image>div.social-share-box {
   display: none !important;
 }
+
+.listContainer{
+  margin-bottom: 300px;
+}
+
+
+
+
 
 
 /* ----------------------------footer--------------------------------------------------------- */

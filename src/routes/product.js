@@ -54,7 +54,6 @@ router.get("/filter/:id", productsController.indexFilter)
 
 // *** GET pcCreation ****/
 router.get("/pcCreation", productsController.fullCreation)
-router.get("/iFrame", productsController.iFrameController)
 
 // /*** CREATE ONE PRODUCT ***/ 
 router.get('/create', productsController.create);
