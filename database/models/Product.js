@@ -16,11 +16,6 @@ module.exports = (sequeliz, Sequelize) => {
       references: 'model',
       referencesKey: 'id'
     },
-    shop_id: {
-      type: Sequelize.BIGINT(11),
-      references: 'shop',
-      referencesKey: 'id'
-    },
     seller_id: {
       type: Sequelize.BIGINT(11),
       references: 'user',
@@ -41,19 +36,7 @@ module.exports = (sequeliz, Sequelize) => {
     price: {
       type: Sequelize.BIGINT(11)
     },
-    discount_price: {
-      type: Sequelize.BIGINT(11)
-    },
-    discount: {
-      type: Sequelize.BIGINT(11)
-    },
     quantity: {
-      type: Sequelize.BIGINT(11)
-    },
-    sold_items: {
-      type: Sequelize.BIGINT(11)
-    },
-    likes: {
       type: Sequelize.BIGINT(11)
     },
     status: {
@@ -78,10 +61,6 @@ module.exports = (sequeliz, Sequelize) => {
   const Product = sequeliz.define(alias, cols, config)
 
   Product.associate = function (models) {
-    Product.belongsTo(models.Shop, {
-      as: 'shop',
-      foreignKey: 'shop_id'
-    }),
     Product.belongsTo(models.User, {
       as: 'seller',
       foreignKey: 'seller_id'

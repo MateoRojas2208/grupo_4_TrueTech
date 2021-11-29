@@ -85,84 +85,84 @@ const controller = {
 				categories_id: 1
 			}
 		}).then(cat1 => {
-				var categoy1 = cat1
+			var categoy1 = cat1
+			Product.findAll({
+				where: {
+					categories_id: 2
+				}
+			}).then(cat2 => {
+				var categoy2 = cat2
 				Product.findAll({
 					where: {
-						categories_id: 2
+						categories_id: 3
 					}
-				}).then(cat2 => {
-						var categoy2 = cat2
+				}).then(cat3 => {
+					var categoy3 = cat3
+					Product.findAll({
+						where: {
+							categories_id: 4
+						}
+					}).then(cat4 => {
+						var categoy4 = cat4
 						Product.findAll({
 							where: {
-								categories_id: 3
+								categories_id: 5
 							}
-						}).then(cat3 => {
-								var categoy3 = cat3
+						}).then(cat5 => {
+							var categoy5 = cat5
+							Product.findAll({
+								where: {
+									categories_id: 6
+								}
+							}).then(cat6 => {
+								var categoy6 = cat6
 								Product.findAll({
 									where: {
-										categories_id: 4
+										categories_id: 7
 									}
-								}).then(cat4 => {
-										var categoy4 = cat4
+								}).then(cat7 => {
+									var categoy7 = cat7
+									Product.findAll({
+										where: {
+											categories_id: 8
+										}
+									}).then(cat8 => {
+										var categoy8 = cat8
 										Product.findAll({
 											where: {
-												categories_id: 5
+												categories_id: 9
 											}
-										}).then(cat5 => {
-												var categoy5 = cat5
-												Product.findAll({
-													where: {
-														categories_id: 6
-													}
-												}).then(cat6 => {
-														var categoy6 = cat6
-														Product.findAll({
-															where: {
-																categories_id: 7
-															}
-														}).then(cat7 => {
-																var categoy7 = cat7
-																Product.findAll({
-																	where: {
-																		categories_id: 8
-																	}
-																}).then(cat8 => {
-																		var categoy8 = cat8
-																		Product.findAll({
-																			where: {
-																				categories_id: 9
-																			}
-																		}).then(cat9 => {
-																				var categoy9 = cat9
-																				Product.findAll({
-																					where: {
-																						categories_id: 10
-																					}
-																				}).then(cat10 => {
-																						var categoy10 = cat10
-																						res.render('pcCreation', {
-																							ram : categoy1,
-																							processor : categoy2,
-																							graficCard : categoy3,
-																							storage : categoy4,
-																							powerSupply : categoy5,
-																							motherboard : categoy6,
-																							cabinet : categoy7,
-																							monitor : categoy8,
-																							keyboard : categoy9,
-																							mouse : categoy10
-																						})
-																					})
-																			})
-																	})
-															})
-													})
+										}).then(cat9 => {
+											var categoy9 = cat9
+											Product.findAll({
+												where: {
+													categories_id: 10
+												}
+											}).then(cat10 => {
+												var categoy10 = cat10
+												res.render('pcCreation', {
+													ram: categoy1,
+													processor: categoy2,
+													graficCard: categoy3,
+													storage: categoy4,
+													powerSupply: categoy5,
+													motherboard: categoy6,
+													cabinet: categoy7,
+													monitor: categoy8,
+													keyboard: categoy9,
+													mouse: categoy10
+												})
 											})
+										})
 									})
+								})
 							})
+						})
 					})
+				})
 			})
-		
+		})
+
 	},
 	// Create - Form to create
 	create: (req, res) => {
@@ -264,11 +264,6 @@ const controller = {
 					max: 20,
 					integer: true
 				}),
-				shop_id: rn({
-					min: 1,
-					max: 20,
-					integer: true
-				}),
 				seller_id: rn({
 					min: 1,
 					max: 20,
@@ -279,11 +274,7 @@ const controller = {
 				specs: specs,
 				color: req.body.colour,
 				price: req.body.price,
-				discount_price: 0,
-				discount: 0,
 				quantity: 1,
-				sold_items: 0,
-				likes: 0,
 				status: true,
 				image: imageLink2
 			}).then(res.redirect("/product"))
@@ -329,8 +320,6 @@ const controller = {
 				description: req.body.description,
 				color: req.body.colour,
 				price: req.body.price,
-				discount_price: 0,
-				discount: 0,
 				quantity: 1,
 				status: true,
 				image: imageLink2
@@ -345,7 +334,7 @@ const controller = {
 		db.Product.destroy({
 			where: { id: req.params.id }
 		});
-	}
+	},
 }
 
 module.exports = controller;

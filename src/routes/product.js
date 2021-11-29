@@ -71,9 +71,4 @@ router.post('/update/:id', uploadFile.single("image"), validations, productsCont
 // /*** DELETE ONE PRODUCT***/ 
 router.post('/destroy/:id', productsController.destroy);
 
-
-
-
-
 module.exports = router;
-// aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa para que deje poner nombre en el comit
