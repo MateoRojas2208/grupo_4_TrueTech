@@ -8,3 +8,11 @@
 --productCreation hacer que las specs se creen con un for() 
 --validacion para specs en backend
 --poner ejs en /user/profile:id
+--cambiar la parte de especificaciones a una tabla nueva, mas o menos como tiene el grupo 8
+--limitar fotos para que sea facil el productDetail
+--hacer session como grupo 8 para que cuando logeas no muestre opcion de login register
+
+
+--preguntar lo de react
+--preguntar responsive pcCreation
+--preguntar carrito en necesario
