@@ -74,31 +74,23 @@
       </div>
       <!-- Especificaciones del producto || Más información -->
       <div class="more-info">
-
-
-        <div class="box">
-          <div class="left">
-            <div class="content">
-              <h2>Especificaciones</h2>
-              <div>Capacidad total: 8gb.</div>
-              <div>Tecnología: DDR4 SDRAM.</div>
-              <div>Velocidad: 3200 MHz.</div>
-              <div>Formato: SIMM.</div>
-              <div>Compatibilidad: computadoras de escritorio.</div>
-            </div>
-          </div>
-        </div>
-        <div class="right">
+        <div class="left">
           <div class="content">
-            <h2>Más información</h2>
-            <div>Fabricante: VENGEANCE.</div>
-            <div>Marca: Corsair.</div>
-            <div>Línea: Vengance RGB Pro.</div>
-            <div>Modelo: CMW8GX4M1E3200C16.</div>
-            <div>Cantidad de pines: 288.</div>
-            <div>Tasa de transferencia: 25600 MB/s.</div>
-            <div>Latencia CAS: 16.</div>
-            <div>Voltaje de alimentación: 1.35V.</div>
+            <h2>Especificaciones</h2>
+            <div class="tituloSpec">
+              <% for( let i=0; i < spec.length; i++ ) { %>
+                <div class="id<%- i -%> ">
+                  <%- spec[i].description -%>
+                </div>
+                <% } %>
+            </div>
+            <div class="descrSpec">
+              <% for( let i=0; i < spec.length; i++ ) { %>
+                <div class="id<%- i -%> ">
+                  <%- spec[i].title -%>
+                </div>
+                <% } %>
+            </div>
           </div>
         </div>
       </div>

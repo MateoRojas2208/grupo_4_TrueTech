@@ -107,6 +107,19 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
+
+CREATE TABLE `specs` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `products_id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(55) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(55) COLLATE utf8mb4_unicode_ci NOT NULL,
+
+ PRIMARY KEY (`id`),
+ index (products_id),
+ foreign key (products_id )
+ references products(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- insert brands
 LOCK TABLES `brands` WRITE;
 insert into brands (id, name) values (1, 'Divanoodle');
@@ -251,3 +264,11 @@ insert into products (id, categories_id, model_id, shop_id, seller_id, specs, na
 insert into products (id, categories_id, model_id, shop_id, seller_id, specs, name, description, color, price, discount_price, discount, quantity, sold_items, likes, status, image, creation_date, update_date) values (19, 19, 19, 19, 19, 1, 'integer aliquet massa id lobortis convallis', 'sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy', '#fd5a45', '80981.99', '659358.04', 59, 532, 23739, 88436, true, 'http://dummyimage.com/157x112.png/ff4444/ffffff', '2021-07-10 15:55:26', '2020-11-24 10:12:48');
 insert into products (id, categories_id, model_id, shop_id, seller_id, specs, name, description, color, price, discount_price, discount, quantity, sold_items, likes, status, image, creation_date, update_date) values (20, 20, 20, 20, 20, 1, 'eleifend pede libero quis orci nullam molestie nibh in lectus', 'sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin', '#8b0321', '520305.97', '296843.86', 68, 151, 513, 30812, false, 'http://dummyimage.com/390x461.png/dddddd/000000', '2021-09-20 09:46:12', '2021-03-04 16:58:20');
 UNLOCK TABLES;
+
+LOCK TABLES `specs` WRITE;
+insert into specs(id, products_id, title, description) values (1, 1, 'T1', "D1");
+insert into specs(id, products_id, title, description) values (2, 2, 'T2', "D2");
+insert into specs(id, products_id, title, description) values (3, 3, 'T3', "D3");
+UNLOCK TABLES;
+
+"[{\"id\":635395797545},{\"specTitle\":\"1\",\"specDescription\":\"1\"},{\"specTitle\":\"2\",\"specDescription\":\"2\"},{\"specTitle\":\"3\",\"specDescription\":\"3\"},{\"specTitle\":\"4\",\"specDescription\":\"4\"},{\"specTitle\":\"5\",\"specDescription\":\"5\"},{\"specTitle\":\"6\",\"specDescription\":\"6\"},{\"specTitle\":\"7\",\"specDescription\":\"7\"},{\"specTitle\":\"8\",\"specDescription\":\"8\"},{\"specTitle\":\"9\",\"specDescription\":\"9\"}]"

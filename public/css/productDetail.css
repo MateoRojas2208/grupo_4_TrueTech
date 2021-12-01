@@ -259,6 +259,7 @@ main {
   margin: 0 auto;
   padding: 15px;
   display: flex;
+  justify-content: center;
   font-family: 'Roboto', sans-serif;
   box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
   border-radius: 10px;
@@ -279,10 +280,6 @@ main {
   text-align: justify;
 }
 
-.left {
-  float: left;
-  width: 50%;
-}
 
 .right {
   float: right;

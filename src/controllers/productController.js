@@ -2,6 +2,7 @@ var rn = require('random-number')
 const db = require('../../database/models');
 const Product = db.Product;
 const Category = db.Category
+const Spec = db.Spec
 const Op = db.Sequelize.Op
 const { validationResult } = require('express-validator');
 const { validationError } = require('express-validator');
@@ -49,8 +50,6 @@ const controller = {
 					})
 			})
 	},
-
-
 	// Show some products (category filter)
 	indexFilter: (req, res) => {
 		var categoryId = req.params.id
@@ -70,15 +69,22 @@ const controller = {
 			});
 		})
 	},
-
-
 	// Detail - Detail from one product
 	detail: (req, res) => {
 		Product.findByPk(req.params.id)
-			.then(product => {
-				res.render('productDetail', { product });
-			}
-			)
+			.then(i => {
+				let product = i
+				Spec.findAll({
+					where: { products_id: 1 }
+				})
+					.then(spec => {
+						// console.log(spec)
+						res.render("productDetail", {
+							product,
+							spec
+						})
+					})
+			})
 	},
 	fullCreation: (req, res) => {
 		Product.findAll({
@@ -187,8 +193,6 @@ const controller = {
 					})
 				})
 		} else {
-
-
 			let link = req.file.path.replace("public", "")
 			let imageLink2 = link.replace("\\", "/")
 
@@ -288,12 +292,13 @@ const controller = {
 
 	// Update - Form to edit
 	edit: (req, res) => {
-		db.Product.findByPk(req.params.id)
-			.then(product => {
-				res.render("productEdit", { product })
+		Product.findByPk(req.params.id)
+			.then(i => {
+				let product = i
+				Spec
 			})
 
-		// 
+		// res.render("productEdit", { product })
 	},
 	// Update - Method to update
 	update: (req, res) => {

@@ -1,6 +1,5 @@
 
 module.exports = (sequeliz, Sequelize) => {
-  const brand = require('./Brand');
   let alias = "BrandModel"
   let cols = {
     id: {

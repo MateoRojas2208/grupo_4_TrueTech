@@ -11,8 +11,7 @@
 --cambiar la parte de especificaciones a una tabla nueva, mas o menos como tiene el grupo 8
 --limitar fotos para que sea facil el productDetail
 --hacer session como grupo 8 para que cuando logeas no muestre opcion de login register
+--formularios con mensajes abajo Grupo 7
 
-
---preguntar lo de react
 --preguntar responsive pcCreation
 --preguntar carrito en necesario

@@ -53,16 +53,10 @@ const controller = {
             let usersNumber = u.length
             let resultValidation = validationResult(req)
 
-            const filter = u.find(user => user.email === req.body.email);
             if (resultValidation.errors.length > 0) {
                 res.render("register", {
                     errors2 : "",
                     errors: resultValidation.mapped(),
-                    oldData: req.body
-                })
-            } else if (filter !== null) {
-                res.render("register", {
-                    errors2: {email: "El email ya existe"},
                     oldData: req.body
                 })
             } else {
