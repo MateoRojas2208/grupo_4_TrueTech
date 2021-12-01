@@ -12,59 +12,6 @@ const controller = {
 
                 res.status(200).json({
                     count: productos.length,
-                    countByCategory: {
-                        MemoriasRam: (productos.filter(function (producto) {
-                            if (producto.categories_id == 1) {
-                                return producto
-                            }
-                        })).length,
-                        Procesadores: (productos.filter(function (producto) {
-                            if (producto.categories_id == 2) {
-                                return producto
-                            }
-                        })).length,
-                        TargetasGraficas: (productos.filter(function (producto) {
-                            if (producto.categories_id == 3) {
-                                return producto
-                            }
-                        })).length,
-                        Almacenamiento:
-                            (productos.filter(function (producto) {
-                                if (producto.categories_id == 4) {
-                                    return producto
-                                }
-                            })).length,
-                        Fuente: (productos.filter(function (producto) {
-                            if (producto.categories_id == 5) {
-                                return producto
-                            }
-                        })).length,
-                        PlacasMadre: (productos.filter(function (producto) {
-                            if (producto.categories_id == 6) {
-                                return producto
-                            }
-                        })).length,
-                        Gabinetes: (productos.filter(function (producto) {
-                            if (producto.categories_id == 7) {
-                                return producto
-                            }
-                        })).length,
-                        Monitores: (productos.filter(function (producto) {
-                            if (producto.categories_id == 8) {
-                                return producto
-                            }
-                        })).length,
-                        Teclados: (productos.filter(function (producto) {
-                            if (producto.categories_id == 9) {
-                                return producto
-                            }
-                        })).length,
-                        Mouse: (productos.filter(function (producto) {
-                            if (producto.categories_id == 10) {
-                                return producto
-                            }
-                        })).length
-                    },
                     products: productos.map(function (producto) {
                         return {
                             id: producto.id,
@@ -117,7 +64,7 @@ const controller = {
     userDetail: function (req, res) {
         User
             .findByPk(req.params.id)
-            .then(usuario =>{
+            .then(usuario => {
                 res.json({
                     id: usuario.id,
                     fullName: usuario.full_name,
@@ -125,6 +72,114 @@ const controller = {
                     email: usuario.email,
                     imageUrl: usuario.photo
                 })
+            })
+    },
+    categoryList: function (req, res) {
+        Category
+            .findAll()
+            .then(lista => {
+                res.json({
+                    count: lista.length,
+                    categories: lista.map(function (categoria) {
+                        return {
+                            id: categoria.id,
+                            name: categoria.name
+                        }
+                    })
+
+                })
+            })
+    },
+    categoryDetail: function (req, res) {
+        Product
+            .findAll()
+            .then(productos => {
+                res.json([
+                    [1, "Memorias Ram", (productos.filter(function (producto) {
+                        if (producto.categories_id == 1) {
+                            return producto
+                        }
+                    })).length],
+                    [2, "Gabinetes", (productos.filter(function (producto) {
+                        if (producto.categories_id == 7) {
+                            return producto
+                        }
+                    })).length],
+                    [3, "Procesadores", (productos.filter(function (producto) {
+                        if (producto.categories_id == 2) {
+                            return producto
+                        }
+                    })).length],
+                    [4, "Targetas Graficas", (productos.filter(function (producto) {
+                        if (producto.categories_id == 3) {
+                            return producto
+                        }
+                    })).length],
+                    [5, "Almacenamiento", (productos.filter(function (producto) {
+                        if (producto.categories_id == 4) {
+                            return producto
+                        }
+                    })).length],
+                    [6, "Fuente", (productos.filter(function (producto) {
+                        if (producto.categories_id == 5) {
+                            return producto
+                        }
+                    })).length],
+                    [7, "Placas Madre", (productos.filter(function (producto) {
+                        if (producto.categories_id == 6) {
+                            return producto
+                        }
+                    })).length],
+
+                    [8, "Monitores", (productos.filter(function (producto) {
+                        if (producto.categories_id == 8) {
+                            return producto
+                        }
+                    })).length],
+                    [9, "Teclados", (productos.filter(function (producto) {
+                        if (producto.categories_id == 9) {
+                            return producto
+                        }
+                    })).length],
+                    [10, "Mouse", (productos.filter(function (producto) {
+                        if (producto.categories_id == 10) {
+                            return producto
+                        }
+                    })).length]])
+            })
+    },
+    productArray: (req, res) => {
+        Product
+            .findAll({
+                include: [
+                    { model: db.Category, as: 'category' }
+               ],})
+            .then(productos => {
+                res.status(200).json(
+                    productos.map(function (producto) {
+                        return [
+                            producto.id,
+                            producto.name,
+                            // producto.categories_id,
+                            "$ " + producto.price
+                        ]
+                    })
+                )
+            })
+    },
+    userArray: function (req, res) {
+        User
+            .findAll()
+            .then(usuarios => {
+                res.status(200).json(
+                    usuarios.map(function (user) {
+                        return [
+                            user.id,
+                            user.full_name,
+                            user.username
+                        ]
+                    })
+                )
             })
     },
 }

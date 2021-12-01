@@ -6,6 +6,7 @@ var logger = require('morgan');
 const session = require("express-session")
 const Sequelize = require('sequelize');
 const mysql = require("mysql2")
+const cors=require("cors");
 
 var indexRouter = require('./src/routes/index');
 var usersRouter = require('./src/routes/users');
@@ -19,6 +20,14 @@ app.set('views', path.join(__dirname, '/src/views'));
 app.set('view engine', 'ejs');
 
 
+const corsOptions ={
+   origin:'*', 
+   credentials:true,   //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions)) // Use this after the variable declaration
+
 
 // creating 24 hours from milliseconds
 const oneWeek = 1000 * 60 * 60 * 24 * 7;
@@ -28,7 +37,6 @@ app.use(session({
   saveUninitialized: false,
   cookie: { maxAge: oneWeek },
   resave: true
-
 }))
 app.use(logger('dev'));
 app.use(express.json());

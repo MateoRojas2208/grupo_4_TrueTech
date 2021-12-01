@@ -10,6 +10,7 @@ const { filter } = require('lodash');
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
+
 		Category.findAll()
 			.then(i => {
 				var category = i;
