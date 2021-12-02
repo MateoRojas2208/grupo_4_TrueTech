@@ -1,3 +1,13 @@
+/* cambios en item */
+.item{
+  width: 500px !important;
+}
+
+
+
+
+
+/* otros cambios */
 .subMainContainer1 {
   display: flex;
   justify-content: center;
@@ -13,8 +23,6 @@
   width: 45%;
   height: 90%;
 }
-
-
 
 .interactive-image {
   width: 100%;
