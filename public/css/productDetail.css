@@ -121,7 +121,7 @@ html, body {
   width: 100%;
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #e3e3e3;
+  background-color: #FFFFFF;
 }
 
 main {
@@ -255,15 +255,16 @@ main {
 
 .more-info {
   background-color: #fff;
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
   padding: 15px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   font-family: 'Roboto', sans-serif;
   box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
   border-radius: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 100px;
 }
 
 /* Columnas */
@@ -273,11 +274,26 @@ main {
   width: 100%;
 }
 
-.content {
-  font-size: 15px;
-  line-height: 20px;
-  padding: 0 20px;
-  text-align: justify;
+.contenido {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-left: 15%;
+  margin-bottom: 50px;
+}
+.resalted{
+  font-weight: bold;
+}
+.tituloSpec{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.inside{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
 }
 
 

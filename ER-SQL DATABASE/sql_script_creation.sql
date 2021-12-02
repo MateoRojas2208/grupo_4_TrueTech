@@ -1,123 +1,71 @@
 CREATE DATABASE  IF NOT EXISTS `database_trueTech1`;
 USE `database_trueTech1`;
 
-
-
-CREATE TABLE `users` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `full_name` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `username` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `clearence` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT "user" NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 CREATE TABLE `brands` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `brand_models` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `brand_id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) unsigned NOT NULL,
+  `brand_id` int(10) unsigned NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-
   PRIMARY KEY (`id`),
-  index (brand_id),
- 	foreign key (brand_id )
- 		references brands(id)
+  KEY `brand_id` (`brand_id`),
+  CONSTRAINT `brand_models_ibfk_1` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+
 CREATE TABLE `categories` (
-  `id` int(10) UNSIGNED  COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-
-
-CREATE TABLE `shop` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `admin_id` int(10) UNSIGNED NOT NULL,
-  `manager_id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `products_count` int(11) NOT NULL,
+CREATE TABLE `users` (
+  `id` int(10) unsigned NOT NULL,
+  `full_name` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sold_items` int(11) NOT NULL,
-  
-  PRIMARY KEY (`id`),
-  
-  index (admin_id),
-  index (manager_id),
-  
- 	foreign key (admin_id)
- 		references users(id),
- 		
- 	foreign key (manager_id)
- 		references users(id)
+  `clearence` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'user',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-
-
 
 CREATE TABLE `products` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `categories_id` int(10) UNSIGNED NOT NULL,
-  `model_id` int(10) UNSIGNED NOT NULL,
-  `shop_id` int(10) UNSIGNED DEFAULT NULL,
-  `seller_id` int(10) UNSIGNED NOT NULL,
-  `specs` varchar(10000)  NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `description` varchar(500) NOT null,
-  `color` varchar(20)  DEFAULT NULL,
-  `price` int(11) UNSIGNED NOT NULL,
-  `discount_price` int(11) DEFAULT NULL,
-  `discount` int(11) DEFAULT NULL,
-  `quantity` int(11) DEFAULT "1",
-  `sold_items` int(11) DEFAULT "0",
-  `likes` int(11) DEFAULT "0",
-  `status` boolean DEFAULT NULL,
-  `image` varchar(100) NOT NULL,
+  `id` int(10) unsigned NOT NULL,
+  `categories_id` int(10) unsigned NOT NULL,
+  `model_id` int(10) unsigned NOT NULL,
+  `seller_id` int(10) unsigned NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `color` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` int(11) unsigned NOT NULL,
+  `quantity` int(11) DEFAULT 1,
+  `status` tinyint(1) DEFAULT NULL,
+  `image` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `creation_date` datetime NOT NULL,
   `update_date` datetime NOT NULL,
-
+  `specs` varchar(10000) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
-
-  index (categories_id),
-  index (model_id),
-  index (shop_id),
-  index (seller_id),
-
-  foreign key (categories_id)
- 		references categories(id),
-
-  foreign key (model_id)
-    references brand_models(id),
-
-  foreign key (shop_id)
- 		references shop(id),
-
-  foreign key (seller_id)
- 		references users(id)
-
+  KEY `categories_id` (`categories_id`),
+  KEY `model_id` (`model_id`),
+  KEY `seller_id` (`seller_id`),
+  CONSTRAINT `products_ibfk_1` FOREIGN KEY (`categories_id`) REFERENCES `categories` (`id`),
+  CONSTRAINT `products_ibfk_2` FOREIGN KEY (`model_id`) REFERENCES `brand_models` (`id`),
+  CONSTRAINT `products_ibfk_4` FOREIGN KEY (`seller_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-
-
 CREATE TABLE `specs` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `products_id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) unsigned NOT NULL,
+  `products_id` int(10) unsigned NOT NULL,
   `title` varchar(55) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` varchar(55) COLLATE utf8mb4_unicode_ci NOT NULL,
-
- PRIMARY KEY (`id`),
- index (products_id),
- foreign key (products_id )
- references products(id)
+  PRIMARY KEY (`id`),
+  KEY `products_id` (`products_id`),
+  CONSTRAINT `specs_ibfk_1` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- insert brands

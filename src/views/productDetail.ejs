@@ -74,24 +74,16 @@
       </div>
       <!-- Especificaciones del producto || Más información -->
       <div class="more-info">
-        <div class="left">
-          <div class="content">
-            <h2>Especificaciones</h2>
-            <div class="tituloSpec">
-              <% for( let i=0; i < spec.length; i++ ) { %>
-                <div class="id<%- i -%> ">
-                  <%- spec[i].description -%>
+        <h2>Especificaciones</h2>
+        <div class="contenido">
+          <% for( let i=0; i < spec.length; i++ ) { %>
+            <div class="inside">
+              <%- spec[i].title -%> 
+                <div class="resalted">
+                  :  <%-spec[i].description -%>
                 </div>
-                <% } %>
             </div>
-            <div class="descrSpec">
-              <% for( let i=0; i < spec.length; i++ ) { %>
-                <div class="id<%- i -%> ">
-                  <%- spec[i].title -%>
-                </div>
-                <% } %>
-            </div>
-          </div>
+            <% } %>
         </div>
       </div>
     </main>
