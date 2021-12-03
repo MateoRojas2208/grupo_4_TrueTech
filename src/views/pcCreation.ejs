@@ -5,7 +5,8 @@
     <%- include("./partials/head") -%>
         <title>Crea tu PC</title>
         <link rel="stylesheet" href="/css/pcCreation.css">
-        <link href="https://cdn.jsdelivr.net/npm/interactiveimagejs@2.7.1/dist/interactive-image.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/interactiveimagejs@2.7.1/dist/interactive-image.min.css"
+            rel="stylesheet">
 </head>
 
 <body>
@@ -19,7 +20,313 @@
                         </div>
                     </div>
                 </div>
-                <div class="listContainer">
+                <div class="listContainer boxItem cyan special">
+                    <div class="boxItem cyan special hidden" id="mother0">
+                        <div class="extraDiv">
+                            <img src="<%=motherboard[0].image %>" class="itemImage">
+                            <h4>
+                                <%=motherboard[0].name%>
+                            </h4>
+                        </div>
+                        <p>Placa Madre</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= motherboard[0].id%> " target=”_blank”><button class="boton1">Ir
+                                    a la pagina del producto</button></a>
+                            <a href="http://www.google.com/"><button class="boton2" onclick="mother1()">Agregar
+                                    Producto</button></a>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="mother1">
+                        <div class="extraDiv">
+                            <img src="<%=motherboard[1].image %>" class="itemImage">
+                            <h4>
+                                <%=motherboard[1].name%>
+                            </h4>
+                        </div>
+
+                        <p>Placa Madre</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= motherboard[1].id %> " target=”_blank”><button
+                                    class="boton1">Ir a la pagina del producto</button></a>
+                            <a href="http://www.google.com/"><button class="boton2" onclick="mother1()">Agregar
+                                    Producto</button></a>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="powerSupply0">
+                        <div class="extraDiv">
+                            <img src="<%= powerSupply[0].image%>" class="itemImage">
+                            <h4>
+                                <%= powerSupply[0].name %>
+                            </h4>
+                        </div>
+                        <p>Fuente</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= powerSupply[0].id %> " target=”_blank”>
+                                <button class="boton1">Ir a la pagina del producto</button>
+                            </a>
+                            <button class="boton2">Agregar Producto</button>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="powerSupply1">
+                        <div class="extraDiv">
+                            <img src="<%= powerSupply[1].image%>" class="itemImage">
+                            <h4>
+                                <%= powerSupply[1].name %>
+                            </h4>
+                        </div>
+                        <p>Fuente</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= powerSupply[1].id %> " target=”_blank”>
+                                <button class="boton1">Ir a la pagina del producto</button>
+                            </a>
+                            <button class="boton2">Agregar Producto</button>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="processor0">
+                        <div class="extraDiv">
+                            <img src="<%= processor[0].image%>" class="itemImage">
+                            <h4>
+                                <%= processor[0].name %>
+                            </h4>
+                        </div>
+                        <p>Fuente</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= processor[0].id %> " target=”_blank”>
+                                <button class="boton1">Ir a la pagina del producto</button>
+                            </a>
+                            <button class="boton2">Agregar Producto</button>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="processor1">
+                        <div class="extraDiv">
+                            <img src="<%= processor[1].image%>" class="itemImage">
+                            <h4>
+                                <%= processor[1].name %>
+                            </h4>
+                        </div>
+                        <p>Fuente</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= processor[1].id %> " target=”_blank”>
+                                <button class="boton1">Ir a la pagina del producto</button>
+                            </a>
+                            <button class="boton2">Agregar Producto</button>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="ram0">
+                        <div class="extraDiv">
+                            <img src="<%= ram[0].image%>" class="itemImage">
+                            <h4>
+                                <%= ram[0].name %>
+                            </h4>
+                        </div>
+                        <p>Fuente</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= ram[0].id %> " target=”_blank”>
+                                <button class="boton1">Ir a la pagina del producto</button>
+                            </a>
+                            <button class="boton2">Agregar Producto</button>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="ram1">
+                        <div class="extraDiv">
+                            <img src="<%= ram[1].image%>" class="itemImage">
+                            <h4>
+                                <%= ram[1].name %>
+                            </h4>
+                        </div>
+                        <p>Fuente</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= ram[1].id %> " target=”_blank”>
+                                <button class="boton1">Ir a la pagina del producto</button>
+                            </a>
+                            <button class="boton2">Agregar Producto</button>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="cabinet0">
+                        <div class="extraDiv">
+                            <img src="<%= cabinet[0].image%>" class="itemImage">
+                            <h4>
+                                <%= cabinet[0].name %>
+                            </h4>
+                        </div>
+                        <p>Fuente</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= cabinet[0].id %> " target=”_blank”>
+                                <button class="boton1">Ir a la pagina del producto</button>
+                            </a>
+                            <button class="boton2">Agregar Producto</button>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="cabinet1">
+                        <div class="extraDiv">
+                            <img src="<%= cabinet[1].image%>" class="itemImage">
+                            <h4>
+                                <%= cabinet[1].name %>
+                            </h4>
+                        </div>
+                        <p>Fuente</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= cabinet[1].id %> " target=”_blank”>
+                                <button class="boton1">Ir a la pagina del producto</button>
+                            </a>
+                            <button class="boton2">Agregar Producto</button>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="storage0">
+                        <div class="extraDiv">
+                            <img src="<%= storage[0].image%>" class="itemImage">
+                            <h4>
+                                <%= storage[0].name %>
+                            </h4>
+                        </div>
+                        <p>Fuente</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= storage[0].id %> " target=”_blank”>
+                                <button class="boton1">Ir a la pagina del producto</button>
+                            </a>
+                            <button class="boton2">Agregar Producto</button>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="storage1">
+                        <div class="extraDiv">
+                            <img src="<%= storage[1].image%>" class="itemImage">
+                            <h4>
+                                <%= storage[1].name %>
+                            </h4>
+                        </div>
+                        <p>Fuente</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= storage[1].id %> " target=”_blank”>
+                                <button class="boton1">Ir a la pagina del producto</button>
+                            </a>
+                            <button class="boton2">Agregar Producto</button>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="monitor0">
+                        <div class="extraDiv">
+                            <img src="<%= monitor[0].image%>" class="itemImage">
+                            <h4>
+                                <%= monitor[0].name %>
+                            </h4>
+                        </div>
+                        <p>Fuente</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= monitor[0].id %> " target=”_blank”>
+                                <button class="boton1">Ir a la pagina del producto</button>
+                            </a>
+                            <button class="boton2">Agregar Producto</button>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="monitor1">
+                        <div class="extraDiv">
+                            <img src="<%= monitor[1].image%>" class="itemImage">
+                            <h4>
+                                <%= monitor[1].name %>
+                            </h4>
+                        </div>
+                        <p>Fuente</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= monitor[1].id %> " target=”_blank”>
+                                <button class="boton1">Ir a la pagina del producto</button>
+                            </a>
+                            <button class="boton2">Agregar Producto</button>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="keyboard0">
+                        <div class="extraDiv">
+                            <img src="<%= keyboard[0].image%>" class="itemImage">
+                            <h4>
+                                <%= keyboard[0].name %>
+                            </h4>
+                        </div>
+                        <p>Fuente</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= keyboard[0].id %> " target=”_blank”>
+                                <button class="boton1">Ir a la pagina del producto</button>
+                            </a>
+                            <button class="boton2">Agregar Producto</button>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="keyboard1">
+                        <div class="extraDiv">
+                            <img src="<%= keyboard[1].image%>" class="itemImage">
+                            <h4>
+                                <%= keyboard[1].name %>
+                            </h4>
+                        </div>
+                        <p>Fuente</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= keyboard[1].id %> " target=”_blank”>
+                                <button class="boton1">Ir a la pagina del producto</button>
+                            </a>
+                            <button class="boton2">Agregar Producto</button>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="graficCard0">
+                        <div class="extraDiv">
+                            <img src="<%= graficCard[0].image%>" class="itemImage">
+                            <h4>
+                                <%= graficCard[0].name %>
+                            </h4>
+                        </div>
+                        <p>Fuente</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= graficCard[0].id %> " target=”_blank”>
+                                <button class="boton1">Ir a la pagina del producto</button>
+                            </a>
+                            <button class="boton2">Agregar Producto</button>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="graficCard1">
+                        <div class="extraDiv">
+                            <img src="<%= graficCard[1].image%>" class="itemImage">
+                            <h4>
+                                <%= graficCard[1].name %>
+                            </h4>
+                        </div>
+                        <p>Fuente</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= graficCard[1].id %> " target=”_blank”>
+                                <button class="boton1">Ir a la pagina del producto</button>
+                            </a>
+                            <button class="boton2">Agregar Producto</button>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="mouse0">
+                        <div class="extraDiv">
+                            <img src="<%= mouse[0].image%>" class="itemImage">
+                            <h4>
+                                <%= mouse[0].name %>
+                            </h4>
+                        </div>
+                        <p>Fuente</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= mouse[0].id %> " target=”_blank”>
+                                <button class="boton1">Ir a la pagina del producto</button>
+                            </a>
+                            <button class="boton2">Agregar Producto</button>
+                        </div>
+                    </div>
+                    <div class="boxItem cyan special hidden" id="mouse1">
+                        <div class="extraDiv">
+                            <img src="<%= mouse[1].image%>" class="itemImage">
+                            <h4>
+                                <%= mouse[1].name %>
+                            </h4>
+                        </div>
+                        <p>Fuente</p>
+                        <div class="buttons">
+                            <a href="/product/detail/<%= mouse[1].id %> " target=”_blank”>
+                                <button class="boton1">Ir a la pagina del producto</button>
+                            </a>
+                            <button class="boton2">Agregar Producto</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button>
+                        CONFIRMAR PEDIDO DE PC
+                    </button>
                 </div>
             </div>
         </main>

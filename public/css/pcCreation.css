@@ -10,6 +10,7 @@
   max-width: 50px;
   height: auto;
   max-height: 80px;
+  margin-right: 15px;
 }
 .buttons{
   display: flex;
@@ -23,12 +24,50 @@
 .boton2{
   margin: 3px;
 }
-
+.hidden{
+  display: none !important;
+}
+.extraDiv{
+  display: flex;
+  align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+}
 
 
 /* otros cambios */
+
+
+/* unvisited link */
+a:link {
+  color: black;
+  font-weight: bold;
+}
+/* mouse over link */
+a:hover {
+  color: blue;
+  font-weight: bold;
+}
+
+
+.special{
+  width: 80% !important;
+}
+.listContainer{
+  width: 95% !important;
+  display: flex !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  margin-bottom: 300px !important;
+}
 .text-item{
   width: 700px !important;
+}
+.MainContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .subMainContainer1 {
   display: flex;
@@ -71,10 +110,6 @@
   display: none !important;
 }
 
-.listContainer{
-  margin-bottom: 300px;
-}
-
 :root {
   --red: hsl(0, 78%, 62%);
   --cyan: hsl(180, 62%, 55%);
@@ -110,7 +145,7 @@ h1:last-of-type {
   color: var(--grayishBlue);
 }
 
-.box {
+.boxItem {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -122,13 +157,13 @@ h1:last-of-type {
 }
 
 @media (max-width: 450px) {
-  .box {
+  .boxItem {
       height: 200px;
   }
 }
 
 @media (max-width: 950px) and (min-width: 450px) {
-  .box {
+  .boxItem {
       text-align: center;
       height: 180px;
   }
@@ -148,7 +183,7 @@ h4 {
 
 
 @media (min-width: 950px) {
-  .box {
+  .boxItem {
       width: 650px;
    
   }
