@@ -51,7 +51,7 @@ a:hover {
 
 
 .special{
-  width: 80% !important;
+  width: 95% !important;
 }
 .listContainer{
   width: 95% !important;
@@ -171,6 +171,9 @@ h1:last-of-type {
 
 .cyan {
   border-top: 3px solid var(--cyan);
+}
+.blue {
+  border-top: 3px solid var(--blue);
 }
 
 h4 {
