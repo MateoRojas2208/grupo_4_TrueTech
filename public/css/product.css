@@ -131,16 +131,12 @@ section {
 
 /* ----------------------------------------main--------------------------- */
 
+
+
 .main {
   margin-bottom: 30px;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-* {
-  font-family: 'Montserrat', sans-serif;
-  outline: 0;
-  transition: .3s;
-}
 
 h2 {
   font-weight: bolder;
