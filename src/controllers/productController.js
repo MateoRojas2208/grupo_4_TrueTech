@@ -75,7 +75,7 @@ const controller = {
 			.then(i => {
 				let product = i
 				Spec.findAll({
-					where: { products_id: 1 }
+					where: { products_id: req.params.id }
 				})
 					.then(spec => {
 						// console.log(spec)
@@ -295,7 +295,7 @@ const controller = {
 		Product.findByPk(req.params.id)
 			.then(i => {
 				let product = i
-				Spec
+				res.render("productEdit", { product})
 			})
 
 		// res.render("productEdit", { product })

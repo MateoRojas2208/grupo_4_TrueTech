@@ -47,7 +47,7 @@
         <div id="shop">
           <div id="shop">
             <% if (product !== "VACIO"){ %>
-              <% for( let i=0; i < categories.length; i++ ) { %>
+              <% for( let i=0; i < product.length; i++ ) { %>
                 <div class="products" id="<%= product[i].id %>">
                   <a href="product/detail/<%=product[i].id%>"><img class="product-image" src="<%=product[i].image%>">
                   </a>
