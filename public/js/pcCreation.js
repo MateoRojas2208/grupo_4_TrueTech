@@ -2,7 +2,6 @@ fetch("http://localhost:3030/api/pcCreation")
   .then(response => {
     response.json()
       .then(response => {
-        console.log(response)
         var items = [
           {
             type: "text",
@@ -79,7 +78,7 @@ fetch("http://localhost:3030/api/pcCreation")
           {
             type: "text",
             title: "Almacenamiento 2",
-            description: `<ul class="descUl">` + "</ul>",
+            description: `<ul class="descUl">` + `<li>` + `<div class="boxItem cyan"><img src="` + response.storage[0].image + `" class="itemImage"><h4>` + response.storage[0].name + `</h2><div class="buttons"><a href="/product/detail/${response.storage[0].id} " target=”_blank”><button class="boton1">Ir a la pagina del producto</button></a><button class="boton2" onclick="storage0()">Agregar Producto</button></div></div>` + "</li>" + `<li>` + `<div class="boxItem cyan"><img src="` + response.storage[1].image + `" class="itemImage"><h4>` + response.storage[1].name + `</h2><div class="buttons"><a href="/product/detail/${response.storage[0].id} " target=”_blank”><button class="boton1">Ir a la pagina del producto</button></a><button class="boton2" onclick="storage1()">Agregar Producto</button></div></div>` + "</ul>",
             position: {
               left: 575,
               top: 570
