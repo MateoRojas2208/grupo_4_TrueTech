@@ -17,9 +17,13 @@ router.get('/user', apiController.userList)
 router.get('/userArray', apiController.userArray)
 router.get('/user/:id', apiController.userDetail)
 
-// *****Apis Users***//
+// *****Apis Category***//
 
 router.get('/category', apiController.categoryList)
 router.get('/category/productsxCategory', apiController.categoryDetail)
+
+// *****Apis PcCreation***//
+
+router.get('/pcCreation', apiController.pcCreation)
 
 module.exports = router;

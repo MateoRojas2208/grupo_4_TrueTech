@@ -219,4 +219,3 @@ insert into specs(id, products_id, title, description) values (2, 2, 'T2', "D2")
 insert into specs(id, products_id, title, description) values (3, 3, 'T3', "D3");
 UNLOCK TABLES;
 
-"[{\"id\":635395797545},{\"specTitle\":\"1\",\"specDescription\":\"1\"},{\"specTitle\":\"2\",\"specDescription\":\"2\"},{\"specTitle\":\"3\",\"specDescription\":\"3\"},{\"specTitle\":\"4\",\"specDescription\":\"4\"},{\"specTitle\":\"5\",\"specDescription\":\"5\"},{\"specTitle\":\"6\",\"specDescription\":\"6\"},{\"specTitle\":\"7\",\"specDescription\":\"7\"},{\"specTitle\":\"8\",\"specDescription\":\"8\"},{\"specTitle\":\"9\",\"specDescription\":\"9\"}]"
