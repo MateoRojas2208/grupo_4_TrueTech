@@ -1,17 +1,13 @@
 --Menu mejor hecho en products
---carrito en base de datos
---CSS EN products
+
 --product/edit agregar el menu de spec
---arreglar css en todas las paginas porque se agrego boostrap
---en creacion de producto el modelo tiene que darte para elegir los de las database
+
 --pestaña de ediit hacerla para que sea como ver el producto en product detail y edites desde ahi en vez de un formulario 
---productCreation hacer que las specs se creen con un for() 
---validacion para specs en backend
+
 --poner ejs en /user/profile:id
---cambiar la parte de especificaciones a una tabla nueva, mas o menos como tiene el grupo 8
---limitar fotos para que sea facil el productDetail
+
 --hacer session como grupo 8 para que cuando logeas no muestre opcion de login register
+
 --formularios con mensajes abajo Grupo 7
 
---preguntar responsive pcCreation
---preguntar carrito en necesario
+--ver de sacar modelo en product create
