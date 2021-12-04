@@ -44,6 +44,22 @@ const validations = [
   body("specT1").notEmpty().withMessage("El campo no puede estar vacio").isLength({ min: 3 }).withMessage("El titulo de la especificacion debe tener al menos 3 caracteres"),
   body("specD1").notEmpty().withMessage("El campo no puede estar vacio").isLength({ min: 3 }).withMessage("La descripcion de la especificacion debe tener al menos 3 caracteres"),
 ]
+const validationsUpdate = [
+  body("name").notEmpty().withMessage("El campo no puede estar vacio").isLength({ min: 5 }).withMessage("El nombre del producto debe tener al menos 5 caracteres"),
+  body("description").notEmpty().withMessage("El campo no puede estar vacio").isLength({ min: 15 }).withMessage("La descripcion del producto debe tener al menos 15 caracteres"),
+  body("price").notEmpty().withMessage("El campo no puede estar vacio").isNumeric().withMessage("El precio debe ser un numero"),
+  body("image").custom((value, {req})=>{
+    if(req.file){
+      let file = req.file.originalname
+
+      let acceptedExt = [".png", ".jpg", ".jpeg"]
+      let extension = (path.extname(file)).toLowerCase();
+      if(!acceptedExt.includes(extension))
+      throw new Error("este tipo de archivo no esta permitido");
+    }
+    return true
+  })
+]
 // ******************  RUTAS  *******************
 
 /*** GET ALL PRODUCTS ***/
@@ -65,7 +81,7 @@ router.get('/detail/:id', productsController.detail);
 
 // /*** EDIT ONE PRODUCT ***/ 
 router.get('/edit/:id', productsController.edit);
-router.post('/update/:id', uploadFile.single("image"), validations, productsController.update);
+router.post('/update/:id', uploadFile.single("image"), validationsUpdate, productsController.update);
 
 
 // /*** DELETE ONE PRODUCT***/ 

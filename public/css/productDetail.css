@@ -169,6 +169,7 @@ main {
   text-decoration: none;
   text-align: center;
   margin: 5px;
+  width: 100%;
 }
 
 .product-description p {
@@ -237,6 +238,7 @@ main {
 .product {
   width: 60%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin: 0px;
   justify-content: center;
@@ -264,7 +266,6 @@ main {
   font-family: 'Roboto', sans-serif;
   box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
   border-radius: 10px;
-  margin-bottom: 100px;
 }
 
 /* Columnas */
@@ -406,6 +407,7 @@ footer {
   bottom: 0;
   left: 0;
   background: #111;
+  margin-top: 100px;
 }
 
 footer .content {
@@ -551,3 +553,26 @@ footer a:hover {
 .product{
   align-items: center;
 } 
+.descriptionCss{
+  width: 80%;
+  height: 200px;
+  padding: 5px;
+  border: 1px black solid;
+}
+.nameCss{
+  width: 50%;
+  padding: 5px;
+  border: 1px black solid;
+}
+.pImage{
+  height: 45px;
+  width: 60%;
+  outline: none;
+  background: #7DC855;
+  border: 2px solid black;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 12px 30px;
+}
