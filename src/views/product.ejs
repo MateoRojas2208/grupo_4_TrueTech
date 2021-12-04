@@ -11,8 +11,8 @@
 </head>
 
 <body>
-   <!---------------- header--------- -->
-   <%- include("./partials/header") -%>
+  <!---------------- header--------- -->
+  <%- include("./partials/header") -%>
     <!-- ------------------main----------------------------- -->
     <main>
       <div>
@@ -21,13 +21,13 @@
         <div id="search">
           <form action="/product/search" method="post">
             <div class="wrap">
-                 <input type="text" class="searchTerm" placeholder="Buscar por nombre..." name="search">
-                 <button type="submit" class="searchButton">
-                   <i class="fa fa-search"></i>
-                </button>
-           </div>
+              <input type="text" class="searchTerm" placeholder="Buscar por nombre..." name="search">
+              <button type="submit" class="searchButton">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
           </form>
-          
+
         </div>
         <div id="filter">
           <div>
@@ -44,44 +44,45 @@
           </div>
 
         </div>
+
         <div id="shop">
-          <div id="shop">
-            <% if (product !== "VACIO"){ %>
-              <% for( let i=0; i < product.length; i++ ) { %>
-                <div class="products" id="<%= product[i].id %>">
-                  <a href="product/detail/<%=product[i].id%>"><img class="product-image" src="<%=product[i].image%>">
-                  </a>
-                  <p class="product-name">
-                    <%= product[i].name%>
-                  </p>
-                  <p class="product-description">
-                    <%= product[i].description%>
-                  </p>
-                  <p class="product-price" value='<%= product[i].price%>'>
-                    <%= "$" + product[i].price%>
-                  </p>
-                  <button class="add-to-cart" id='test'>Agregar al carrito</button>
+          <% if (product !=="VACIO" ){ %>
+            <% for( let i=0; i < product.length; i++ ) { %>
+              <div class="card1" id="<%= product[i].id %>">
+                <div class="imgBox1">
+                  <img src="<%=product[i].image%>" alt="mouse corsair" class="mouse1">
                 </div>
-                <% }} ; %>
-                
-                  <% if (filtered !== "VACIO" ){ %>
-                    <% for( let i=0; i < filtered.length; i++ ) { %>
-                    <div class="products" id="i">
-                      <a href="product/detail/<%=filtered[i].id%>"><img class="product-image" src="<%=filtered[i].image%>">
-                      </a>
-                      <p class="product-name">
-                        <%= filtered[i].name%>
-                      </p>
-                      <p class="product-description">
-                        <%= filtered[i].description%>
-                      </p>
-                      <p class="product-price" value='<%= filtered[i].price%>'>
-                        <%= filtered[i].price%>
-                      </p>
-                      <button class="add-to-cart" id='test'>Agregar al carrito</button>
+                <div class="contentBox1">
+                  <h3>
+                    <%= product[i].name%>
+                  </h3>
+                  <h2 class="price1">
+                    <%= "$" + product[i].price%>
+                  </h2>
+                  <a href="/product/detail/<%= product[i].id %> " class="buy1">Ver Informacion Del Producto</a>
+                  <button class="add-to-cart buy1" id='test'>Agregar al carrito</button>
+                </div>
+              </div>
+              <% }} ; %>
+
+                <% if (filtered !=="VACIO" ){ %>
+                  <% for( let i=0; i < filtered.length; i++ ) { %>
+                    <div class="card1" id="<%=filtered[i].id%>">
+                      <div class="imgBox1">
+                        <img src="<%=filtered[i].image%>" alt="mouse corsair" class="mouse1">
+                      </div>
+                      <div class="contentBox1">
+                        <h3>
+                          <%= filtered[i].name%>
+                        </h3>
+                        <h2 class="price1">
+                          <%= "$" + filtered[i].price%>
+                        </h2>
+                        <a href="/product/detail/<%=filtered[i].id%> " class="buy1">Ver Informacion Del Producto</a>
+                        <button class="add-to-cart buy1" id='test'>Agregar al carrito</button>
+                      </div>
                     </div>
                     <% }} %>
-          </div>
         </div>
         <div id='cart-wrapper' class="slider close">
           <div id='cart'>

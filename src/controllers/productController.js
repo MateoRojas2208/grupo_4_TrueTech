@@ -55,16 +55,17 @@ const controller = {
 		var categoryId = req.params.id
 		Category.findAll().then(i => {
 			var category = i
-			Product.findOne({
+			Product.findAll({
 				where: {
 					categories_id: categoryId
 				}
 			}).then((filtered) => {
+				console.log(filtered)
 				let products = "VACIO"
 				return res.render('product', {
 					product: products,
 					categories: category,
-					filtered: [filtered]
+					filtered: filtered
 				});
 			});
 		})
