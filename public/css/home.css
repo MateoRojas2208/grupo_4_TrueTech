@@ -384,7 +384,7 @@ a:focus {
 .product_section .product_container .box .btn-box a {
   display: inline-block;
   padding: 10px 30px;
-  background-color: #8019c8;
+  background-color: green;
   color: #ffffff;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
@@ -393,7 +393,7 @@ a:focus {
 }
 
 .product_section .product_container .box .btn-box a:hover {
-  background-color: #541184;
+  background-color: lightgreen;
 }
 
 .dropdown-toggle::after {
