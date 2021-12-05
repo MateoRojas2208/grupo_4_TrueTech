@@ -402,6 +402,12 @@ a:focus {
 .dropdown-menu {
   position: absolute !important;
 }
+.centered{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
 
 /* ----------------------------footer--------------------------------------------------------- */
@@ -558,3 +564,7 @@ footer a:hover{
   display: flex;
   justify-content: space-between;
 }
+
+
+/***************SLIDER  *************************************/
+

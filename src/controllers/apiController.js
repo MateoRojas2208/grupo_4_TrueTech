@@ -195,7 +195,7 @@ const controller = {
         let cat10 = Product.findAll({ where: { categories_id: 10 } })
         Promise.all([cat1, cat2, cat3, cat4, cat5, cat6, cat7, cat8, cat9, cat10])
             .then(function ([cat1, cat2, cat3, cat4, cat5, cat6, cat7, cat8, cat9, cat10]) {
-                res.json('pcCreation', {
+                res.json({
                     ram: cat1,
                     processor: cat2,
                     graficCard: cat3,
