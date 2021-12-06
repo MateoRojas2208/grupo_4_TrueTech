@@ -5,13 +5,9 @@ let cartWrapper = document.getElementById('cart-wrapper');
 let cartElement = document.getElementById('cart');
 let subtotal = document.getElementById('subtotal');
 let total = document.getElementById('total');
-let applyPromoButton = document.querySelector('#apply-promo');
 let addToCartButton = document.querySelectorAll('.add-to-cart');
 let cartTogglee = document.querySelectorAll("#cart-button");
 
-
-
-applyPromoButton.addEventListener('click', applyPromo);
 
 let cartProductQuantity = "<input name='quantity' id='quantity-value' type='number' value='1'>";
 
@@ -40,8 +36,6 @@ for (let button of addToCartButton) {
 for (let button of cartTogglee) {
     button.addEventListener('click', addToCart);
 }
-
-
 var keep = document.getElementById("ks");
 
 keep.onclick = function(){
@@ -54,14 +48,6 @@ keep.onclick = function(){
 
 // Adding products to the shopping cart
 function addToCart(event) {
-
-    if (added.includes(event.target.parentElement.id)) {
-        duplicateId = '#' + event.target.parentElement.id;
-
-        cartTableBody.querySelector(duplicateId).querySelector('#quantity-value').value++;
-        return;
-    }
-
     // Capture product
     let product = event.target.parentNode;
     let productId = product.id;
@@ -145,13 +131,10 @@ function removeFromCart(event) {
 
             subtotalRowParent.removeChild(discountRow);
         }
-
     }
-
     cart.finalDis = 0;
     updateSubtotal();
     updateTotal();
-
 }
 
 
@@ -190,88 +173,6 @@ function updateQuantity(event) {
     updateSubtotal();
     updateTotal();
 }
-
-function applyPromo(event) {
-    let promoInputValue = document.getElementById('promo').value.toUpperCase();
-    let promoInput = document.getElementById('promo');
-
-    switch (promoInputValue) {
-        case 'IPHONEX15':
-            let price = 0;
-            for (item of cart.items) {
-                if (item.product.includes('iphone-x')) {
-                    price += item.productPrice;
-                    let pro15Dis = (price * 15) / 100;
-
-                    cart.iphoneDis = pro15Dis;
-                    cart.finalDis = cart.iphoneDis.toFixed(2);
-                    addDiscountAmount();
-                }
-            }
-
-            alert('15% Off the iPhone X!');
-            break;
-
-        case 'ANDROID10':
-            for (item of cart.items) {
-                if (isIncluded('android', itemClass[item.product])) {
-                    let product = cartTableBody.querySelector('#' + item.product);
-                    var productUpdatedPrice = product.querySelector('#updated-product-price').innerHTML;
-
-                    productUpdatedPrice = (Number(productUpdatedPrice) * 10) / 100;
-
-                    product.querySelector('#updated-product-price').innerHTML = (Number(product.querySelector('#updated-product-price').innerHTML)) - productUpdatedPrice;
-
-                }
-            }
-
-            cart.androidDis = productUpdatedPrice;
-            cart.finalDis = cart.androidDis.toFixed(2);
-
-            addDiscountAmount();
-
-            alert('10% Off all Android products!');
-
-            break;
-
-        case '5OFFEVERYTHING':
-            let subtotalDiscount = (cart.subtotal * 5) / 100;
-
-            cart.Off5 = subtotalDiscount;
-            cart.finalDis = cart.Off5.toFixed(2);
-            addDiscountAmount();
-
-            alert('5% Off the price of all products combined!');
-            break;
-
-        case '':
-            alert('Please enter a discount code!');
-
-            break;
-
-        default:
-            alert('Invalid Code!');
-    }
-
-    function addDiscountAmount() {
-        var orderTotalRow = document.getElementById("total-wrapper");
-        var orderTotalRowParent = orderTotalRow.parentNode;
-        var newRow = document.createElement("tr");
-        orderTotalRowParent.insertBefore(newRow, orderTotalRow);
-        newRow.setAttribute("id", "discountRow");
-        for (var j = 0; j < 2; j++) {
-            var newTd = document.createElement("td");
-            newRow.appendChild(newTd);
-        }
-        newRow.childNodes[0].innerHTML = "Discount:";
-        newRow.childNodes[1].innerHTML = cart.finalDis;
-        newRow.childNodes[1].setAttribute("id", "discountAmt");
-
-        updateSubtotal();
-        updateTotal();
-    }
-}
-
 function updateSubtotal() {
     cart.subtotal = 0;
 

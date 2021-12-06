@@ -1,5 +1,1 @@
 --Menu mejor hecho en products
-
---poner ejs en /user/profile:id
-
---ver de sacar modelo en product create

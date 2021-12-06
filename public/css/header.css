@@ -28,3 +28,9 @@
 .dropdown-menu {
     position: absolute !important;
 }
+.container1{
+    padding-right: 15px !important; 
+    padding-left: 15px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}

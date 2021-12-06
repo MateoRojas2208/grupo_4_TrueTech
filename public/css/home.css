@@ -286,7 +286,7 @@ a:focus {
 
 .product_section .product_heading h2 {
   padding: 10px 20px;
-  background-color: #19c880;
+  background-color: #8019c8;
   color: #ffffff;
   font-weight: bold;
   font-size: 24px;
@@ -562,7 +562,7 @@ footer a:hover{
 }
 .arreglo4{
   display: flex !important;
-  justify-content: space-between;
+  justify-content: space-between !important;
 }
 
 
