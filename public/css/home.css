@@ -286,7 +286,7 @@ a:focus {
 
 .product_section .product_heading h2 {
   padding: 10px 20px;
-  background-color: #19c880;
+  background-color: #8019c8;
   color: #ffffff;
   font-weight: bold;
   font-size: 24px;
@@ -549,20 +549,20 @@ footer a:hover{
     padding-left: 0;
   }
 }
-#arreglo{
+.arreglo{
   display: flex !important;
   flex-direction: row !important;
 }
-#arreglo2{
+.arreglo2{
   display: flex !important;
   flex-direction: row !important;
 }
-#arreglo3{
-  display: block;
+.arreglo3{
+  display: block !important;
 }
 .arreglo4{
-  display: flex;
-  justify-content: space-between;
+  display: flex !important;
+  justify-content: space-between !important;
 }
 
 

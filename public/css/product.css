@@ -155,6 +155,7 @@ h2 {
   color: white;
   transition: background .5s;
   border-radius: 4px;
+  z-index: 1000;
 }
 
 .cart-button-style-two {
@@ -262,6 +263,7 @@ h2 {
   overflow: hidden;
   background: white;
   transition: all 1s;
+  z-index: 1000;
 }
 
 .slider.close {

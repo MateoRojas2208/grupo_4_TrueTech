@@ -94,7 +94,29 @@ const controller = {
             }
             )
     },
-
+    profileEdit: (req, res) => {
+        let user = req.session.userLoged.id
+        User.findByPk(user)
+            .then(user => {
+                res.render('profileEdit', { user });
+            }
+            )
+    },
+    profileSave: (req, res) => {
+        let user = req.session.userLoged.id
+        User.update({
+            full_name: req.body.name
+        }, {
+            where: { id: user }
+        })
+            .then(response => {
+                User.findByPk(user)
+                    .then(user => {
+                        res.render('profile', { user });
+                    }
+                    )
+            })
+    }
 }
 
 

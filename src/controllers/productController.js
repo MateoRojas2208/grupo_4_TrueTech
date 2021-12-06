@@ -277,6 +277,7 @@ const controller = {
 			image: imageLink2
 		}, { where: { id: req.params.id } })
 			.then(a => {
+				console.log(a)
 				Product.findByPk(req.params.id)
 					.then(productasd => {
 						let product = productasd

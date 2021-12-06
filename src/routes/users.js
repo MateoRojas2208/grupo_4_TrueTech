@@ -64,7 +64,8 @@ router.post("/register", uploadFile.single("image"), validations, usersControlle
 /* GET profile page */
 
 router.get('/profile',logged, usersController.profile);
-
+router.get('/profile/Edit',logged, usersController.profileEdit);
+router.post('/profile/save', usersController.profileSave);
 
 
 module.exports = router;
