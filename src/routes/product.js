@@ -27,9 +27,7 @@ const validations = [
   body("category").notEmpty().withMessage("El campo no puede estar vacio"),
   body("name").notEmpty().withMessage("El campo no puede estar vacio").isLength({ min: 5 }).withMessage("El nombre del producto debe tener al menos 5 caracteres"),
   body("description").notEmpty().withMessage("El campo no puede estar vacio").isLength({ min: 15 }).withMessage("La descripcion del producto debe tener al menos 15 caracteres"),
-  body("colour").notEmpty().withMessage("El campo no puede estar vacio"),
   body("price").notEmpty().withMessage("El campo no puede estar vacio").isNumeric().withMessage("El precio debe ser un numero"),
-  body("model").notEmpty().withMessage("El campo no puede estar vacio"),
   body("image").custom((value, {req})=>{
     if(req.file){
       let file = req.file.originalname

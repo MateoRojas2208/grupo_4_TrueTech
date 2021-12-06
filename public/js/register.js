@@ -9,8 +9,8 @@ window.addEventListener("load", function () {
 
     uName.addEventListener("change", function (e) {
         e.preventDefault();
-        if (uName.value.length < 2) {
-            alert("El nombre debe tener al menos 2 caracteres");
+        if (uName.value.length < 5) {
+            alert("El nombre debe tener al menos 5 caracteres");
         }
     })
 

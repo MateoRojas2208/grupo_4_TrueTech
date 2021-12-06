@@ -175,6 +175,7 @@ select option {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 0px !important;
 }
 
 .row:before, .row:after {
