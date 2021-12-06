@@ -20,31 +20,37 @@
         <button id='cart-button' class="trigger cart-button-style">Mostrar Carrito</button>
         <div id="search">
           <form action="/product/search" method="post">
-            <div class="wrap">
-              <input type="text" class="searchTerm" placeholder="Buscar por nombre..." name="search">
-              <button type="submit" class="searchButton">
-                <i class="fa fa-search"></i>
-              </button>
+            <div class="container">
+              <div class="row height d-flex justify-content-center align-items-center">
+                <div class="col-md-8">
+                  <div class="search">
+                    <i class="fa fa-search"></i>
+                    <input type="text" class="form-control searchTerm" placeholder="Buscar por nombre..." name="search">
+                    <button type="submit" class="btn btn-primary searchButton">
+                      Search
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </form>
-
+          <section id="sidebar">
+            <div>
+              <h6 class="p-1 border-bottom">Filtro Por categoria</h6>
+              <ul>
+                <% for( let i=0; i < categories.length; i++ ) { %>
+                  <li>
+                    <a href="/product/filter/<%= categories[i].id %>">
+                      <div>
+                        <%= categories[i].name %>
+                      </div>
+                    </a>
+                  </li>
+                  <% } %>
+              </ul>
+            </div>
+          </section>
         </div>
-        <div id="filter">
-          <div>
-            Filtro Por categoria
-          </div>
-          <div class="containerOptionsC">
-            <% for( let i=0; i < categories.length; i++ ) { %>
-              <a href="/product/filter/<%= categories[i].id %>" class="optionsC">
-                <div class="optionsC">
-                  <%= categories[i].name %>
-                </div>
-              </a>
-              <% } %>
-          </div>
-
-        </div>
-
         <div id="shop">
           <% if (product !=="VACIO" ){ %>
             <% for( let i=0; i < product.length; i++ ) { %>
@@ -128,8 +134,6 @@
               </table>
             </div>
           </div>
-        </div>
-        <div class="facilidad"><a href="./product/Create">ir a creacion de producto (link para que sea mas facil)</a>
         </div>
     </main>
 

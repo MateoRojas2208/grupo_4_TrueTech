@@ -11,4 +11,4 @@ const controller = {
         })
 	},
 }
-module.exports = controlle
+module.exports = controller
