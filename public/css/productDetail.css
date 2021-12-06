@@ -576,3 +576,12 @@ footer a:hover {
   text-decoration: none;
   padding: 12px 30px;
 }
+.delete-product {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  justify-content: center;
+  border: 1px solid #939393;
+  border-radius: 7px;
+  margin: 15px 23.59%;
+}

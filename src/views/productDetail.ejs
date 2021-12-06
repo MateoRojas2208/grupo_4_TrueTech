@@ -64,6 +64,14 @@
             <div class="edit-product">
               <a href="/product/edit/<%- product.id -%>" class="cart-btn">Editar Producto</a>
             </div>
+            <form action="/product/destroy/<%- product.id -%>" method="POST" enctype="multipart/form-data"></form>
+            <div class="delete-product">
+              <a href="/product/destroy/<%- product.id -%>" class="cart-btn"> Eliminar Producto</a>
+
+
+
+            </div>
+            </form>
           </div>
 
         </div>
@@ -74,9 +82,9 @@
         <div class="contenido">
           <% for( let i=0; i < spec.length; i++ ) { %>
             <div class="inside">
-              <%- spec[i].title -%> 
+              <%- spec[i].title -%>
                 <div class="resalted">
-                  :  <%-spec[i].description -%>
+                  : <%-spec[i].description -%>
                 </div>
             </div>
             <% } %>
