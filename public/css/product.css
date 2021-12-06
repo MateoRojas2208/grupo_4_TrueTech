@@ -245,17 +245,6 @@ h2 {
   clear: both;
 }
 
-.add-to-cart {
-  display: block;
-  margin: 1% auto;
-  border-style: none;
-  width: 10em;
-  height: 3em;
-  background: #62ff8e;
-  color: white;
-  font-weight: bold;
-  border-radius: 20px;
-}
 
 .add-to-cart:hover {
   background: #7762ff;
@@ -583,4 +572,109 @@ footer a:hover {
   background-color: crimson;
   padding: 20px;
   margin-top: 50px;
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
+
+
+.card1 {
+  position: relative;
+  width: 18%;
+  height: 570px;
+  background: #191919;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 10px;
+  margin-bottom: 50px !important;
+}
+
+.card1::before {
+  content: "";
+  position: absolute;
+  top: -60%;
+  width: 100%;
+  height: 100%;
+  background: #ffc085;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.card1:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.card1::after {
+  content: "TrueTech";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 5em;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.card1 .imgBox1 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+.card1 .contentBox1 {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.card1 .contentBox1 h3 {
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card1 .contentBox1 .price1 {
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.card1 .contentBox1 .buy1 {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #000000 !important;
+  text-decoration: none !important;
+  background: #e3e3e3;
+  border-radius: 30px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  transition: 0.5s;
+}
+
+.card1:hover .contentBox1 .buy1 {
+  top: 0;
+  opacity: 1;
+}
+
+.mouse1 {
+  height: 200px;
+  width: auto;
+}
+#shop{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }

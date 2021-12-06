@@ -1,18 +1,16 @@
 <header>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <div class="navbar navbar-inverse">
-    <div class="container-fluid" id="arreglo3">
+    <div class="container-fluid arreglo3">
       <div class="row">
-        <div class="col-lg-12" id="arreglo2">
-
+        <div class="col-lg-12 arreglo2">
           <div class="navbar-header">
             <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span
                 class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             <a href="/" class="navbar-brand">True Tech</a>
           </div>
-
-          <div class="navbar-collapse collapse" id="arreglo4">
-            <ul class="nav navbar-nav" id="arreglo">
+          <div class="navbar-collapse collapse arreglo4" id="mobile_menu">
+            <ul class="nav navbar-nav arreglo" >
               <li class="active"><a href="/">Pagina Principal</a></li>
               <li><a href="/product/pcCreation">Crea Tu PC</a></li>
               <li id="hola"><a href="/product" id="hola3">Productos</a>
@@ -28,16 +26,36 @@
               </li>
               <!-- agregar <li> si hacen falta -->
             </ul>
-            <ul class="nav navbar-nav navbar-right" id="arreglo">
-              <li><a href="/users/profile"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
-              <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
-                    class="glyphicon glyphicon-log-in"></span> Iniciar Sesión / Registrarte <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="/users/login">Iniciar sesion</a></li>
-                  <li><a href="/users/register">Registrarte</a></li>
+            <% if(locals.isLogged) { %>
+              <ul class="nav navbar-nav navbar-right arreglo">
+                <li><a href="/users/profile/" ><span class="glyphicon glyphicon-user"></span>Mi Perfil</a></li>
+                <% if(locals.userLogged.clearence === true) { %>
+                  <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      </span>Admin Panel</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/product/create">Crear Un Producto</a></li>
+                      <li><a href="http://localhost:3000/" target=”_blank”>Dashboard</a></li>
+                    </ul>
+                  </li>
+                  <% } %>
+              </ul>
+              <% } else { %>
+                <ul class="nav navbar-nav navbar-right" id="arreglo">
+                  <li><a href="/users/profile"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
+                  <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <span class="glyphicon glyphicon-log-in"></span>
+                      Iniciar Sesión / Registrarte
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/users/login">Iniciar sesion</a></li>
+                      <li><a href="/users/register">Registrarte</a></li>
+                    </ul>
+                  </li>
                 </ul>
-              </li>
-            </ul>
+                <% } %>
           </div>
         </div>
       </div>

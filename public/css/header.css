@@ -1,16 +1,30 @@
-#hola{
+#hola {
 
-    display:  flex !important;
-    flex-direction: row!important;
-    align-items: center!important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
 }
-#hola2{
-    padding:15px!important;
-    padding-left: 5px!important;
+
+#hola2 {
+    padding: 15px !important;
+    padding-left: 5px !important;
 }
-#hola3{
-    padding-right: 0px!important;
+
+#hola3 {
+    padding-right: 0px !important;
 }
+
 #navbar {
-    border-end-end-radius: 4px!important;
+    border-end-end-radius: 4px !important;
+}
+.navbar{
+    margin-bottom: 0px !important;
+}
+
+.dropdown-toggle::after {
+    content: none !important;
+}
+
+.dropdown-menu {
+    position: absolute !important;
 }

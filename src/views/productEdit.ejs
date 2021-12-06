@@ -3,71 +3,83 @@
 
 <head>
     <%- include("./partials/head") -%>
-        <link rel="stylesheet" href="/css/productCreation.css">
+        <link rel="stylesheet" href="/css/productDetail.css">
         <title>Creacion de Producto</title>
         <!------ header ------->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+        <style type="text/css">
+            .product-small-img img {
+                width: 100%;
+                border: 1px solid rgba(0, 0, 0, .2);
+                padding: 8px;
+                margin: 10px 10px 15px;
+                cursor: pointer;
+            }
+        </style>
 </head>
 
 <body>
-   <!---------------- header--------- -->
-   <%- include("./partials/header") -%>
+    <!---------------- header--------- -->
+    <%- include("./partials/header") -%>
 
         <main>
-            <div class="container">
-                <form action="/product/update/<%- product.id -%>" method="POST" enctype="multipart/form-data">
-                    <div class="row">
-                        <h4>Producto</h4>
-                        <div class="input-group input-group-icon"><input type="text" name="name"
-                                placeholder="<%- product.name -%>"  required/>
-                            <div class="input-icon"><i class="fa fa-bookmark" aria-hidden="true"></i></div>
+            <form action="/product/update/<%- product.id -%>" method="POST" enctype="multipart/form-data">
+                <div class="container">
+                    <!-- Imágenes del producto -->
+                    <div class="product">
+                        <div class="img-container">
+                            <img id="imageBox" src=" <%-product.image-%> ">
                         </div>
-                        <div class="input-group input-group-icon"><input type="Model"
-                                placeholder="<%- product.model -%>" required name="model"/>
-                            <div class="input-icon"><i class="fa fa-terminal" aria-hidden="true"></i></div>
-                        </div>
-                        <div class="input-group input-group-icon" id="table">
-                            <div class="table-cell">
-                                <textarea cols="80" class="descripciones" placeholder="<%- product.description -%>" name="description"
-                                    style="resize:none" required></textarea>
-                            </div>
-                        </div>
+                        <input type="file" name="image" id="" class="pImage">
                     </div>
-                    <div class="row">
-                        <div class="col-half">
-                            <h4>Color</h4>
-                            <div class="input-group input-group-icon"><input id="colour" type="text"
-                                    placeholder="<%- product.colour -%>" required name="colour"/>
-                                <div class="input-icon"><i class="fa fa-terminal" aria-hidden="true"></i></div>
-                            </div>
+                    <script type="text/javascript">
+                        function myFunction(smallImg) {
+                            var fullImg = document.getElementById("imageBox");
+                            fullImg.src = smallImg.src;
+                        }
+                    </script>
+                    <!-- Descripción del producto -->
+                    <div class="product-description">
+                        <div class="ProductInfo">
+                            <span>
+                                <input type="text" class="nameCss" value="<%- product.name -%>" name="name">
+                            </span>
+                            <textarea cols="80" class="descriptionCss" name="description" style="resize:none"><%- product.description -%></textarea>
                         </div>
-                        <div class="col-half">
-                            <h4>Price</h4>
-                            <div class="input-group input-group-icon">
-                                <input placeholder="Precio" type="number" name="price" required>
-                                <div class="input-icon">$</div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <h4>Imagen del producto</h4>
-                            <div>
-                                <div><input type="file" name="image" placeholder="<%- product.image -%>" required accept="image/*"></div>
-                            </div>
-                        </div>
-                    </div>
+                        <!-- Precio del producto -->
+                        <div class="buttonsProduct">
+                            <div class="product-price">
+                                <span>
+                                    $<input type="text" value=" <%- product.price -%>" name="price"> 
+                                </span>
 
-                    <div class="entregar">
-                        <button type="submit" class="ghost" id="edit"><a>Actualizar Producto</a></button>
+                            </div>
+                            <!-- ------------------------------Mostrar solo a creador del producto----------------------------- -->
+
+                        </div>
+
                     </div>
-                </form>
-                <form action="/product/destroy/<%- product.id -%>" method="POST" enctype="multipart/form-data">
-                    <div class="invisible"><input type="text"></div>
-                    <div class="form-destroy">
-                        <button type="submit" class="ghost" id="erase"><a>Eliminar Producto</a></button>
+                </div>
+                <!-- Especificaciones del producto || Más información -->
+                <div class="more-info">
+                    <h2>Especificaciones</h2>
+                    <div class="contenido">
+                        <% for( let i=0; i < spec.length; i++ ) { %>
+                            <div class="inside">
+                                <%- spec[i].title -%>
+                                    <div class="resalted">
+                                        : <%-spec[i].description -%>
+                                    </div>
+                            </div>
+                            <% } %>
                     </div>
-                </form>
-            </div>
+                </div>
+                <div class="edit-product">
+                    <button type="submit" class="cart-btn">Guardar Producto</button>
+                </div>
+            </form>
         </main>
 
 </body>

@@ -396,7 +396,18 @@ a:focus {
   background-color: lightgreen;
 }
 
-
+.dropdown-toggle::after {
+  content: none !important;
+  }
+.dropdown-menu {
+  position: absolute !important;
+}
+.centered{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
 
 /* ----------------------------footer--------------------------------------------------------- */
@@ -549,7 +560,11 @@ footer a:hover{
 #arreglo3{
   display: block;
 }
-#arreglo4{
+.arreglo4{
   display: flex;
   justify-content: space-between;
 }
+
+
+/***************SLIDER  *************************************/
+
