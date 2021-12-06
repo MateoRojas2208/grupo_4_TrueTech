@@ -65,12 +65,9 @@
               <a href="/product/edit/<%- product.id -%>" class="cart-btn">Editar Producto</a>
             </div>
             <form action="/product/destroy/<%- product.id -%>" method="POST" enctype="multipart/form-data">
-            <div class="delete-product">
-              <a href="/product/destroy/<%- product.id -%>" class="cart-btn"> Eliminar Producto</a>
-
-
-
-            </div>
+              <div class="delete-product">
+                <button type="submit" class="cart-btn" id="erase">Eliminar Producto</button>
+              </div>
             </form>
           </div>
 

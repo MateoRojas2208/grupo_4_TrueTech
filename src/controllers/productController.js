@@ -298,7 +298,9 @@ const controller = {
 	destroy: (req, res) => {
 		db.Product.destroy({
 			where: { id: req.params.id }
-		});
+		}).then(a =>{
+			res.redirect("/")
+		})
 	},
 }
 
