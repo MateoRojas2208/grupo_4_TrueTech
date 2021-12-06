@@ -560,7 +560,7 @@ footer a:hover{
 #arreglo3{
   display: block;
 }
-#arreglo4{
+.arreglo4{
   display: flex;
   justify-content: space-between;
 }

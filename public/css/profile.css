@@ -406,18 +406,18 @@ footer a:hover {
     }
 }
 
-#arreglo{
+.arreglo{
     display: flex !important;
     flex-direction: row !important;
 }
-#arreglo2{
+.arreglo2{
     display: flex !important;
     flex-direction: row !important;
 }
-#arreglo3{
-    display: block;
+.arreglo3{
+    display: block !important;
 }
-#arreglo4{
-    display: flex;
-    justify-content: space-between;
+.arreglo4{
+    display: flex !important;
+    justify-content: space-between !important;
 }

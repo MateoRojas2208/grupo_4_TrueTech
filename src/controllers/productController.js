@@ -7,11 +7,12 @@ const Op = db.Sequelize.Op
 const { validationResult } = require('express-validator');
 const { validationError } = require('express-validator');
 const { filter } = require('lodash');
+const sessions = require('express-session');
+
 
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-
 		Category.findAll()
 			.then(i => {
 				var category = i;
@@ -60,7 +61,6 @@ const controller = {
 					categories_id: categoryId
 				}
 			}).then((filtered) => {
-				console.log(filtered)
 				let products = "VACIO"
 				return res.render('product', {
 					product: products,
@@ -79,7 +79,6 @@ const controller = {
 					where: { products_id: req.params.id }
 				})
 					.then(spec => {
-						// console.log(spec)
 						res.render("productDetail", {
 							product,
 							spec
@@ -198,7 +197,6 @@ const controller = {
 
 			}
 			let specs = JSON.stringify(filteredSpecs)
-			console.log(specs)
 
 			Product.create({
 				id: rn({
@@ -242,7 +240,6 @@ const controller = {
 					where: { products_id: req.params.id }
 				})
 					.then(spec => {
-						// console.log(spec)
 						res.render("productEdit", {
 							product,
 							spec
@@ -287,7 +284,6 @@ const controller = {
 							where: { products_id: req.params.id }
 						})
 							.then(spec => {
-								// console.log(spec)
 								res.render("productDetail", {
 									product,
 									spec

@@ -22,7 +22,7 @@ module.exports = (sequeliz, Sequelize) => {
         type: Sequelize.STRING
       },
       clearence: {
-        type: Sequelize.STRING
+        type: Sequelize.BOOLEAN
       }
     }
     let config = {

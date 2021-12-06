@@ -20,32 +20,38 @@ const controller = {
     },
     // te logea en la cuenta (falta hacer que sirva la verificacion)
     enter: (req, res) => {
-
         var mail = req.body.email
         var pass = req.body.password
+        var usuarioALogearse;
         User.findOne({
             where: { email: mail }
         }).then((resultado) => {
-            if (resultado !== null) {
-                if (bcrypt.compareSync(pass, resultado.password)) {
-                    req.session.isLogged = true
-                    res.redirect("/users/profile:" + resultado.id);
-
-                } else {
-                    res.render("login", {
-                        errors1: "El mail y la contraseña no coinciden"
-                    })
-                }
-            } else {
-                res.render("login", {
-                    errors1: "El mail y la contraseña no coinciden"
+            if (resultado == undefined) {
+                res.render("./users/login", {
+                    errors: {
+                        email: {
+                            errors1: "El mail y la contraseña no coinciden"
+                        }
+                    }
                 })
+            } else {
+                if (bcrypt.compareSync(req.body.password, resultado.password) == true) {
+                    req.session.userLoged = resultado
+                    res.cookie("userEmail", resultado.id, {
+                        maxAge: Infinity
+                    })
+                    res.redirect("/")
+                }
             }
+        }).catch(() => {
+            res.render("login", {
+                errors1: "El mail y la contraseña no coinciden"
+            })
         })
     },
     // carga la pagina de register
     register: (req, res) => {
-        res.render("register", {errors2: ""})
+        res.render("register", { errors2: "" })
     },
     // cuando apretas crear en register/POST de creacion de cuenta en base de datos
     createNewAccount: (req, res) => {
@@ -55,7 +61,7 @@ const controller = {
 
             if (resultValidation.errors.length > 0) {
                 res.render("register", {
-                    errors2 : "",
+                    errors2: "",
                     errors: resultValidation.mapped(),
                     oldData: req.body
                 })
@@ -81,11 +87,12 @@ const controller = {
 
     // carga la pagina del perfil
     profile: (req, res) => {
-        User.findByPk(req.params.id)
-    .then(user => {
-        res.render('profile', { user });
-    }
-    )
+        let user = req.session.userLoged.id
+        User.findByPk(user)
+            .then(user => {
+                res.render('profile', { user });
+            }
+            )
     },
 
 }

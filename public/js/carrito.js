@@ -173,7 +173,6 @@ function updateQuantity(event) {
             case 'updated-product-price':
                 updatedPrice = node;
                 totalPrice = Number(node.innerHTML);
-                console.log(totalPrice);
         }
     }
 
@@ -190,7 +189,6 @@ function updateQuantity(event) {
 
     updateSubtotal();
     updateTotal();
-    console.log(cart);
 }
 
 function applyPromo(event) {

@@ -45,13 +45,6 @@ window.addEventListener("load", function () {
             alert("La descripción debe tener al menos 20 caracteres y no puede estar vacia");
         }
     })
-
-    pColour.addEventListener("change", function (e) {
-        e.preventDefault();
-        if (pColour.value == "") {
-            alert("El color es obligatorio");
-        }})
-
     pImage.addEventListener("change", function (e) {
         e.preventDefault();
         if (pImage.file != "JPG", "JPEG", "PNG") {

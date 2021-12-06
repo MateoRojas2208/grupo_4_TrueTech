@@ -1,13 +1,5 @@
 --Menu mejor hecho en products
 
---product/edit agregar el menu de spec
-
---pestaña de ediit hacerla para que sea como ver el producto en product detail y edites desde ahi en vez de un formulario 
-
 --poner ejs en /user/profile:id
-
---hacer session como grupo 8 para que cuando logeas no muestre opcion de login register
-
---formularios con mensajes abajo Grupo 7
 
 --ver de sacar modelo en product create

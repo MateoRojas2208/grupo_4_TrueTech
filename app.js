@@ -7,18 +7,12 @@ const session = require("express-session")
 const Sequelize = require('sequelize');
 const mysql = require("mysql2")
 const cors=require("cors");
-
 var indexRouter = require('./src/routes/index');
 var usersRouter = require('./src/routes/users');
 var productRouter = require("./src/routes/product")
 var apiRouter = require("./src/routes/api")
 var app = express();
-
-
-// view engine setup
-app.set('views', path.join(__dirname, '/src/views'));
-app.set('view engine', 'ejs');
-
+const loggedMiddleware = require("./src/middlewares/loggedMiddleware");
 
 const corsOptions ={
    origin:'*', 
@@ -28,27 +22,29 @@ const corsOptions ={
 
 app.use(cors(corsOptions)) // Use this after the variable declaration
 
-
-// creating 24 hours from milliseconds
-const oneWeek = 1000 * 60 * 60 * 24 * 7;
 //session middleware
 app.use(session({
-  secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
-  saveUninitialized: false,
-  cookie: { maxAge: oneWeek },
-  resave: true
+  secret: 'TrueTechSecreto',
+  resave: true,
+  saveUninitialized: true,
 }))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(loggedMiddleware)
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/product", productRouter)
 app.use("/api", apiRouter)
 
+
+
+// view engine setup
+app.set('views', path.join(__dirname, '/src/views'));
+app.set('view engine', 'ejs');
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
