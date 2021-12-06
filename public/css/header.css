@@ -17,6 +17,9 @@
 #navbar {
     border-end-end-radius: 4px !important;
 }
+.navbar{
+    margin-bottom: 0px !important;
+}
 
 .dropdown-toggle::after {
     content: none !important;

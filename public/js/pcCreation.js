@@ -129,7 +129,6 @@ fetch("http://localhost:3030/api/pcCreation")
         var options = {
           allowHtml: true
         };
-
         $(document).ready(function () {
           $("#my-interactive-image").interactiveImage(items, options);
         });
@@ -141,11 +140,6 @@ fetch("http://localhost:3030/api/pcCreation")
         // function removeSpec() {
         //   alert("Al menos tienes que tener 1 Especificacion")
         // }
-
-
-
-
-
         window.addEventListener("load", function () {
           var PM1 = document.getElementById("PM1");
           var PM2 = document.getElementById("PM2");

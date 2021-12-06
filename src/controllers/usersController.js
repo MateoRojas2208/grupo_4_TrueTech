@@ -33,12 +33,12 @@ const controller = {
 
                 } else {
                     res.render("login", {
-                        errors1: "El mail y la contraseña no coinciden (contraseña"
+                        errors1: "El mail y la contraseña no coinciden"
                     })
                 }
             } else {
                 res.render("login", {
-                    errors1: "El mail y la contraseña no coinciden (mail)"
+                    errors1: "El mail y la contraseña no coinciden"
                 })
             }
         })
