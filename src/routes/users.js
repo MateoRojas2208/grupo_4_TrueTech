@@ -25,7 +25,7 @@ const storage = multer.diskStorage({
 
 // express-validator
 const validations = [
-   body("name").notEmpty().withMessage("El campo no puede estar vacio").isLength({ min: 5 }).withMessage("El nombre del producto debe tener al menos 5 caracteres").escape(),
+   body("name").notEmpty().withMessage("El campo no puede estar vacio").isLength({ min: 5 }).withMessage("El nombre debe tener como minimo 3 letras").escape(),
    body("email").notEmpty().withMessage("El campo no puede estar vacio").bail().isEmail().withMessage("Tenes que escribir un formato de correo valido").trim().escape().normalizeEmail(),
    body("password").notEmpty().withMessage("El campo no puede estar vacio")
    .bail().isStrongPassword(
