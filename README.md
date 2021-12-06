@@ -18,7 +18,6 @@
 - Con este proyecto buscamos facilitarle al usuario la tarea de armar una computadora sin tener conocimientos sobre estas. 
 - El sitio apunta a todo el público que no esta tan informado.
 - Nuestro producto será dirigido a los adolescentes y adultos jóvenes.
-- La página tendrá computadoras "prefabricadas" y con tan solo elegir el juego que quieren jugar la página le daría la que necesitan.
 
 * Integrantes y link del proyecto
 
